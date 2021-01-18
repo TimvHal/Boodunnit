@@ -78,6 +78,12 @@ public class PlayerBehaviour : BaseMovement
             return;
         }
 
+        //Setting velocity to 0
+        if (ConversationManager.HasConversationStarted)
+        {
+            this.Rigidbody.velocity = Vector3.zero;
+        }
+
         //Posses behaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -148,7 +154,6 @@ public class PlayerBehaviour : BaseMovement
 
         if (!DashBehaviour.IsDashing && !PossessionBehaviour.IsPossessing && !ConversationManager.HasConversationStarted)
         {
-
             MoveEntityInDirection(moveDirection);   
         } 
         else if (PossessionBehaviour.IsPossessing && !ConversationManager.HasConversationStarted)
