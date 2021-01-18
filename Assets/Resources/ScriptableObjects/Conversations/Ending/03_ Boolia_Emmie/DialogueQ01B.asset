@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f58d2f2c4326554192b1344512242ec, type: 3}
+  m_Name: DialogueQ01B
+  m_EditorClassIdentifier: 
+  sentences:
+  - Text: 'Heh, I guess it was. '
+  - Text: "But it had to be done. I couldn\u2019t keep lying to you and everyone
+      like that."
+  - Text: "I\u2019m so sorry for how things have gone these past few days. I wish
+      we could\u2019ve..."
+  - Text: "That we could\u2019ve been sisters for a little longer. "
+  - Text: "I\u2019ll miss you like crazy."
+  - Text: But we all have to keep moving forwards, I guess. Even if it hurts.
+  question: {fileID: 11400000, guid: 66b3d7f1ccef21745970be6e615b0f87, type: 2}

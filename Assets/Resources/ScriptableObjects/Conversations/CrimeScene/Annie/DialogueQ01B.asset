@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f58d2f2c4326554192b1344512242ec, type: 3}
+  m_Name: DialogueQ01B
+  m_EditorClassIdentifier: 
+  sentences:
+  - Text: "Lawson, right? Yeah, I know her. It\u2019s an awful thing, what happened.
+      Wouldn\u2019t wish it on anyone."
+  - Text: 'I remember when my mother died. It was terrible. '
+  - Text: To make things worse, it was a hammer-related accident that got her.
+  - Text: "Made me nervous around hammers for a while. In my line of profession,
+      that\u2019s a career-killer."
+  - Text: But, whenever I use my hammer, instead of getting sad, it reminds me of
+      her instead.
+  - Text: 'You helped me see that. '
+  - Text: "But anyway, that\u2019s besides the point."
+  - Text: "Sadly, I don\u2019t have a clue what happened. I was busy fixing the stairs
+      in my house."
+  - Text: "For some reason, they\u2019ve broken just so that you can only go downstairs,
+      but not up again."
+  - Text: "I haven\u2019t been able to shower or change in days, that\u2019s upstairs,
+      sadly."
+  - Text: Oh! Was that TMI? S-sorry!
+  question: {fileID: 11400000, guid: ed425fc33e5435e45b5f20302518ddde, type: 2}

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f58d2f2c4326554192b1344512242ec, type: 3}
+  m_Name: DialogueQ04A
+  m_EditorClassIdentifier: 
+  sentences:
+  - Text: 'When I moved here to help you with your shop,
+
+      there was this tulip
+      I wanted to give you. I grew it by myself.
+
+'
+  - Text: "Since we hadn\u2019t seen each other in a long time..."
+  - Text: I barely managed to sneak it in, since it was so heavy!
+  - Text: "I hid it on the top shelf at the time, but when I wanted to give it to
+      you\u2026"
+  - Text: "it just\u2026 slipped out of hands."
+  - Text: And you- you were right there!
+  - Text: I-I swear it was an accident!
+  - Text: I called the police, but I...I panicked!
+  - Text: I mean...I just moved to Boonkle!
+  - Text: No way they would believe me if I told them it was an accident!
+  - Text: "Besides, they still haven\u2019t even accepted me yet."
+  - Text: Such a tight-knit community would want anyone locked up in that situation!
+  - Text: "That\u2019s...That\u2019s why I hid the flower pot in the trash\u2026"
+  question: {fileID: 11400000, guid: a8a06edafe4895944a04959953d76129, type: 2}

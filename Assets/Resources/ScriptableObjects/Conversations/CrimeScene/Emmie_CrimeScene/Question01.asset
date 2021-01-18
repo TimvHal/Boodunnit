@@ -14,15 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text: "Anyway, what\u2019s up?"
   Choices:
+  - Text: What do you know about this?
+    CharacterUnlocksChoice: 
+    Dialogue: {fileID: 11400000, guid: 5e735feccab12904cb165acf7b418e90, type: 2}
+    Question: {fileID: 0}
+    ChoiceIndexToHide: 0
+    ClueToUnlock: {fileID: 11400000, guid: 373ec4e00a3a90e49acd444db35ed69e, type: 2}
   - Text: Who should we talk to?
     CharacterUnlocksChoice: 
     Dialogue: {fileID: 11400000, guid: 53c257e72cfd3ae43bd75061c8ff04bf, type: 2}
     Question: {fileID: 0}
+    ChoiceIndexToHide: 0
+    ClueToUnlock: {fileID: 0}
   - Text: Who do you think killed me?
     CharacterUnlocksChoice: 
     Dialogue: {fileID: 11400000, guid: 351990196af05e140b5b29a3aa3c567c, type: 2}
     Question: {fileID: 0}
+    ChoiceIndexToHide: 0
+    ClueToUnlock: {fileID: 0}
   - Text: "Let\u2019s keep looking."
     CharacterUnlocksChoice: 
     Dialogue: {fileID: 11400000, guid: f3b714ff1df8c3c46808f34e624c5ddc, type: 2}
     Question: {fileID: 0}
+    ChoiceIndexToHide: 0
+    ClueToUnlock: {fileID: 0}

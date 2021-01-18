@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f58d2f2c4326554192b1344512242ec, type: 3}
+  m_Name: Dialogue01
+  m_EditorClassIdentifier: 
+  sentences:
+  - Text: "Ladies and gentlemen, may I have your attention, please?\r"
+  - Text: "Uhm\u2026 I need to tell you something about the case of Julia Lawson\u2019s
+      death."
+  - Text: I know it had a major impact on all of Boonkle
+  - Text: "Our founder probably wouldn\u2019t have cared like most of you do."
+  - Text: "So regardless of what I\u2019m about to tell you, it goes without saying
+      that our bond as a town,"
+  - Text: will always be the brightest light in dark times like these.
+  - Text: Ahem.
+  question: {fileID: 0}

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class GlideBehaviour : MonoBehaviour
 {
@@ -7,6 +8,12 @@ public class GlideBehaviour : MonoBehaviour
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private float _glideGravity = 1f;
     [SerializeField] private Animator _animator;
+    private BirdBehaviour _birdBehaviour;
+
+    private void Awake()
+    {
+        _birdBehaviour = GetComponent<BirdBehaviour>();
+    }
 
     private void Update()
     {
@@ -29,12 +36,14 @@ public class GlideBehaviour : MonoBehaviour
     {
         IsGliding = true;
         _rigidbody.useGravity = false;
+        _birdBehaviour.HasToggledAbility = true;
     }
 
     private void DisableGlide()
     {
         IsGliding = false;
         _rigidbody.useGravity = true;
+        _birdBehaviour.HasToggledAbility = false;
     }
 
     private void ApplyLoweredGravity()

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f58d2f2c4326554192b1344512242ec, type: 3}
+  m_Name: Dialogue02
+  m_EditorClassIdentifier: 
+  sentences:
+  - Text: "My\u2026 my own clumsiness got Julia killed."
+  - Text: "I\u2019m so, so sorry! I-I swear it was an accident! I\u2019m sorry!"
+  - Text: "It\u2019s\u2026 it\u2019s just... the ladder was so wobbly and the flower
+      pot was too heavy!"
+  - Text: "But I\u2019m not here t-to justify my actions, I just wanted to come clean."
+  - Text: "A feeling of guilt is... no excuse to stay silent in\u2026 in front of
+      a town like Boonkle,"
+  - Text: not to mention m-my own, sweet sister.
+  - Text: "It\u2019s my fault...It\u2019s all my fault."
+  question: {fileID: 0}

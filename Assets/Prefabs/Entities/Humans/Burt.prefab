@@ -512,6 +512,7 @@ GameObject:
   - component: {fileID: 9046699222887342269}
   - component: {fileID: 9046699222887342268}
   - component: {fileID: 9046699222887342242}
+  - component: {fileID: 151487560244891313}
   m_Layer: 11
   m_Name: Burt
   m_TagString: Untagged
@@ -599,6 +600,8 @@ MonoBehaviour:
   IsJumping: 0
   CanJump: 0
   bottomHitPoint: {x: 0, y: 0, z: 0}
+  OffMeshLinkTraverseType: 0
+  IsTraversingOfMeshLink: 0
   TargetToFollow: {fileID: 0}
   NavMeshAgent: {fileID: 0}
   Animator: {fileID: 0}
@@ -609,6 +612,7 @@ MonoBehaviour:
   SequencePatrolAreas: []
   CanPossess: 1
   TimesPosessed: 0
+  HasToggledAbility: 0
   WalkAudioClips: []
   Dialogue: {fileID: 0}
   Question: {fileID: 0}
@@ -623,6 +627,7 @@ MonoBehaviour:
   IsScaredOfLevitatableObject: 1
   LevitatableObjectFearDamage: 10
   HasFearCooldown: 0
+  ParabolaHeight: 0
   _fearRadius: 0
   _fearAngle: 0
   _ragdollController: {fileID: 9046699222887342268}
@@ -638,7 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a370603715da9442b5b569700ac28f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterAnimator: {fileID: 5364424460467163225}
+  _characterAnimator: {fileID: 0}
 --- !u!195 &9046699222887342242
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -661,6 +666,25 @@ NavMeshAgent:
   m_BaseOffset: 1.88
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &151487560244891313
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4269270940693356867}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: ef8f0910b4cb1f54db72eb71ee3f2e43, type: 3}
+  m_Controller: {fileID: 9100000, guid: a172992d89bce6649b9c781567b3c37a, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4553136638991710330
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,7 +854,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5618516387926621798}
-  - component: {fileID: 5364424460467163225}
   m_Layer: 11
   m_Name: Burt
   m_TagString: Untagged
@@ -854,25 +877,6 @@ Transform:
   m_Father: {fileID: 3491608994560916473}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &5364424460467163225
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5094462119620109532}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: ef8f0910b4cb1f54db72eb71ee3f2e43, type: 3}
-  m_Controller: {fileID: 9100000, guid: a172992d89bce6649b9c781567b3c37a, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5138866511282721835
 GameObject:
   m_ObjectHideFlags: 0

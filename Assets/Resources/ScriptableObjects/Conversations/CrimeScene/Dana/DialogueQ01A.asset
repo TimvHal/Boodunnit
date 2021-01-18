@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f58d2f2c4326554192b1344512242ec, type: 3}
+  m_Name: DialogueQ01A
+  m_EditorClassIdentifier: 
+  sentences:
+  - Text: "That\u2019s a bit of a weird question to ask. We\u2019ve been working
+      together for quite some time now."
+  - Text: "Oh, wait! You\u2019re roleplaying as an inspector, right? Like in your
+      mystery novels?"
+  - Text: In that case, Inspector Marcus, I will comply to the best of my ability!
+  - Text: "My name is Dana, and I\u2019m a full-time policewoman!"
+  - Text: At least, I am now. On other days, I do other things. For one, I like to
+      bake.
+  - Text: "I wasn\u2019t born in this uniform, that\u2019s for sure. No, I\u2019ve
+      always been a born and bred girl scout!"
+  - Text: I can do more types of knots than there are stars in the sky!
+  - Text: "Do not fact check that! There\u2019s no need! It\u2019s true!"
+  question: {fileID: 11400000, guid: 47eb45e1f5d310a4ab4e4ccc3abfaec6, type: 2}

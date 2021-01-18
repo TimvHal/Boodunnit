@@ -805,9 +805,12 @@ MonoBehaviour:
   HighlightBehaviour: {fileID: 8658040402228577262}
   LevitateBehaviour: {fileID: 8658040402228577261}
   ConversationRadius: 5
-  LeviatateRadius: 5
+  LeviatateRadius: 12
   PossesionRadius: 5
   ClueRadius: 5
+  AirVentRadius: 20
+  ClimableRadius: 20
+  DashRadius: 10
   ConversationManager: {fileID: 8658040402228577260}
   PauseMenu: {fileID: 0}
   AudioSources: []
@@ -847,6 +850,7 @@ MonoBehaviour:
   DashCooldown: 2
   DashDuration: 0.2
   DashDistance: 5
+  DashFearDamage: 5
 --- !u!114 &8658040402228577262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -871,14 +875,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d5bbad97a653c48951722b094a3396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 8658040402228577266}
-  _mainCamera: {fileID: 0}
-  _overlapSphereRadiusInUnits: 5
-  _overlapSphereAngleInDegrees: 360
-  _velocitySpeedPercentage: 25
-  _pushPullSpeed: 300
-  _frozenDurationInSeconds: 5
-  _minimumSelectionDistanceInUnits: 2
+  _levitationMoveSpeed: 250
+  _objectStartingDistance: 10
+  _objectStartingHeight: 8
+  _ignoredLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &8658040402228577260
 MonoBehaviour:
   m_ObjectHideFlags: 0

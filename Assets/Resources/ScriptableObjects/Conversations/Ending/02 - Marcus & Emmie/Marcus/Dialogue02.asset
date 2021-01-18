@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f58d2f2c4326554192b1344512242ec, type: 3}
+  m_Name: Dialogue02
+  m_EditorClassIdentifier: 
+  sentences:
+  - Text: "Our force has no\u2026 I mean, HAD no clue where to look at the start
+      of this investigation."
+  - Text: "But based on recently found evidence, we may have found\u2026 some sort
+      of\u2026 lead?"
+  - Text: "And...it pains me to say this to you, but we\u2019ve-"
+  question: {fileID: 0}

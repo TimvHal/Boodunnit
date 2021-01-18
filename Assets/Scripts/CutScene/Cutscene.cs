@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Entities;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -52,6 +53,9 @@ public class Cutscene : MonoBehaviour
                     break;
                 case ActionType.Dialogue:
                     yield return StartCoroutine(StartDialogue(action));
+                    break;
+                case ActionType.DialogueNPC:
+                    yield return StartCoroutine(StartDialogueNPC(action));
                     break;
                 case ActionType.Method:
                     CallMethodFromMonoBehaviour(action);
@@ -173,9 +177,7 @@ public class Cutscene : MonoBehaviour
 
     private IEnumerator StartDialogue(Action currentAction)
     {
-        if (!currentAction.ObjectForCutscene)
-            yield break;
-
+        // Conversation between player and entity.
         PlayerBehaviour playerBehaviour = currentAction.ObjectForCutscene.GetComponent<PlayerBehaviour>();
         if (playerBehaviour)
         {
@@ -187,6 +189,25 @@ public class Cutscene : MonoBehaviour
                 bool isPossessing = possessionBehaviour.IsPossessing;
                 conversationManager.TriggerConversation(isPossessing, currentAction.Dialogue, currentAction.Question);
             }
+        }
+
+        while (currentAction.IsExecuting)
+        {
+            currentAction.IsExecuting = ConversationManager.HasConversationStarted;
+            yield return null;
+        }
+    }
+
+    private IEnumerator StartDialogueNPC(Action currentAction)
+    {
+        if (ConversationManager.HasConversationStarted)
+            yield break;
+
+        ConversationManager conversationManager = currentAction.ConversationManager;
+        BaseEntity targetToTalkTo = currentAction.TargetToTalkTo;
+        if (conversationManager && targetToTalkTo)
+        {
+            conversationManager.TriggerCutsceneConversation(targetToTalkTo, currentAction.targetIsPlayer, currentAction.Dialogue, currentAction.Question);
         }
 
         while (currentAction.IsExecuting)
@@ -224,6 +245,8 @@ public class Cutscene : MonoBehaviour
     private void DisableOrEnablePlayer(bool shouldPlayerBeEnabled)
     {
         FindObjectOfType<PlayerBehaviour>().enabled = shouldPlayerBeEnabled;
+        if(shouldPlayerBeEnabled)
+            FindObjectOfType<PlayerBehaviour>().PossessionSpeed = 10;
     }
 
     /// <summary>

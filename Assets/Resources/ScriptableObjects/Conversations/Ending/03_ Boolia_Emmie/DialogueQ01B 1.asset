@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f58d2f2c4326554192b1344512242ec, type: 3}
+  m_Name: DialogueQ01B 1
+  m_EditorClassIdentifier: 
+  sentences:
+  - Text: "I don\u2019t think I\u2019m going back to the city. There\u2019s no life
+      there for me anymore."
+  - Text: "It\u2019s just\u2026 too much. Too much noise, too much pressure... I
+      think I want to live a smaller life."
+  - Text: "I might just stay here, in Boonkle. The people seem kind of\u2026 bizarre.
+      In a good way."
+  - Text: 'I can see why you moved here, after you quit detective work. '
+  - Text: "Maybe it\u2019s time for me to do the same. I\u2019m sure people will
+      have use for an artist here, right?"
+  - Text: "Besides, I\u2019ve heard there\u2019s a great waterside property that\u2019s
+      just become available\u2026"
+  - Text: "It\u2019s even rumored to be haunted - I heard someone was killed there!"
+  - Text: ...Too soon? Fair enough.
+  question: {fileID: 11400000, guid: 66b3d7f1ccef21745970be6e615b0f87, type: 2}

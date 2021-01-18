@@ -13,6 +13,8 @@ public class CluesPanel : MonoBehaviour
     public Text Description;
     public Image Image;
 
+    public Sprite HiddenClueImageSprite;
+
     private List<string> _collectedClueNames = new List<string>();
     private string _hiddenClueName = "???";
 
@@ -43,12 +45,11 @@ public class CluesPanel : MonoBehaviour
         } 
         else
         {
-            Clue hiddenClue = Clues.FirstOrDefault(c => c.Name == _hiddenClueName);
-            Name.text = hiddenClue.Name;
-            Details.text = hiddenClue.Details;
-            Location.text = hiddenClue.Location;
-            Description.text = hiddenClue.Description;
-            Image.sprite = hiddenClue.Image;
+            Name.text = "???";
+            Details.text = "???";
+            Location.text = "???";
+            Description.text = "???";
+            Image.sprite = HiddenClueImageSprite;
         }
     }
 }

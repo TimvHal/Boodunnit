@@ -13,6 +13,7 @@
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
+/[Aa]ssets/**/*.json
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
@@ -61,3 +62,5 @@ crashlytics-build.properties
 
 # Personal workspace
 .idea/
+/Assets/3b578e1d-bed8-4d3c-8600-fa298d3db44b.json.meta
+

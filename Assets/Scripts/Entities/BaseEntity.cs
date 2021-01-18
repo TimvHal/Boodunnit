@@ -1,21 +1,19 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using DefaultNamespace.Enums;
 using Enums;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.UI;
 
 namespace Entities
 {
-    public abstract class BaseEntity : BaseEntityMovement, IPossessable
+    public abstract class BaseEntity : BaseEntityMovement, IPossessable, IIconable
     {
         //Public properties
         public bool IsPossessed { get; set; }
         public bool CanPossess = true;
         public int TimesPosessed;
+        public bool HasToggledAbility;
         
         public bool IsWalking { get; set; }
 
@@ -39,10 +37,12 @@ namespace Entities
         public bool IsScaredOfLevitatableObject;
         public float LevitatableObjectFearDamage = 10;
         public bool HasFearCooldown;
+        
+        public float ParabolaHeight;
 
         [SerializeField] private float _fearRadius;
         [SerializeField] private float _fearAngle;
-
+        
         [SerializeField] private RagdollController _ragdollController;
 
         protected void InitBaseEntity()
@@ -56,7 +56,7 @@ namespace Entities
             if (outline)
             {
                 Color possesionColor;
-                ColorUtility.TryParseHtmlString("#ffed85", out possesionColor);
+                ColorUtility.TryParseHtmlString("#79957c", out possesionColor);
                 outline.OutlineColor = possesionColor;
                 outline.OutlineMode = Outline.Mode.OutlineVisible;
                 outline.OutlineWidth = 5.0f;
@@ -78,6 +78,12 @@ namespace Entities
 
                     MoveWithPathFinding();
                 }
+            }
+            
+            NavMeshAgent.autoTraverseOffMeshLink = (OffMeshLinkTraverseType == OffMeshLinkMethod.None);
+            if (OffMeshLinkTraverseType == OffMeshLinkMethod.Parabola && NavMeshAgent.isOnOffMeshLink && !IsTraversingOfMeshLink)
+            {
+                StartCoroutine(Parabola(NavMeshAgent));
             }
         }
 
@@ -153,6 +159,7 @@ namespace Entities
                     (collider && !collider.isTrigger) &&
                     Vector3.Dot((collider.transform.root.position - transform.position).normalized, transform.forward) * 100f >= (90f - (_fearAngle / 2f)) &&
                     collider.GetComponent<BaseEntity>() &&
+                    ScaredOfEntities != null &&
                     ScaredOfEntities.ContainsKey(collider.GetComponent<BaseEntity>().CharacterName))
                 .Select(e => e.GetComponent<BaseEntity>())
                 .ToList();
@@ -188,6 +195,15 @@ namespace Entities
             if (EmotionalState == EmotionalState.Fainted) return;
             FearDamage += amount;
 
+            if (FearDamage >= FearThreshold / 2)
+            {
+                EmotionalState = EmotionalState.Terrified;
+            }
+            else
+            {
+                EmotionalState = EmotionalState.Scared;
+            }
+
             SetScaredStage(FearDamage >= FearThreshold / 2 && EmotionalState != EmotionalState.Fainted ? 2 : 1);
             PauseEntityNavAgent(true);
 
@@ -205,6 +221,16 @@ namespace Entities
         protected virtual void CalmDown()
         {
             if (FearDamage > 0) FearDamage -= FearThreshold / 20f;
+
+            if (FearDamage == 0)
+            {
+                EmotionalState = EmotionalState.Calm;
+            }
+            else if (FearDamage < FearThreshold / 2)
+            {
+                EmotionalState = EmotionalState.Scared;
+            }
+
             if (FearDamage <= 0)
             {
                 if (Animator && Animator.runtimeAnimatorController != null)
@@ -330,6 +356,26 @@ namespace Entities
                     return true;
             }
             return false;
+        }
+
+        public void DealFearDamageAfterDash(int damage)
+        {
+            DealFearDamage(damage);
+        }
+
+        public EmotionalState GetEmotionalState()
+        {
+            return EmotionalState;
+        }
+
+        public bool GetCanBePossessed()
+        {
+            return CanPossess;
+        }
+
+        public bool GetCanTalkToBoolia()
+        {
+            return CanTalkToBoolia;
         }
     }
 }

@@ -14,15 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text: "What\u2019s your business?"
   Choices:
+  - Text: What do you know about this?
+    CharacterUnlocksChoice: 
+    Dialogue: {fileID: 11400000, guid: 5a4a93df945560544b8608fa772c1fa9, type: 2}
+    Question: {fileID: 0}
+    ChoiceIndexToHide: 0
+    ClueToUnlock: {fileID: 11400000, guid: 5ff1820b20bc30f4dbfae08c8cacd63c, type: 2}
   - Text: Who are you?
     CharacterUnlocksChoice: 
     Dialogue: {fileID: 11400000, guid: afd118ea9fe1faa478006faa15d75a23, type: 2}
     Question: {fileID: 0}
+    ChoiceIndexToHide: 0
+    ClueToUnlock: {fileID: 0}
   - Text: Do you know anything about the murder?
     CharacterUnlocksChoice: 
     Dialogue: {fileID: 11400000, guid: c93d0ece837e1804ea4aa19a27164157, type: 2}
     Question: {fileID: 0}
+    ChoiceIndexToHide: 0
+    ClueToUnlock: {fileID: 0}
   - Text: "Sorry, I\u2019ve got to go."
     CharacterUnlocksChoice: 
     Dialogue: {fileID: 11400000, guid: 2cbae54a3a56c874da941396b50d4eb5, type: 2}
     Question: {fileID: 0}
+    ChoiceIndexToHide: 0
+    ClueToUnlock: {fileID: 0}

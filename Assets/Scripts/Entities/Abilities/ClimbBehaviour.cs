@@ -18,11 +18,13 @@ public class ClimbBehaviour : MonoBehaviour
     [SerializeField] private float _rotationSpeed = 100f;
     [SerializeField] private Image _staminaRadialCircle;
     private Rigidbody _rigidbody;
+    private RatBehaviour _ratBehaviour;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        
+        _ratBehaviour = GetComponent<RatBehaviour>();
+
         if (CurrentStamina > MaximumStamina) CurrentStamina = MaximumStamina;
         else if (CurrentStamina < MinimumStamina) CurrentStamina = MinimumStamina;
     }
@@ -61,6 +63,7 @@ public class ClimbBehaviour : MonoBehaviour
             RotateToWallNormal(hit);
             _rigidbody.useGravity = false;
             IsClimbing = true;
+            _ratBehaviour.HasToggledAbility = true;
             StartCoroutine(DepleteStamina());
         }
     }
@@ -70,6 +73,7 @@ public class ClimbBehaviour : MonoBehaviour
         transform.LookAt(transform.position -transform.up);
         _rigidbody.useGravity = true;
         IsClimbing = false;
+        _ratBehaviour.HasToggledAbility = false;
         StartCoroutine(ReplenishStamina());
     }
 

@@ -14,39 +14,13 @@ namespace DefaultNamespace
 {
     public class FirebaseHTTPController
     {
-        private static readonly string apiKey = "AIzaSyC5lGUMD6hlJPbI7zkcWEU3aV_seCde3Wo";
-        private static readonly string username = "drijvern@gmail.com";
-        private static readonly string credentials = "B00D3n1t";
-        private static string idToken;
+        public static readonly string apiKey = "AIzaSyC5lGUMD6hlJPbI7zkcWEU3aV_seCde3Wo";
+        public static readonly string username = "drijvern@gmail.com";
+        public static readonly string credentials = "B00D3n1t";
 
-        public static async void PostPlaythrough(Playthrough playthrough)
+        public static UserLoginCredentials GetLogin()
         {
-            try
-            {
-                HttpClient client = new HttpClient();
-                string content = JsonConvert.SerializeObject(new UserLoginCredentials(username, credentials));
-
-                HttpResponseMessage responseMessage = await client.PostAsync(
-                    "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + apiKey,
-                    new StringContent(content));
-            
-                if (responseMessage.IsSuccessStatusCode)
-                {
-                    string result = await responseMessage.Content.ReadAsStringAsync();
-                    JObject jObject = JObject.Parse(result);
-                    idToken = jObject["idToken"].Value<string>();
-                
-                    HttpResponseMessage msg = await client.PostAsync(
-                        $"https://boodunnitcharts-default-rtdb.firebaseio.com/rest.json?auth={idToken}",
-                        new StringContent(JsonConvert.SerializeObject(playthrough))
-                    );
-                    Console.WriteLine(msg.StatusCode);
-                }
-            }
-            catch (Exception e)
-            {
-                //ignore
-            }
+            return new UserLoginCredentials(username, credentials);
         }
 
         public class UserLoginCredentials
@@ -60,6 +34,15 @@ namespace DefaultNamespace
                 this.email = email;
                 this.password = password;
             }
+        }
+
+        public class LoginResponse
+        {
+            public string idToken;
+            public string email;
+            public string refreshToken;
+            public string expiresIn;
+            public string localId;
         }
     }
 }

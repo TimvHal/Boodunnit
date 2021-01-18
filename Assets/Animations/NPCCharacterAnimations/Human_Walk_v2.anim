@@ -35100,7 +35100,7 @@ AnimationClip:
   - time: 0.13333334
     functionName: PlayWalkAudioClip
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 11500000, guid: 26feedc2e54440098779067200dd10ec, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

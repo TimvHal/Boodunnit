@@ -5,5 +5,6 @@
     Scaling,
     Popup,
     Dialogue,
+    DialogueNPC,
     Method
 }

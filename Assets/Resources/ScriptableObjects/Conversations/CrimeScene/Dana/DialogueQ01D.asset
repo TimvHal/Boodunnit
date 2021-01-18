@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f58d2f2c4326554192b1344512242ec, type: 3}
+  m_Name: DialogueQ01D
+  m_EditorClassIdentifier: 
+  sentences:
+  - Text: "Oh\u2026 I see you found it. You\u2019re a really good detective!"
+  - Text: "Yeah, this is one of mine. I\u2019m guessing you found where I threw it
+      out, then."
+  - Text: 'You know that I like to work in the bakery in my spare time, right? '
+  - Text: "That\u2019s where your donut supply comes from. I\u2019m providing for
+      you guys."
+  - Text: Or, I guess, enabling your addictions.
+  - Text: "But yeah. Anyway. I heard Julia\u2019s sister was coming to town soon."
+  - Text: I wanted to welcome her with a surprise cake. I even made sure it was strawberry-flavoured.
+  - Text: "According to Julia, that was Emmie\u2019s favourite."
+  - Text: "But, I mean, look at the situation. I can\u2019t give Emmie a cake now.
+      Her sister was murdered!"
+  - Text: "Or are you asking me this\u2026 because you think this cake links me to
+      the murder? Ridiculous!"
+  - Text: 'If baking is a crime, then lock me up right now! '
+  - Text: "But according to my scout\u2019s handbook it isn\u2019t, so butt out!
+      Hmpf!"
+  question: {fileID: 0}

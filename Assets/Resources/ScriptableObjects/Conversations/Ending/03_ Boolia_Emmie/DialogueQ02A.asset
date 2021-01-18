@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f58d2f2c4326554192b1344512242ec, type: 3}
+  m_Name: DialogueQ02A
+  m_EditorClassIdentifier: 
+  sentences:
+  - Text: "Huh\u2026 now that you mention it, I guess we did!"
+  - Text: "It was kind of a dead giveaway, though. I didn\u2019t really have to do
+      a whole lot of deducing."
+  - Text: "Y\u2019know, since it was my fault. Ha ha\u2026 I\u2019m glad you can
+      forgive me."
+  - Text: "But now that you\u2019ve resolved your unfinished business and all, I
+      can\u2019t help but notice\u2026."
+  - Text: 'The people in town seem to be pretty chill with finding out about the
+      existence of the afterlife. '
+  - Text: "Like, no freakouts or anything. Everybody\u2019s just rolling with it."
+  - Text: "Maybe they\u2019re seen ghosts around before?"
+  - Text: "That would be a cool idea for some illustrations\u2026 Let me write that
+      down!"
+  question: {fileID: 11400000, guid: 66b3d7f1ccef21745970be6e615b0f87, type: 2}

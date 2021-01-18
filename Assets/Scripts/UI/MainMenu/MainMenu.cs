@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class MainMenu : MonoBehaviour
             if (continueButton)
                 continueButton.SetActive(false);
         }
+
+        PlaythroughLogger.Instance.CheckUnuploadedLogs();
     }
 
     public void NewGame()
@@ -32,7 +35,6 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Application.Quit();
+        PlaythroughLogger.Instance.WriteLogThenQuit();
     }
-
 }

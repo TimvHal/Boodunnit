@@ -40,6 +40,12 @@ public class Log
             info = _info;
             LogTimes = _logTimes;
         }
+
+        public Entry()
+        {
+            info = "";
+            LogTimes = new List<float>();
+        }
     }
 
 }

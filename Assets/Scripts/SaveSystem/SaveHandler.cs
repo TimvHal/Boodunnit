@@ -115,6 +115,7 @@ public class SaveHandler
             if (propertiesInScene.ContainsKey(uniqueKey))
             {
                 propertyValue = (T)Convert.ChangeType(propertiesInScene[uniqueKey], typeof(T));
+                Debug.Log("Boemba: " + propertyValue);
                 isValueFound = true;
             }
         }
@@ -164,6 +165,21 @@ public class SaveHandler
         }
 
         return false;
+    }
+
+    /// <summary>
+    /// Get all names of the collected clues
+    /// </summary>
+    /// <returns>list with names of all collected clues</returns>
+    public List<string> GetSavedClueNames()
+    {
+        string clues = PlayerPrefs.GetString(_cluesSaveKey);
+        if (!string.IsNullOrEmpty(clues))
+        {
+            List<string> clueList = JsonConvert.DeserializeObject<List<string>>(clues);
+            return clueList;
+        }
+        return null;
     }
 
     /// <summary>

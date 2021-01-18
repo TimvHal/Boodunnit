@@ -14,7 +14,7 @@ public class VincentBehaviour : BaseEntity
 
     public override void UseFirstAbility()
     {
-        // Yeet skeet, my behaviour is complete obsolete
+        // Yeet skeet, my behaviour is completely obsolete
     }
 
 }

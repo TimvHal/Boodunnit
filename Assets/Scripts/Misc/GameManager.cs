@@ -9,6 +9,9 @@ public class GameManager
     /// </summary>
     public static bool IsPaused { get; set; }
     public static bool IsCutscenePlaying { get; set; }
+
+    public static bool PlayerHasAllClues = false;
+    public static bool PlayerIsInEndState = false;
     public static Collider CurrentHighlightedCollider { get; set; }
 
     private static bool _cursorIsLocked = true;

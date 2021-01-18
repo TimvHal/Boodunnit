@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f58d2f2c4326554192b1344512242ec, type: 3}
+  m_Name: DialogueQ05A
+  m_EditorClassIdentifier: 
+  sentences:
+  - Text: "Julia, when I saw you standing in front of me, back at the cemetery\u2026"
+  - Text: "You said you didn\u2019t remember anything, which was the reason you\u2019re
+      here like this."
+  - Text: I was so happy, but also scared.
+  - Text: "I couldn\u2019t get over losing you."
+  - Text: What would I do if I lost you a second time?
+  - Text: Solving your death means I have to say goodbye to you again...for ever.
+  - Text: "That\u2019s why I stalled our case."
+  question: {fileID: 11400000, guid: 9f277667595ee80419c2eb7e614372aa, type: 2}

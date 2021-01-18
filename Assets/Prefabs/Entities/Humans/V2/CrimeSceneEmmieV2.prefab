@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1164943817930913052
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 532012604440946208, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+      propertyPath: Collider
+      value: 
+      objectReference: {fileID: 1508548231582930675}
+    - target: {fileID: 532012604440946208, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+      propertyPath: Dialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: de666574abaed5449a031186c7d99d56, type: 2}
+    - target: {fileID: 532012604440946208, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 205759053728866494}
+    - target: {fileID: 532012604440946208, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+      propertyPath: CanPossess
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 532012604440946208, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+      propertyPath: Relationships.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995242838963564242, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+      propertyPath: m_Name
+      value: CrimeSceneEmmieV2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995242838963564243, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995242838963564243, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995242838963564243, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995242838963564243, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995242838963564243, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.614
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995242838963564243, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995242838963564243, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -24.556002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995242838963564243, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995242838963564243, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995242838963564243, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995242838963564243, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995242838963564243, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995242838963564243, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995242838963564243, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+--- !u!136 &1508548231582930675 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 343899359827747823, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+  m_PrefabInstance: {fileID: 1164943817930913052}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &205759053728866494 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1365073364541724066, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+  m_PrefabInstance: {fileID: 1164943817930913052}
+  m_PrefabAsset: {fileID: 0}

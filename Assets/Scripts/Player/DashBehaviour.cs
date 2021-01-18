@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Entities;
+using Entities.Humans;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -13,6 +15,9 @@ public class DashBehaviour : MonoBehaviour
     public float DashCooldown = 2f;
     public float DashDuration = 0.2f;
     public float DashDistance = 7f;
+
+    public int DashFearDamage = 5;
+
     private float _dashSpeed;
 
     private Rigidbody _rigidbodyPlayer;
@@ -27,6 +32,8 @@ public class DashBehaviour : MonoBehaviour
     private Collider[] _collidesAtEndOFRaycast;
 
     private bool _canDash;
+
+    private List<IPossessable> _fearDashPossessables = new List<IPossessable>();
 
     private void Awake()
     {
@@ -93,6 +100,8 @@ public class DashBehaviour : MonoBehaviour
         DashOnCooldown = true;
         IsDashing = false;
         _rigidbodyPlayer.useGravity = true;
+
+        _fearDashPossessables.Clear();
     }
 
     private bool CheckDashEndPosition()
@@ -198,5 +207,23 @@ public class DashBehaviour : MonoBehaviour
             currentTime += Time.deltaTime;
         }
         DashOnCooldown = false;
+    }
+
+    public void CheckDashThroughPossessables()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 0.5f);
+        foreach (Collider hitCollider in hitColliders)
+        {
+            IPossessable possessable = hitCollider.GetComponent<IPossessable>();
+            if (possessable != null 
+                && !_fearDashPossessables.Contains(possessable) 
+                && !hitCollider.GetComponent<EmmieBehaviour>()
+                && !hitCollider.GetComponent<SirBoonkleBehaviour>() 
+                && !hitCollider.GetComponent<VincentBehaviour>())
+            {
+                _fearDashPossessables.Add(possessable);
+                possessable.DealFearDamageAfterDash(DashFearDamage);
+            }
+        }
     }
 }

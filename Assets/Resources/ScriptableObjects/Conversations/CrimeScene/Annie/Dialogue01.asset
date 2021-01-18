@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f58d2f2c4326554192b1344512242ec, type: 3}
+  m_Name: Dialogue01
+  m_EditorClassIdentifier: 
+  sentences:
+  - Text: 'S-Sally! Hi! '
+  - Text: "What\u2019s-what\u2019s up with you on this day? Today? What\u2019s going
+      on with you...right now?"
+  - Text: "Ha ha\u2026 um. I\u2019m doing good! Good now you\u2019re here! If-if
+      you feel the same!"
+  - Text: "I was just walking \u2018round town, seeing if I could fix anything here
+      or there..."
+  - Text: But, not to bore ya! You must have come to talk to me with a reason, right?
+  question: {fileID: 11400000, guid: ed425fc33e5435e45b5f20302518ddde, type: 2}

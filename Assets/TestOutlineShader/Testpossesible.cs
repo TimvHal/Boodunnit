@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Testpossesible : MonoBehaviour, IPossessable
 {
+    public void DealFearDamageAfterDash(int damage)
+    {
+        throw new System.NotImplementedException();
+    }
+
     // Start is called before the first frame update
     void Start()
     {

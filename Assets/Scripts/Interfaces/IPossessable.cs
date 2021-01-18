@@ -4,4 +4,5 @@ using UnityEngine;
 
 public interface IPossessable
 {
+    void DealFearDamageAfterDash(int damage);
 }

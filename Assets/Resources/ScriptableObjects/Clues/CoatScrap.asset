@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a87fdf7dec06ae4b9e5dae250dc42ed, type: 3}
   m_Name: CoatScrap
   m_EditorClassIdentifier: 
-  Name: A Coat scap
-  Details: Details Clue 1
-  Location: Location Clue 1
-  Description: Description Clue 1
-  Image: {fileID: 21300000, guid: f44b80f795e3590458a98e995a242efa, type: 3}
+  Name: Red fabric
+  Details: A small scrap of red fabric, perhaps from a coat or shirt.
+  Location: Air vent on the roof of the crime scene.
+  Description: "Looks like it\u2019s been ripped off a piece of clothing or accessory."
+  Image: {fileID: 21300000, guid: 67e683fc037b87e4c800feec28a49f7d, type: 3}

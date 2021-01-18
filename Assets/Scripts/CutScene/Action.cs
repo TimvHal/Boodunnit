@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Entities;
+using UnityEngine;
 
 [System.Serializable]
 public class Action
@@ -39,8 +40,15 @@ public class Action
     public Dialogue Dialogue;
     public Question Question;
 
+    [Header("Check if cutscene is between entity and entity instead of boolia and entity")]
+    public ConversationManager ConversationManager;
+    public BaseEntity TargetToTalkTo;
+    public bool targetIsPlayer;
+
     [Header("Click the '+' button and pass a reference to a scrip if the action is 'Method'")]
     public MethodToCallEvent MethodToCallFromScript;
+
+    public static bool ConversationTargetIsNpc;
 }
 
 [System.Serializable]

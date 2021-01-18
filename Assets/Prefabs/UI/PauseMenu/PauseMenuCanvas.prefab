@@ -32,10 +32,10 @@ RectTransform:
   m_Father: {fileID: 8886725898075013413}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.36578125, y: 0.076000005}
-  m_AnchorMax: {x: 0.36578125, y: 0.076000005}
-  m_AnchoredPosition: {x: -74, y: 110}
-  m_SizeDelta: {x: 757, y: 597}
+  m_AnchorMin: {x: 0.23600002, y: 0.089}
+  m_AnchorMax: {x: 0.41221878, y: 0.36200002}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 637.1222, y: 501.7517}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8886725896788476996
 CanvasRenderer:
@@ -467,10 +467,10 @@ RectTransform:
   m_Father: {fileID: 8886725898658456411}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 5.065}
-  m_AnchorMin: {x: 0.47278127, y: 0.193}
-  m_AnchorMax: {x: 0.62700003, y: 0.549451}
-  m_AnchoredPosition: {x: 1, y: 0.4000244}
-  m_SizeDelta: {x: -30.622711, y: -24.175552}
+  m_AnchorMin: {x: 0.47200003, y: 0.17}
+  m_AnchorMax: {x: 0.628, y: 0.55300003}
+  m_AnchoredPosition: {x: 0.94000244, y: 0.3999939}
+  m_SizeDelta: {x: -35.62271, y: -24.691406}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8886725897189582365
 CanvasRenderer:
@@ -546,10 +546,10 @@ RectTransform:
   m_Father: {fileID: 8886725898658456411}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.434}
-  m_AnchorMin: {x: 0.3722188, y: 0.68600005}
-  m_AnchorMax: {x: 0.5946563, y: 0.77448374}
-  m_AnchoredPosition: {x: -1.3000488, y: -1.3000488}
-  m_SizeDelta: {x: -11.560059, y: -31.281189}
+  m_AnchorMin: {x: 0.3766458, y: 0.6813099}
+  m_AnchorMax: {x: 0.59000003, y: 0.79700005}
+  m_AnchoredPosition: {x: -2.699997, y: -3.5}
+  m_SizeDelta: {x: -1.5600586, y: -40.245422}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8886725897215770501
 CanvasRenderer:
@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: 8886725897252974587}
   - component: {fileID: 8886725897252974580}
   m_Layer: 5
-  m_Name: Clue3Button
+  m_Name: Bloody knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -626,10 +626,10 @@ RectTransform:
   m_Father: {fileID: 8886725898075013413}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.117000006, y: 0.277}
-  m_AnchorMax: {x: 0.117000006, y: 0.277}
-  m_AnchoredPosition: {x: 209, y: 114}
-  m_SizeDelta: {x: 442, y: 825}
+  m_AnchorMin: {x: 0.22769792, y: 0.28300002}
+  m_AnchorMax: {x: 0.3214792, y: 0.62}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 415.3988, y: 758.8126}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8886725897252974586
 CanvasRenderer:
@@ -707,7 +707,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 8886725897252974587}
   m_OnClick:
     m_PersistentCalls:
@@ -733,7 +733,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
           m_FloatArgument: 0
-          m_StringArgument: Clue 3
+          m_StringArgument: Bloody knife
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &8886725897283470279
@@ -768,10 +768,10 @@ RectTransform:
   m_Father: {fileID: 8886725898658456411}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.17568752, y: 0.053000003}
-  m_AnchorMax: {x: 0.52834374, y: 0.72351635}
-  m_AnchoredPosition: {x: -86.00012, y: 0.7890625}
-  m_SizeDelta: {x: -1, y: -2}
+  m_AnchorMin: {x: 0.1074375, y: 0.053000003}
+  m_AnchorMax: {x: 0.46256253, y: 0.6782362}
+  m_AnchoredPosition: {x: 0.58984375, y: 1.9299316}
+  m_SizeDelta: {x: -1.826477, y: 0.27871704}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8886725897283470276
 CanvasRenderer:
@@ -801,7 +801,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2b114471950f25c4a85b58b6e6019913, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4c2c9dbe74a929441a926d65e01af610, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1126,10 +1126,10 @@ RectTransform:
   m_Father: {fileID: 8886725898075013413}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.29756248, y: 0.507515}
-  m_AnchorMax: {x: 0.29756248, y: 0.507515}
-  m_AnchoredPosition: {x: 42, y: -4}
-  m_SizeDelta: {x: 668, y: 241}
+  m_AnchorMin: {x: 0.25347918, y: 0.44866872}
+  m_AnchorMax: {x: 0.41700003, y: 0.557233}
+  m_AnchoredPosition: {x: 0, y: 0.000030517578}
+  m_SizeDelta: {x: 606.8522, y: 204.81033}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8886725897541934863
 CanvasRenderer:
@@ -1201,10 +1201,10 @@ RectTransform:
   m_Father: {fileID: 8886725898658456411}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 3.587}
-  m_AnchorMin: {x: 0.26434377, y: 0.818}
-  m_AnchorMax: {x: 0.40078124, y: 0.88000005}
-  m_AnchoredPosition: {x: 0, y: 2}
-  m_SizeDelta: {x: -16, y: -12}
+  m_AnchorMin: {x: 0.2664792, y: 0.83500004}
+  m_AnchorMax: {x: 0.39247918, y: 0.9076633}
+  m_AnchoredPosition: {x: 1, y: -3.5}
+  m_SizeDelta: {x: -4, y: -22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8886725897567437320
 CanvasRenderer:
@@ -1356,10 +1356,10 @@ RectTransform:
   m_Father: {fileID: 8886725898075013413}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.25821877, y: 0.347497}
-  m_AnchorMax: {x: 0.25821877, y: 0.347497}
-  m_AnchoredPosition: {x: 7, y: 263}
-  m_SizeDelta: {x: 1187, y: 891}
+  m_AnchorMin: {x: 0.163, y: 0.51980984}
+  m_AnchorMax: {x: 0.41700003, y: 0.86500007}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 973.43506, y: 672.49194}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8886725898029271138
 CanvasRenderer:
@@ -1565,7 +1565,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.7685314, y: 0.024}
   m_AnchorMax: {x: 0.85865635, y: 0.22100002}
-  m_AnchoredPosition: {x: 0.5, y: -0.49987793}
+  m_AnchoredPosition: {x: 0.5, y: -0.5}
   m_SizeDelta: {x: 2.2021484, y: -0.5819702}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8886725898059178531
@@ -1840,7 +1840,7 @@ GameObject:
   - component: {fileID: 8886725898084288229}
   - component: {fileID: 8886725898084288230}
   m_Layer: 5
-  m_Name: Clue5Button
+  m_Name: Trash cake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1860,10 +1860,10 @@ RectTransform:
   m_Father: {fileID: 8886725898075013413}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.25821877, y: 0.035496995}
-  m_AnchorMax: {x: 0.25821877, y: 0.035496995}
-  m_AnchoredPosition: {x: -124, y: 79}
-  m_SizeDelta: {x: 360, y: 350}
+  m_AnchorMin: {x: 0.14, y: 0.024}
+  m_AnchorMax: {x: 0.27164584, y: 0.24480343}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 201.75635, y: 172.02087}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8886725898084288228
 CanvasRenderer:
@@ -1941,7 +1941,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 8886725898084288229}
   m_OnClick:
     m_PersistentCalls:
@@ -1967,7 +1967,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 4
           m_FloatArgument: 0
-          m_StringArgument: Clue 5
+          m_StringArgument: Trash cake
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &8886725898104360163
@@ -1995,17 +1995,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8886725898104360163}
-  m_LocalRotation: {x: -0, y: -0, z: 0.04009016, w: 0.9991961}
+  m_LocalRotation: {x: -0, y: -0, z: 0.037903294, w: 0.9992814}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8886725898658456411}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.595}
-  m_AnchorMin: {x: 0.46643752, y: 0.5862549}
-  m_AnchorMax: {x: 0.6167813, y: 0.66}
-  m_AnchoredPosition: {x: -3.2000122, y: -1.5}
-  m_SizeDelta: {x: -23.337585, y: -19}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.344}
+  m_AnchorMin: {x: 0.47500002, y: 0.59300005}
+  m_AnchorMax: {x: 0.5954792, y: 0.6813099}
+  m_AnchoredPosition: {x: 0.69994354, y: -2.4999847}
+  m_SizeDelta: {x: -4.7245483, y: -24.76186}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8886725898104360160
 CanvasRenderer:
@@ -2062,7 +2062,7 @@ GameObject:
   - component: {fileID: 8886725898238748139}
   - component: {fileID: 8886725898238748132}
   m_Layer: 5
-  m_Name: Clue4Button
+  m_Name: Broken flower pot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2082,10 +2082,10 @@ RectTransform:
   m_Father: {fileID: 8886725898075013413}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.10678126, y: 0.122497}
-  m_AnchorMax: {x: 0.10678126, y: 0.122497}
-  m_AnchoredPosition: {x: 36, y: 221}
-  m_SizeDelta: {x: 345, y: 175}
+  m_AnchorMin: {x: 0.101, y: 0.291}
+  m_AnchorMax: {x: 0.24700001, y: 0.507515}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -0.000061035156, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8886725898238748138
 CanvasRenderer:
@@ -2108,7 +2108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2163,7 +2163,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 8886725898238748139}
   m_OnClick:
     m_PersistentCalls:
@@ -2189,7 +2189,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
           m_FloatArgument: 0
-          m_StringArgument: Clue 4
+          m_StringArgument: Broken flower pot
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &8886725898378754528
@@ -2283,7 +2283,7 @@ GameObject:
   - component: {fileID: 8886725898385191795}
   - component: {fileID: 8886725898385191788}
   m_Layer: 5
-  m_Name: Clue2Button
+  m_Name: Hard hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2303,10 +2303,10 @@ RectTransform:
   m_Father: {fileID: 8886725898075013413}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.221875, y: 0.545}
-  m_AnchorMax: {x: 0.221875, y: 0.545}
-  m_AnchoredPosition: {x: 109, y: 171}
-  m_SizeDelta: {x: 155, y: 160}
+  m_AnchorMin: {x: 0.23834376, y: 0.646}
+  m_AnchorMax: {x: 0.37800002, y: 0.8724887}
+  m_AnchoredPosition: {x: 0.00012207031, y: 0}
+  m_SizeDelta: {x: -34.97473, y: -28.83342}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8886725898385191794
 CanvasRenderer:
@@ -2384,7 +2384,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 8886725898385191795}
   m_OnClick:
     m_PersistentCalls:
@@ -2410,7 +2410,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: Clue 2
+          m_StringArgument: Hard hat
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &8886725898400234931
@@ -2438,17 +2438,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8886725898400234931}
-  m_LocalRotation: {x: -0, y: -0, z: 0.0040559936, w: -0.99999183}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.37507164, y: 0.37507164, z: 0.37507164}
   m_Children: []
   m_Father: {fileID: 8886725898075013413}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.465}
-  m_AnchorMin: {x: 0.23521876, y: 0.15100001}
-  m_AnchorMax: {x: 0.23521876, y: 0.15100001}
-  m_AnchoredPosition: {x: 42, y: 109}
-  m_SizeDelta: {x: 1005, y: 570}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.179, y: 0.20774715}
+  m_AnchorMax: {x: 0.4143021, y: 0.44252127}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 752.7366, y: 381.7887}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8886725898400234928
 CanvasRenderer:
@@ -2763,7 +2763,7 @@ GameObject:
   - component: {fileID: 8886725898564829011}
   - component: {fileID: 8886725898564829004}
   m_Layer: 5
-  m_Name: Clue1Button
+  m_Name: Red fabric
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2783,10 +2783,10 @@ RectTransform:
   m_Father: {fileID: 8886725898075013413}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.11000001, y: 0.552503}
-  m_AnchorMax: {x: 0.21400002, y: 0.92800003}
-  m_AnchoredPosition: {x: -55, y: 20}
-  m_SizeDelta: {x: 1.3093872, y: 0.565094}
+  m_AnchorMin: {x: 0.09247917, y: 0.57727003}
+  m_AnchorMax: {x: 0.19747917, y: 0.94664437}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -0.000045776367, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8886725898564829010
 CanvasRenderer:
@@ -2809,7 +2809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -2864,7 +2864,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 8886725898564829011}
   m_OnClick:
     m_PersistentCalls:
@@ -2890,7 +2890,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: A Coat scap
+          m_StringArgument: Red fabric
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &8886725898658456404
@@ -2994,6 +2994,7 @@ MonoBehaviour:
   Location: {fileID: 8886725898104360161}
   Description: {fileID: 8886725897189582366}
   Image: {fileID: 8886725897283470277}
+  HiddenClueImageSprite: {fileID: 21300000, guid: 4c2c9dbe74a929441a926d65e01af610, type: 3}
 --- !u!1 &8886725898713399614
 GameObject:
   m_ObjectHideFlags: 0
@@ -3335,7 +3336,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1280, y: 720}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -3378,6 +3379,12 @@ MonoBehaviour:
   - {fileID: 8886725898075013414}
   - {fileID: 8886725898658456404}
   - {fileID: 8886725897436970640}
+  ClueImages:
+  - {fileID: 8886725898564829006}
+  - {fileID: 8886725898385191790}
+  - {fileID: 8886725897252974582}
+  - {fileID: 8886725898238748134}
+  - {fileID: 8886725898084288224}
 --- !u!1 &8886725898819135152
 GameObject:
   m_ObjectHideFlags: 0
@@ -3410,10 +3417,10 @@ RectTransform:
   m_Father: {fileID: 8886725898075013413}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.15034376, y: 0.573503}
-  m_AnchorMax: {x: 0.15034376, y: 0.573503}
-  m_AnchoredPosition: {x: 278, y: 63}
-  m_SizeDelta: {x: 110, y: 105}
+  m_AnchorMin: {x: 0.3144792, y: 0.58444196}
+  m_AnchorMax: {x: 0.41952085, y: 0.753}
+  m_AnchoredPosition: {x: 0, y: -0.000030517578}
+  m_SizeDelta: {x: -45.83423, y: -37.38817}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8886725898819135157
 CanvasRenderer:

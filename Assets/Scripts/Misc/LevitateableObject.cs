@@ -1,102 +1,115 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using DefaultNamespace.Enums;
 using UnityEngine;
 
 public class LevitateableObject : MonoBehaviour, ILevitateable
 {
     [SerializeField] private bool _canRespawnWhenOutOfRange;
-    public float DespawnDistance = 10f;
     private Vector3 _spawnLocation;
     private Quaternion _spawnRotation;
-
     private Rigidbody _rigidbody;
-    public LayerMask DefaultLayerMask;
-
+    private GameObject _player;
+    private float _maxDistanceToPlayerWhileFrozen;
+    
+    private Outline _outline;
+    private Color _purple;
+    private Color _coolerPurple;
+    
+    public LevitationState State { get; set; }
     public int TimesLevitated { get; set; }
+    
+    public float DespawnDistance = 10f;
     public bool WillLogPossessCount;
 
     private void Awake()
     {
-        CanBeLevitated = true;
         State = LevitationState.NotLevitating;
         _rigidbody = GetComponent<Rigidbody>();
-        
-        DefaultLayerMask = gameObject.layer;
+        _player = FindObjectOfType<PlayerBehaviour>().gameObject;
 
-        _spawnLocation = transform.position;
-        _spawnRotation = transform.rotation;
+        Outline outlineComponent = gameObject.GetComponent<Outline>();
+        if (!outlineComponent) _outline = gameObject.AddComponent<Outline>();
+
+        AddOutline();
+        SetSpawnLocationAndRotation();
         StartCoroutine(CheckForDistance());
-
-        Outline outline = gameObject.AddComponent<Outline>();
-        if (outline)
-        {
-            Color purple;
-            ColorUtility.TryParseHtmlString("#d2b8db", out purple);
-
-            outline.OutlineColor = purple;
-            outline.OutlineMode = Outline.Mode.OutlineVisible;
-            outline.OutlineWidth = 5.0f;
-            outline.enabled = false;
-        }
     }
 
-    public bool CanBeLevitated { get; set; }
-
-    public bool CanRespawnWhenOutOfRange
+    private void Start()
     {
-        get
-        {
-            return _canRespawnWhenOutOfRange;
-        }
-        set
-        {
-            _canRespawnWhenOutOfRange = value;
-        }
+        _maxDistanceToPlayerWhileFrozen = _player.GetComponent<LevitateBehaviour>().CurrentLevitateRadius + 0.1f;
     }
 
-    public LevitationState State { get; set; }
-
-    private void FreezeOrReleaseLevitateableObject(LevitationState levitationState)
+    private void Update()
     {
-        switch (levitationState)
-        {
-            case LevitationState.Frozen:
-                SetRigidbodyAndLevitationBooleans(false, true, false);
-                break;
-            
-            case LevitationState.NotLevitating:
-                SetRigidbodyAndLevitationBooleans(true, false, true);
-                break;
-        }
-        
-        State = levitationState;
+        float distance = Vector3.Distance(gameObject.transform.position, _player.transform.position);
+        ChangeOutlineWidthWithDistance(distance);
+        if (distance > _maxDistanceToPlayerWhileFrozen) Release();
     }
 
-    private void SetRigidbodyAndLevitationBooleans(bool useGravity, bool isKinematic, bool canBeLevited)
+    public void Freeze()
     {
-        _rigidbody.useGravity = useGravity;
+        if (gameObject.GetComponentInChildren<LevitateableObjectIsInsideTrigger>().PlayerIsInsideObject) return;
+        _outline.OutlineColor = _coolerPurple;
+        ChangeLayerMask(0);
+        ToggleIsKinematic(true);
+        State = LevitationState.Frozen;
+    }
+
+    public void Release()
+    {
+        if (_outline) _outline.OutlineColor = _purple;
+        ToggleIsKinematic(false);
+        State = LevitationState.NotLevitating;
+    }
+
+    public void ToggleIsKinematic(bool isKinematic)
+    {
+        _rigidbody.useGravity = !isKinematic;
         _rigidbody.isKinematic = isKinematic;
-        CanBeLevitated = canBeLevited;
     }
 
-    public IEnumerator LevitateForSeconds(float seconds)
+    private void ChangeLayerMask(int layerMaskParam)
     {
-        gameObject.layer = DefaultLayerMask;
         foreach (Transform transform in gameObject.GetComponentsInChildren<Transform>(true))
         {
-            transform.gameObject.layer = DefaultLayerMask;
-        }     
+            if (!transform.gameObject.GetComponent<LevitateableObjectIsInsideTrigger>())
+                transform.gameObject.layer = layerMaskParam;
+        }   
+    }
 
-        FreezeOrReleaseLevitateableObject(LevitationState.Frozen);
-        yield return new WaitForSeconds(seconds);
-        FreezeOrReleaseLevitateableObject(LevitationState.NotLevitating);
+    private void SetSpawnLocationAndRotation()
+    {
+        _spawnLocation = transform.position;
+        _spawnRotation = transform.rotation;
+    }
+
+    private void AddOutline()
+    {
+        if (_outline)
+        {
+            ColorUtility.TryParseHtmlString("#6F4F61", out _purple);
+            ColorUtility.TryParseHtmlString("C6BAC4", out _coolerPurple);
+
+            _outline.OutlineColor = _purple;
+            _outline.OutlineMode = Outline.Mode.OutlineVisible;
+            _outline.OutlineWidth = 0.0f;
+            _outline.enabled = false;
+        }
+    }
+
+    private void ChangeOutlineWidthWithDistance(float distance)
+    {
+        if (_outline) _outline.OutlineWidth = 10f * (1f - (distance / (_maxDistanceToPlayerWhileFrozen - 0.1f)));
     }
 
     private IEnumerator CheckForDistance()
     {
-        yield return new WaitForSeconds(3f);
-        if (CanRespawnWhenOutOfRange && Mathf.Abs(Vector3.Distance(transform.position, _spawnLocation)) >= DespawnDistance && Mathf.Abs(Vector3.Distance(transform.position, CameraController.RotationTarget.position)) >= DespawnDistance && Mathf.Abs(Vector3.Distance(_spawnLocation, CameraController.RotationTarget.position)) >= DespawnDistance)
+        yield return new WaitForSeconds(2f);
+        if (CanRespawnWhenOutOfRange && 
+            Mathf.Abs(Vector3.Distance(transform.position, _spawnLocation)) >= DespawnDistance && 
+            Mathf.Abs(Vector3.Distance(transform.position, CameraController.RotationTarget.position)) >= DespawnDistance && 
+            Mathf.Abs(Vector3.Distance(_spawnLocation, CameraController.RotationTarget.position)) >= DespawnDistance)
         {
             Despawn();
         }
@@ -104,7 +117,7 @@ public class LevitateableObject : MonoBehaviour, ILevitateable
         StartCoroutine(CheckForDistance());
     }
     
-    public void Despawn()
+    private void Despawn()
     {
         transform.position = _spawnLocation;
         transform.rotation = _spawnRotation;
@@ -113,13 +126,14 @@ public class LevitateableObject : MonoBehaviour, ILevitateable
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (State == LevitationState.Levitating)
-        {
-            float collisionForce = collision.impulse.magnitude / Time.fixedDeltaTime;
-            if(collisionForce > 200f)
-            {
-                SoundManager.Instance.PlaySound("Levitate_bump");
-            }
-        }
+        if (State != LevitationState.Levitating) return;
+        float collisionForce = collision.impulse.magnitude / Time.fixedDeltaTime;
+        if(collisionForce > 200f) SoundManager.Instance.PlaySound("Levitate_bump");
+    }
+    
+    public bool CanRespawnWhenOutOfRange
+    {
+        get => _canRespawnWhenOutOfRange;
+        set => _canRespawnWhenOutOfRange = value;
     }
 }

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f58d2f2c4326554192b1344512242ec, type: 3}
+  m_Name: DialogueQ01D
+  m_EditorClassIdentifier: 
+  sentences:
+  - Text: My knife! My treasure!
+  - Text: Or should I call you a treasure for finding it?
+  - Text: "...Annie? What\u2019s with that face?"
+  - Text: Oh! No worries, that blood is from one of the pigs that came in this morning.
+  - Text: "Anyway, about the dead flower girl\u2026"
+  - Text: Remember when I told you that this knife is my favorite?
+  - Text: We all have something we prefer over others in this world.
+  - Text: "Whether it\u2019s a knife of mine, one of your tools, one of the past
+      Boonkle mayors\u2026"
+  - Text: or one of those flower girls.
+  - Text: If one thing gets a certain amount of love and attention,
+  - Text: the other might eventually be completely forgotten.
+  - Text: My point is, no pun intended,
+  - Text: that everyone here must have an opinion on both of the flower girls.
+  - Text: Does that give you a reason to kill? Who knows?
+  - Text: Am I babbling like an idiot? You tell me, dear.
+  question: {fileID: 0}

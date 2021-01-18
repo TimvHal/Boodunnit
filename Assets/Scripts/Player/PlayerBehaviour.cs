@@ -14,6 +14,9 @@ public class PlayerBehaviour : BaseMovement
     public float LeviatateRadius;
     public float PossesionRadius;
     public float ClueRadius;
+    public float AirVentRadius;
+    public float ClimableRadius;
+    public float DashRadius;
 
     public ConversationManager ConversationManager;
 
@@ -41,6 +44,11 @@ public class PlayerBehaviour : BaseMovement
         _highlightRadiuses.Add("LevitateRadius", LeviatateRadius);
         _highlightRadiuses.Add("PossesionRadius", PossesionRadius);
         _highlightRadiuses.Add("ClueRadius", ClueRadius);
+        _highlightRadiuses.Add("AirVentRadius", AirVentRadius);
+        _highlightRadiuses.Add("ClimableRadius", ClimableRadius);
+        _highlightRadiuses.Add("DashRadius", DashRadius);
+
+        LevitateBehaviour.CurrentLevitateRadius = LeviatateRadius;
 
         _emmie = FindObjectOfType<EmmieBehaviour>();
     } 
@@ -50,6 +58,8 @@ public class PlayerBehaviour : BaseMovement
         Collider HighlightedObject = HighlightBehaviour.HighlightGameobject(_highlightRadiuses);
         GameManager.CurrentHighlightedCollider = HighlightedObject;
 
+        PickUpClue(HighlightedObject);
+        StartEndingWithEmmie(HighlightedObject);
         PlayerAnimation();
 
         //Pause game behaviour
@@ -74,10 +84,10 @@ public class PlayerBehaviour : BaseMovement
             if (PossessionBehaviour.IsPossessing && !ConversationManager.HasConversationStarted && PossessionBehaviour.TargetBehaviour.IsGrounded)
             {
                 PossessionBehaviour.LeavePossessedTarget();
-            } 
+            }
             else
             {
-                if(!DashBehaviour.IsDashing && !ConversationManager.HasConversationStarted && !LevitateBehaviour.IsLevitating && HighlightedObject && HighlightedObject.GetComponent<IPossessable>() != null)
+                if (!DashBehaviour.IsDashing && !ConversationManager.HasConversationStarted && !LevitateBehaviour.IsLevitating && HighlightedObject && HighlightedObject.GetComponent<IPossessable>() != null)
                 {
                     PossessionBehaviour.PossessTarget(HighlightedObject);
                 }
@@ -113,6 +123,10 @@ public class PlayerBehaviour : BaseMovement
                     _dashCounter++;
                 }
             }
+        }
+        if (DashBehaviour.IsDashing)
+        {
+            DashBehaviour.CheckDashThroughPossessables();
         }
 
         if(!PossessionBehaviour.IsPossessing && !ConversationManager.HasConversationStarted)
@@ -165,6 +179,7 @@ public class PlayerBehaviour : BaseMovement
             _dashCounter = 0;
         }
     }
+
     private void FixedUpdate()
     {
         LevitateBehaviour.MoveLevitateableObject();
@@ -185,24 +200,65 @@ public class PlayerBehaviour : BaseMovement
 
         SaveHandler.Instance.SaveDataContainer(playerDataContainer);
     }
+
     private void HandleLevitationInput()
     {
-        LevitateBehaviour.FindLevitateableObjectsInFrontOfPlayer();
-        
-        if (Input.GetMouseButtonDown(0))
-        {
-            LevitateBehaviour.LevitationStateHandler();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            LevitateBehaviour.RemoveRigidbodyAndStartFreeze();
-        }
-
-        LevitateBehaviour.PushOrPullLevitateableObject();
+        LevitateBehaviour.CurrentLevitateableObjects = LevitateBehaviour.FindLevitateableObjectsInFrontOfPlayer();
+        LevitateBehaviour.SetCurrentHighlightedObject(HighlightBehaviour.HighlightGameobject(_highlightRadiuses));
+        if (Input.GetMouseButtonDown(0)) LevitateBehaviour.LevitationStateHandler();
     }
 
+    private void PickUpClue(Collider HighlightedObject) {
+        if (!HighlightedObject)
+            return;
 
+        WorldSpaceClue clue = HighlightedObject.GetComponent<WorldSpaceClue>();
+        if (clue)
+        {
+            if (!SaveHandler.Instance.DoesPlayerHaveClue(clue.ClueScriptableObject.Name)) {
+                clue.AddToInventory();
+            }
+        }
+    }
+
+    private void StartEndingWithEmmie(Collider HighlightedObject)
+    {
+        if (!HighlightedObject)
+            return;
+
+        EmmieBehaviour emmie = HighlightedObject.GetComponent<EmmieBehaviour>();
+        if (emmie)
+        {
+            if (GameManager.PlayerHasAllClues && !GameManager.PlayerIsInEndState)
+            {
+                GameManager.PlayerIsInEndState = true;
+                FadeInAndOut fade = GameObject.Find("FadeInOutCanvas").GetComponent<FadeInAndOut>();
+                if (fade)
+                {
+                    fade.FadeIn(1);
+                    PrepareForEnding();
+                }
+
+                Cutscene endCutscene = GameObject.Find("EndCutscene").GetComponent<Cutscene>();
+                if (endCutscene)
+                {
+                    endCutscene.StartCutscene();
+                }
+            }
+        }
+    }
+
+    private void PrepareForEnding()
+    {
+        PossessionSpeed = 0;
+        Rigidbody.velocity = Vector3.zero;
+        Animator.SetBool("IsMoving", false);
+        IconCanvas canvas = FindObjectOfType<IconCanvas>();
+        if (canvas)
+        {
+            canvas.DisableIcons();
+        }
+    }
 
     private void PlayerAnimation()
     {

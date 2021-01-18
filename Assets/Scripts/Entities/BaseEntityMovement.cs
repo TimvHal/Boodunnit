@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
@@ -9,6 +10,9 @@ using Vector3 = UnityEngine.Vector3;
 
 public abstract class BaseEntityMovement : BaseMovement
 {
+    public OffMeshLinkMethod OffMeshLinkTraverseType;
+    public bool IsTraversingOfMeshLink;
+    
     public GameObject TargetToFollow;
 
     [HideInInspector]
@@ -35,14 +39,17 @@ public abstract class BaseEntityMovement : BaseMovement
     {
         InitBaseMovement();
         NavMeshAgent = GetComponent<NavMeshAgent>();
+        
         Animator = GetComponent<Animator>();
+        if (!Animator) Animator = GetComponentInChildren<Animator>();
 
         if (NavMeshAgent)
         {
             NavMeshAgent.autoBraking = true;
             NavMeshAgent.speed = PathfindingSpeed;
-            _spawnRotation = transform.root.rotation;
-            _spawnLocation = transform.root.position;
+            _spawnRotation = transform.rotation;
+            _spawnLocation = transform.position;
+            NavMeshAgent.autoTraverseOffMeshLink = (OffMeshLinkTraverseType == OffMeshLinkMethod.None);
         }
     }
 
@@ -140,7 +147,7 @@ public abstract class BaseEntityMovement : BaseMovement
     private bool HasReachedDestination(Vector3 destination)
     {
         float distanceToDestination = Vector3.Distance(transform.position, destination);
-        return distanceToDestination < 0.5f;
+        return distanceToDestination < (Collider.bounds.extents.y / 2) + 1f;
     }
 
     public IEnumerator StartCountdownInArea(float amountOfTime)
@@ -169,6 +176,13 @@ public abstract class BaseEntityMovement : BaseMovement
         NavMeshAgent.ResetPath();
         _pathFindingState = pathFindingState;
     }
+    
+    public void SetPathFindingStateToNone() 
+    {
+        NavMeshAgent.ResetPath();
+        NavMeshAgent.enabled = false;
+        _pathFindingState = PathFindingState.None;
+    }
 
     public void ResetDestination()
     {
@@ -183,5 +197,36 @@ public abstract class BaseEntityMovement : BaseMovement
         {
             NavMeshAgent.isStopped = shouldPause;
         }
+    }
+    
+    //Allows entities to traverse the offmeshlink in a parabola.
+    public IEnumerator Parabola(NavMeshAgent agent)
+    {
+        
+        IsTraversingOfMeshLink = true;
+        OffMeshLinkData data = agent.currentOffMeshLinkData;
+        OffMeshLinkProperties offMeshLinkProperties = data.offMeshLink.gameObject.GetComponent<OffMeshLinkProperties>();
+        
+        Vector3 startPos = agent.transform.position;
+        Vector3 endPos = data.endPos + Vector3.up * agent.baseOffset;
+        float height = offMeshLinkProperties.ParabolaHeight;
+        float duration = offMeshLinkProperties.ParabolaDuration;
+        float normalizedTime = 0.0f;
+        
+        while (normalizedTime < 1.0f)
+        {
+            var lookPos = endPos - transform.position;
+            lookPos.y = 0;
+            var rotation = Quaternion.LookRotation(lookPos);
+            transform.rotation = rotation;
+                    
+            float yOffset = height * 4.0f * (normalizedTime - normalizedTime * normalizedTime);
+            agent.transform.position = Vector3.Lerp(startPos, endPos, normalizedTime) + yOffset * Vector3.up;
+            normalizedTime += Time.deltaTime / duration;
+            yield return null;
+        }
+
+        agent.CompleteOffMeshLink();
+        IsTraversingOfMeshLink = false;
     }
 }

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f5ce73c4fbedd4ebf32b7dc1f44bb2, type: 3}
+  m_Name: Question01
+  m_EditorClassIdentifier: 
+  Text: Is there anything I can do for you?
+  Choices:
+  - Text: What do you know about this?
+    CharacterUnlocksChoice: 
+    Dialogue: {fileID: 11400000, guid: 24ea50bb4cfcab04f883454d7260d57e, type: 2}
+    Question: {fileID: 0}
+    ChoiceIndexToHide: 0
+    ClueToUnlock: {fileID: 11400000, guid: 026dc0d5fa2135a418b90fb9494792ad, type: 2}
+  - Text: Who are you?
+    CharacterUnlocksChoice: 
+    Dialogue: {fileID: 11400000, guid: c16f3b7b697c3fd4ea85c19eeaf8c522, type: 2}
+    Question: {fileID: 0}
+    ChoiceIndexToHide: 0
+    ClueToUnlock: {fileID: 0}
+  - Text: "Do you know anything about Julia\u2019s murder?"
+    CharacterUnlocksChoice: 
+    Dialogue: {fileID: 11400000, guid: e47d87b1fd280014891c85f89ce7b119, type: 2}
+    Question: {fileID: 0}
+    ChoiceIndexToHide: 0
+    ClueToUnlock: {fileID: 0}
+  - Text: "Sorry, I\u2019ve got to go."
+    CharacterUnlocksChoice: 
+    Dialogue: {fileID: 11400000, guid: b2005432394c4e84aa51cab433786259, type: 2}
+    Question: {fileID: 0}
+    ChoiceIndexToHide: 0
+    ClueToUnlock: {fileID: 0}

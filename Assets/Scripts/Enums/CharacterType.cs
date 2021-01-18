@@ -22,6 +22,8 @@
         Villager,
         Vincent,
         Burt,
-        Bort
+        Bort,
+        Sally,
+        Annie
     }
 }

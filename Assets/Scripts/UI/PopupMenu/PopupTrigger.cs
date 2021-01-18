@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PopupTrigger : MonoBehaviour
 {
@@ -24,7 +22,7 @@ public class PopupTrigger : MonoBehaviour
             GameManager.CursorIsLocked = false;
             Time.timeScale = 0;
 
-            other.GetComponent<LevitateBehaviour>().RemoveRigidbodyAndStartFreeze();
+            other.GetComponent<LevitateBehaviour>().FreezeLevitateableObject();
             Popup.gameObject.SetActive(true);
             _hasBeenTriggered = true;
         }

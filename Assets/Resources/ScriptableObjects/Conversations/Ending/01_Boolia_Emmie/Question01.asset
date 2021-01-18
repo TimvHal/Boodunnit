@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f5ce73c4fbedd4ebf32b7dc1f44bb2, type: 3}
+  m_Name: Question01
+  m_EditorClassIdentifier: 
+  Text: Boolia! What's up?
+  Choices:
+  - Text: "Check out all these clues I\u2019ve gathered, these could give the police
+      a lead!"
+    CharacterUnlocksChoice: 
+    Dialogue: {fileID: 11400000, guid: ba2d257a46c541f40bf83299500e1e00, type: 2}
+    Question: {fileID: 0}
+    ChoiceIndexToHide: 0
+    ClueToUnlock: {fileID: 0}
+  - Text: Look, the police could interrogate those who these clues belong to!
+    CharacterUnlocksChoice: 
+    Dialogue: {fileID: 11400000, guid: 6c3fb7b3cd9182e4193ee9547785cdf6, type: 2}
+    Question: {fileID: 0}
+    ChoiceIndexToHide: 0
+    ClueToUnlock: {fileID: 0}
+  - Text: "I\u2019m sure we\u2019re getting closer, but we should keep looking around
+      for more clues."
+    CharacterUnlocksChoice: 
+    Dialogue: {fileID: 11400000, guid: b8692e3aa91c75541893e34126b8ab03, type: 2}
+    Question: {fileID: 0}
+    ChoiceIndexToHide: 0
+    ClueToUnlock: {fileID: 0}

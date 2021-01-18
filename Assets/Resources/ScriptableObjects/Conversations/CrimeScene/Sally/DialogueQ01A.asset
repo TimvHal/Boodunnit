@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f58d2f2c4326554192b1344512242ec, type: 3}
+  m_Name: DialogueQ01A
+  m_EditorClassIdentifier: 
+  sentences:
+  - Text: Asks the person who stands in front of my shop window almost daily.
+  - Text: "And you barely even come inside to talk to me\u2026"
+  - Text: "Is there something I\u2019m not aware of, Annie?"
+  - Text: Then again, someone your size overlooks the letters of my logo fairly easily.
+  - Text: "Just this once, I\u2019ll formally introduce myself to you."
+  - Text: "Sarah \u2018Stabbin Sally\u2019 Sharples."
+  - Text: At your service, if I feel like it...
+  question: {fileID: 11400000, guid: 5e47dbf8bf86d6245aa8aad9804027d7, type: 2}

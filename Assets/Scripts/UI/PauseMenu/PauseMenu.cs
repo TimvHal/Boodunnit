@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class PauseMenu : MonoBehaviour
     public CameraController CameraController;
 
     public List<GameObject> CanvasPanels;
+
+    public List<GameObject> ClueImages = new List<GameObject>();
 
     public void TogglePauseGame()
     {
@@ -29,8 +33,29 @@ public class PauseMenu : MonoBehaviour
         {
             CameraController.RotationSpeed = playerSettings.CameraSensitivity;
         }
+
+        ToggleImagesCollectedClues();
     }
-    
+
+    private void ToggleImagesCollectedClues()
+    {
+        List<Clue> clues = Resources.LoadAll<Clue>("ScriptableObjects/Clues").ToList();
+        foreach (Clue clue in clues)
+        {
+            if (SaveHandler.Instance.DoesPlayerHaveClue(clue.Name))
+            {
+                foreach (GameObject clueImageButton in ClueImages)
+                {
+                    if (clueImageButton.name.Equals(clue.Name))
+                    {
+                        clueImageButton.GetComponent<Image>().color = Color.white;
+                        clueImageButton.GetComponent<Button>().interactable = true;
+                    }
+                }
+            }
+        }
+    }
+
     public void OnQuitToMainMenu()
     {
         TogglePauseGame();

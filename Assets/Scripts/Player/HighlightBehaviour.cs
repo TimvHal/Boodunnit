@@ -8,6 +8,12 @@ public class HighlightBehaviour : MonoBehaviour
     private Vector3 _position;
     private Collider _currentCollider;
     private Collider _previousCollider;
+    private IconCanvas _iconCanvas;
+
+    private void Awake()
+    {
+        _iconCanvas = FindObjectOfType<IconCanvas>();
+    }
 
     public Collider HighlightGameobject(Dictionary<string, float> highlightRadius)
     {
@@ -44,6 +50,9 @@ public class HighlightBehaviour : MonoBehaviour
             {
                 ToggleOutlineScriptOnGameobject(outline, true);
             }
+
+            if(!GameManager.IsCutscenePlaying)
+                ShowIconsAboveHighlightedObject();
         }
 
         if (_previousCollider != _currentCollider)
@@ -56,6 +65,8 @@ public class HighlightBehaviour : MonoBehaviour
                 {
                     ToggleOutlineScriptOnGameobject(outline, false);
                 }
+
+                DisableIconCanvasImages();
             }
 
             _previousCollider = _currentCollider;
@@ -67,14 +78,15 @@ public class HighlightBehaviour : MonoBehaviour
         IPossessable possessableObject = collider.GetComponent<IPossessable>();
         ILevitateable levitateableObject = collider.GetComponent<ILevitateable>();
         WorldSpaceClue worldSpaceClue = collider.GetComponent<WorldSpaceClue>();
+        AirVent airVent = collider.GetComponent<AirVent>();
 
         if (PossessionBehaviour.PossessionTarget)
         {
-            return possessableObject != null;
+            return possessableObject != null || airVent != null || collider.gameObject.layer == 12;
         }
         else
         {
-            return possessableObject != null || levitateableObject != null || worldSpaceClue != null;
+            return possessableObject != null || levitateableObject != null || worldSpaceClue != null || collider.gameObject.layer == 10;
         }
     }
 
@@ -115,7 +127,8 @@ public class HighlightBehaviour : MonoBehaviour
                 if (!PossessionBehaviour.PossessionTarget &&
                     (collider.GetComponent<ILevitateable>() != null && distance < _highlighRadius["LevitateRadius"] ||
                      collider.GetComponent<IPossessable>() != null && distance < _highlighRadius["PossesionRadius"] ||
-                     collider.GetComponent<WorldSpaceClue>() != null && distance < _highlighRadius["ClueRadius"]) &&
+                     collider.GetComponent<WorldSpaceClue>() != null && distance < _highlighRadius["ClueRadius"] ||
+                     collider.gameObject.layer == 10 && distance < _highlighRadius["DashRadius"]) &&
                      distance < minRadius)
                 {
                     minRadius = distance;
@@ -126,7 +139,9 @@ public class HighlightBehaviour : MonoBehaviour
                 else if (PossessionBehaviour.PossessionTarget && PossessionBehaviour.PossessionTarget != collider.gameObject)
                 {
                     //if collider is Possesable and within radius
-                    if (collider.gameObject.GetComponent<IPossessable>() != null && distance < _highlighRadius["ConversationRadius"])
+                    if (collider.gameObject.GetComponent<IPossessable>() != null && distance < _highlighRadius["ConversationRadius"] ||
+                     collider.gameObject.GetComponent<AirVent>() != null && distance < _highlighRadius["AirVentRadius"] ||
+                     collider.gameObject.layer == 12 && distance < _highlighRadius["ClimableRadius"])
                     {
                         if (distance < minRadius)
                         {
@@ -140,8 +155,22 @@ public class HighlightBehaviour : MonoBehaviour
 
         return closestCollider;
     }
-    private void ToggleOutlineScriptOnGameobject(Outline outline, bool active)
+    private  void ToggleOutlineScriptOnGameobject(Outline outline, bool active)
     {
         outline.enabled = active;
+    }
+
+    private void ShowIconsAboveHighlightedObject()
+    {
+        if (_iconCanvas && _currentCollider)
+        {
+            _iconCanvas.IconTarget = _currentCollider.gameObject;
+            _iconCanvas.EnableIcons();
+        }
+    }
+
+    private void DisableIconCanvasImages()
+    {
+        _iconCanvas.DisableIcons();
     }
 }

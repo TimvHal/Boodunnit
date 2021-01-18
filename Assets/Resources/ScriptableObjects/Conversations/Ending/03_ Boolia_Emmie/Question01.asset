@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f5ce73c4fbedd4ebf32b7dc1f44bb2, type: 3}
+  m_Name: Question01
+  m_EditorClassIdentifier: 
+  Text: Hi, sis.
+  Choices:
+  - Text: That was a brave thing to do.
+    CharacterUnlocksChoice: 
+    Dialogue: {fileID: 11400000, guid: 993813ffc006a2942afc545f2416b300, type: 2}
+    Question: {fileID: 0}
+    ChoiceIndexToHide: 0
+    ClueToUnlock: {fileID: 0}
+  - Text: That was a stupid thing to do.
+    CharacterUnlocksChoice: 
+    Dialogue: {fileID: 11400000, guid: 993813ffc006a2942afc545f2416b300, type: 2}
+    Question: {fileID: 0}
+    ChoiceIndexToHide: 0
+    ClueToUnlock: {fileID: 0}

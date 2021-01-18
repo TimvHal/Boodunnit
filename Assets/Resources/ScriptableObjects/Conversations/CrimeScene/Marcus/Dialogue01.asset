@@ -21,6 +21,6 @@ MonoBehaviour:
   - Text: "I, uh, can\u2019t imagine the pain you must feel."
   - Text: "Especially since her death was so \u2026 forgive my wording, but, well\u2026"
   - Text: "It\u2019s very strange. We can\u2019t make head nor tail of it just yet."
-  - Text: "After we\u2019ve found two clues, we\u2019ll have a solid theory on what
+  - Text: "After we\u2019ve found five clues, we\u2019ll have a solid theory on what
       happened."
   question: {fileID: 11400000, guid: 3cdc377ae9169904484093b0af432376, type: 2}

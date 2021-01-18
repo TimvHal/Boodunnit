@@ -7,7 +7,9 @@ public class SceneTransitionHandler
     private List<string> _excludedScenesFromSavedScenes = new List<string>()
         {
             "MainMenu",
-            "LoadingScene"
+            "LoadingScene",
+            "EndScreenScene",
+            "CreditScene"
         };
 
     public static SceneTransitionHandler Instance

@@ -36,7 +36,7 @@ public class PossessionBehaviour : MonoBehaviour
 
     public void LeavePossessedTarget()
     {
-        if (PossessionTarget && IsPossessing)
+        if (PossessionTarget && IsPossessing && !TargetBehaviour.HasToggledAbility)
         {
             IsPossessing = false;
             TargetBehaviour.IsPossessed = false;
@@ -128,17 +128,12 @@ public class PossessionBehaviour : MonoBehaviour
 
     public void PossessTarget(Collider possesionTarget)
     {
-        if (IsPossessing || IsOnCooldown)
-        {
-            return;
-        }
+        if (IsPossessing || IsOnCooldown) return;
 
         //Check if the targetBehaviour is possessable.
         TargetBehaviour = possesionTarget.GetComponent<BaseEntity>();
-        if (!TargetBehaviour.CanPossess)
-        {
-            return;
-        }
+        
+        if (!TargetBehaviour.CanPossess || TargetBehaviour.IsTraversingOfMeshLink) return;
 
         PossessionTarget = possesionTarget.gameObject;
         _cameraController.CameraRotationTarget = possesionTarget.transform;

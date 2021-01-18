@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f58d2f2c4326554192b1344512242ec, type: 3}
+  m_Name: DialogueQ01A
+  m_EditorClassIdentifier: 
+  sentences:
+  - Text: "Oh. I see. Well, I suppose I can\u2019t blame you for forgetting about
+      me..."
+  - Text: "We\u2019ve only known each other all our lives\u2026 It\u2019s not like
+      you live next door or anything."
+  - Text: "If you\u2019ve forgotten, then you\u2019ve forgotten, uh, is what my Nana
+      always used to say!"
+  - Text: "...me? Crying? From my eyes? No, it\u2019s, uh, well... "
+  - Text: "...my eyes are supposed to be wet, so it\u2019s fine. Don\u2019t worry
+      about it\u2026 It\u2019s, it\u2019s fine."
+  - Text: "But, yeah, hi, I\u2019m Annie. Annie the Andyman. I mean, handyman. I
+      mean, handywoman."
+  - Text: I repair stuff around town. Like my mother before me, and her mother before
+      her.
+  - Text: Hammering is like, our thing, I guess.
+  question: {fileID: 11400000, guid: ed425fc33e5435e45b5f20302518ddde, type: 2}
