@@ -3,7 +3,42 @@ guid: 7b60393bd1d7b56458a121b03c213e44
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Blue
+    second: {fileID: 2100000, guid: eb0e75fb00d0dbe48b975dd1236f37bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Eye
+    second: {fileID: 2100000, guid: fc544e316ecd1e54e808ea502f061092, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Gold
+    second: {fileID: 2100000, guid: 7be718ca7c4f84a4cb14e2ddccd4f924, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Pouch
+    second: {fileID: 2100000, guid: e5c46a808dc53d24ea9ad20c7b2f9ef0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Triangle_Hair
+    second: {fileID: 2100000, guid: 6789310914bfe1143897e2d8a2ca53cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Triangle_Nose
+    second: {fileID: 2100000, guid: 931224033ff20a74aa92fced3bef0c69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Triangle_Skin
+    second: {fileID: 2100000, guid: 90cacd1ddfbcb864d869ac244ca02cbe, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

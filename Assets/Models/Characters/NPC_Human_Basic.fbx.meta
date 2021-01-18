@@ -7,38 +7,43 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 55c199134deab4145a5d6053bdba662f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: pasted__M_Blue
-    second: {fileID: -5135592815056491843, guid: 004667f70a0710347ba3b2ace0c4f53d, type: 3}
+    second: {fileID: 2100000, guid: eb0e75fb00d0dbe48b975dd1236f37bc, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__M_Eye
-    second: {fileID: 2100000, guid: 28eeb6a1dc897ca4fba9aad241f7eab3, type: 2}
+    second: {fileID: 2100000, guid: fc544e316ecd1e54e808ea502f061092, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__M_Ginger
-    second: {fileID: -539123942481383892, guid: 004667f70a0710347ba3b2ace0c4f53d, type: 3}
+    second: {fileID: 2100000, guid: 1e99fb83168d59f4da42bc90c13cf0b7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__M_Gold
-    second: {fileID: -6566220426624358206, guid: 004667f70a0710347ba3b2ace0c4f53d, type: 3}
+    second: {fileID: 2100000, guid: 7be718ca7c4f84a4cb14e2ddccd4f924, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__M_LightBlue
-    second: {fileID: 2396733991367315829, guid: 004667f70a0710347ba3b2ace0c4f53d, type: 3}
+    second: {fileID: 2100000, guid: b4801a1eb432b8a4995795a969158891, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__M_Pouch
-    second: {fileID: 2896822385795500411, guid: 004667f70a0710347ba3b2ace0c4f53d, type: 3}
+    second: {fileID: 2100000, guid: e5c46a808dc53d24ea9ad20c7b2f9ef0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__M_Skin2
-    second: {fileID: -1809297550647617543, guid: 004667f70a0710347ba3b2ace0c4f53d, type: 3}
+    second: {fileID: 2100000, guid: 90cacd1ddfbcb864d869ac244ca02cbe, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

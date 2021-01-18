@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: kozijn.004
-    second: {fileID: 2100000, guid: b39dcdc81a7a56143b148d8e4ffaf065, type: 2}
+    second: {fileID: 2100000, guid: 37175eeff1ec28346bff6b98c29d9a26, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

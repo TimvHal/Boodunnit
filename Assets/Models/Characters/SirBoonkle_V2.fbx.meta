@@ -9,6 +9,21 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: M_SirBoonkle
     second: {fileID: 2100000, guid: b3df76bebc04b0c43b2e043c396f7543, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_SirBoonkle_Cane
+    second: {fileID: 2100000, guid: 28eeb6a1dc897ca4fba9aad241f7eab3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_SirBoonkle_Hair
+    second: {fileID: 2100000, guid: 0898fe6eb9b36034abde2fb154a9b48a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_SirBoonkle_Pipe
+    second: {fileID: 2100000, guid: 28295625e6f494e41be8af43a9012fec, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

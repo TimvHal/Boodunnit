@@ -3,7 +3,12 @@ guid: cd3c7557cec1fa84999ffa80d2d290e2
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Beret
+    second: {fileID: 2100000, guid: 320be5a70805c4e459fba31fbb801091, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

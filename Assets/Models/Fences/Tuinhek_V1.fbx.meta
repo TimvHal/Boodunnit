@@ -3,7 +3,12 @@ guid: ad8da1a3e32f6874da5da86e7badffad
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tuinhek_1
+    second: {fileID: 2100000, guid: b8c6e53e4fcfc0449b60e79735adfb3c, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
