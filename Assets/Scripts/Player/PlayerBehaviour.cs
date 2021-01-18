@@ -82,6 +82,7 @@ public class PlayerBehaviour : BaseMovement
         if (ConversationManager.HasConversationStarted)
         {
             this.Rigidbody.velocity = Vector3.zero;
+            ConversationManager.ConversationTarget.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
 
         //Posses behaviour
