@@ -9,6 +9,7 @@ public class LevitateBehaviour : MonoBehaviour
     [SerializeField] private float _levitationMoveSpeed = 250f;
     [SerializeField] private float _objectStartingDistance = 10f;
     [SerializeField] private float _objectStartingHeight = 8f;
+    [SerializeField] private float _sphereCastAllRadius = 2f;
     
     [Header("Layers")]
     [SerializeField] private LayerMask _ignoredLayerMask;
@@ -104,15 +105,16 @@ public class LevitateBehaviour : MonoBehaviour
             Vector3.Distance(gameObject.transform.position, _mainCamera.transform.position) 
             + CurrentLevitateRadius;
 
-        RaycastHit[] hits;
-        hits = Physics.RaycastAll(
+        RaycastHit[] sphereCastAllHits;
+        sphereCastAllHits = Physics.SphereCastAll(
             _mainCamera.transform.position,
+            _sphereCastAllRadius,
             _mainCamera.transform.forward,
             distanceBetweenObjectAndCamera,
             ~_ignoredLayerMask
         );
-        
-        RaycastHit firstHit = hits
+
+        RaycastHit firstHit = sphereCastAllHits
             .OrderBy(hit => Vector3.Distance(hit.transform.position, transform.position))
             .FirstOrDefault(hit => hit.collider.gameObject.GetComponent<ILevitateable>() != null);
 
