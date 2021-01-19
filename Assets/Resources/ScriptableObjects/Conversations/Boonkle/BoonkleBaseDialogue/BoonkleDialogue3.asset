@@ -13,22 +13,13 @@ MonoBehaviour:
   m_Name: BoonkleDialogue3
   m_EditorClassIdentifier: 
   sentences:
-  - Text: "Ah, my statue! It gets more moldy by the day\u2026"
-  - Text: Speaking of me, you must be burning with curiosity!
-  - Text: "If not, I don\u2019t blame you. You see..."
-  - Text: "When I founded this town, Boonkle, I wasn\u2019t the most generous or
-      beloved person."
-  - Text: And not only because I named it after myself.
-  - Text: At one point, I lost sight of what was important, what really mattered.
+  - Text: "When I founded this town, <b>Boonkle</b>, I wasn\u2019t the most generous
+      or beloved person."
   - Text: I became so obsessed with wealth, that I completely neglected the welfare
       of the residents.
   - Text: I turned my back on the town I founded, never helping those who needed
       me.
-  - Text: "No wonder nobody showed up at my funeral. I\u2019m surprised my statue
-      is still standing."
-  - Text: "I should really have moved on when I died, but\u2026 I just couldn\u2019t."
-  - Text: "That\u2019s why I\u2019m in the same form as you, to do something I should\u2019ve
-      done ages ago."
-  - Text: "I need to help someone for a change\u2026"
-  - Text: And it looks like that someone is you, Julia.
+  - Text: "That\u2019s why I\u2019m in the same form as you, I need to help someone
+      for a change\u2026"
+  - Text: And it looks like that someone is you, Julia. Or should I say <b>Boolia</b>?
   question: {fileID: 0}

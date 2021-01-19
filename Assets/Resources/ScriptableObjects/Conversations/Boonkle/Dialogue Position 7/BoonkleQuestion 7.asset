@@ -18,11 +18,17 @@ MonoBehaviour:
     CharacterUnlocksChoice: 
     Dialogue: {fileID: 11400000, guid: b74a15bae9ce73f43be2bb8eee700309, type: 2}
     Question: {fileID: 0}
+    ChoiceIndexToHide: 0
+    ClueToUnlock: {fileID: 0}
   - Text: How do you know all of this about me?
     CharacterUnlocksChoice: 
     Dialogue: {fileID: 11400000, guid: 4e9af3f2dc7d84c42b6c62be04b848e1, type: 2}
     Question: {fileID: 0}
-  - Text: I understand what I need to do. Thank you, Mr. Boonkle.
+    ChoiceIndexToHide: 0
+    ClueToUnlock: {fileID: 0}
+  - Text: I understand what I need to do. Thank you, Sir Boonkle.
     CharacterUnlocksChoice: 
     Dialogue: {fileID: 11400000, guid: 5fe0936b25b3ca0498c927269e3e576f, type: 2}
     Question: {fileID: 0}
+    ChoiceIndexToHide: 0
+    ClueToUnlock: {fileID: 0}
