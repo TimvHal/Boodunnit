@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f58d2f2c4326554192b1344512242ec, type: 3}
+  m_Name: MarcusGoodbyeDialogue
+  m_EditorClassIdentifier: 
+  sentences:
+  - Text: There she is. The woman of the hour. Hiya, Julia.
+  - Text: "I\u2019ll admit\u2026 despite reading all those mystery novels, I\u2019m
+      not the best as solving murder cases. "
+  - Text: "You\u2019ve got me beat there."
+  - Text: I hope that, uh, the afterlife is less eventful than things have been here.
+  - Text: "And if it isn\u2019t, you\u2019ll be there to handle it. I have faith
+      in that."
+  question: {fileID: 0}
