@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8ce3679def025564bb022923dfb70649
+guid: 4833fcad559acda4786d0ea75af9cc61
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
@@ -8,11 +8,6 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: B8E7DE.108
-    second: {fileID: 2100000, guid: 79854f0c6c31cc446bdd390e294ecf6b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: B8E7DE.112
     second: {fileID: 2100000, guid: 79854f0c6c31cc446bdd390e294ecf6b, type: 2}
   - first:
       type: UnityEngine:Material
