@@ -42,9 +42,9 @@ public class ConversationCamera : MonoBehaviour
         //This makes both the conversation target and the player look at one another
         RotateWithIgnoreXZRotations(_cameraController.CameraRotationTarget, conversationTarget);
 
-        if ((GameManager.CurrentHighlightedCollider != null && 
-            GameManager.CurrentHighlightedCollider.gameObject.GetComponent<VincentBehaviour>() == null) &&
-            GameManager.CurrentHighlightedCollider.gameObject.GetComponent<EmmieBehaviour>().Collider.name != "CemeteryEmmie Variant")
+        if (GameManager.CurrentHighlightedCollider != null && 
+            GameManager.CurrentHighlightedCollider.name != "VincentTheVigilanteV2" &&
+            GameManager.CurrentHighlightedCollider.name != "CemeteryEmmie Variant")
         {
             RotateWithIgnoreXZRotations(ConversationManager.ConversationTarget, _cameraController.CameraRotationTarget.position);
         }

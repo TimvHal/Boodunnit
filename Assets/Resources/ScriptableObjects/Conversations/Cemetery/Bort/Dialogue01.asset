@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - Text: "Hey, there\u2019s my BB - Big Bro."
+  - Text: b
   question: {fileID: 11400000, guid: 51f8595b5c288a141afbe4849b9a0ae8, type: 2}
