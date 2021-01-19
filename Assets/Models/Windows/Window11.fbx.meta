@@ -23,7 +23,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: glas.052
-    second: {fileID: 2100000, guid: e82f9e17866521c4aae1f0774d603ce9, type: 2}
+    second: {fileID: 2100000, guid: d1187397f3fd90a4e82fd75e49d06076, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
