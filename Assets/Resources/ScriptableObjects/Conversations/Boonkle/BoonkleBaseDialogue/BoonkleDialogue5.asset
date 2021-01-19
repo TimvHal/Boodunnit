@@ -15,8 +15,8 @@ MonoBehaviour:
   sentences:
   - Text: "Good job! You\u2019re almost at the entrance!"
   - Text: Yes, almost, since there are still people blocking the gate over there.
-  - Text: You can possess people too, but I think the best thing to do is scare them
-      away.
-  - Text: You can use the same rat you just possessed.
-  - Text: Keep in mind that some people are easier to scare than others.
+  - Text: You can either possess and move them, or <b>scare</b> them with the same
+      rat you just used.
+  - Text: When possessing a human, you can talk to others by pressing <b>F</b> as
+      well.
   question: {fileID: 0}

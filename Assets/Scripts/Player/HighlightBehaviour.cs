@@ -8,7 +8,11 @@ public class HighlightBehaviour : MonoBehaviour
     private Vector3 _position;
     private Collider _currentCollider;
     private Collider _previousCollider;
+    private Collider _currentColliderDashable;
+    private Collider _previousColliderDashable;
     private IconCanvas _iconCanvas;
+
+    public LayerMask IgnoredLayerMasks;
 
     private void Awake()
     {
@@ -40,9 +44,11 @@ public class HighlightBehaviour : MonoBehaviour
             .Where(c => { return IsHighlightable(c) && IsObjectInAngle(c); })
             .ToArray();
 
-        _currentCollider = GetClosestCollider(currentObjects);
+        Collider[] closetColliders = GetClosestCollider(currentObjects);
+        _currentCollider = closetColliders[0];
+        _currentColliderDashable = closetColliders[1];
 
-        if (_currentCollider != null)
+        if (_currentCollider != null && checkForWall())
         {
             Outline outline = _currentCollider.gameObject.GetComponent<Outline>();
 
@@ -51,9 +57,16 @@ public class HighlightBehaviour : MonoBehaviour
                 ToggleOutlineScriptOnGameobject(outline, true);
             }
 
-            if(!GameManager.IsCutscenePlaying)
+            if (!GameManager.IsCutscenePlaying)
                 ShowIconsAboveHighlightedObject();
         }
+
+        if (_currentColliderDashable != null && checkForWallDashable())
+        {
+            if (!GameManager.IsCutscenePlaying)
+                ShowDashIconAboveDashable();
+        }
+        
 
         if (_previousCollider != _currentCollider)
         {
@@ -70,6 +83,15 @@ public class HighlightBehaviour : MonoBehaviour
             }
 
             _previousCollider = _currentCollider;
+        }
+
+        if (_previousColliderDashable != _currentColliderDashable)
+        {
+            if (_previousColliderDashable != null)
+            {
+                DisableIconCanvasImages();
+            }
+            _previousColliderDashable = _currentColliderDashable;
         }
     }
 
@@ -111,10 +133,12 @@ public class HighlightBehaviour : MonoBehaviour
         return angle > -90 && angle < 90;
     }
 
-    public Collider GetClosestCollider(Collider[] colliders)
+    public Collider[] GetClosestCollider(Collider[] colliders)
     {
         float minRadius = _maxRadius;
+        float minRadiusDashable = _maxRadius;
         Collider closestCollider = null;
+        Collider closestColliderDashable = null;
 
         foreach (Collider collider in colliders)
         {
@@ -123,12 +147,17 @@ public class HighlightBehaviour : MonoBehaviour
             {
                 float distance = Vector3.Distance(_position, collider.transform.position);
 
+                if (collider.gameObject.layer == 10 && distance < _highlighRadius["DashRadius"] && distance < minRadiusDashable)
+                {
+                    minRadiusDashable = distance;
+                    closestColliderDashable = collider;
+                }
+
                 //check the extra distances distance < minDistance
                 if (!PossessionBehaviour.PossessionTarget &&
                     (collider.GetComponent<ILevitateable>() != null && distance < _highlighRadius["LevitateRadius"] ||
                      collider.GetComponent<IPossessable>() != null && distance < _highlighRadius["PossesionRadius"] ||
-                     collider.GetComponent<WorldSpaceClue>() != null && distance < _highlighRadius["ClueRadius"] ||
-                     collider.gameObject.layer == 10 && distance < _highlighRadius["DashRadius"]) &&
+                     collider.GetComponent<WorldSpaceClue>() != null && distance < _highlighRadius["ClueRadius"]) &&
                      distance < minRadius)
                 {
                     minRadius = distance;
@@ -153,8 +182,42 @@ public class HighlightBehaviour : MonoBehaviour
             }
         }
 
-        return closestCollider;
+        return new Collider[] { closestCollider, closestColliderDashable };
     }
+
+    private bool checkForWall()
+    {
+        if (_currentCollider)
+        {
+            RaycastHit hit;
+            Vector3 direction = (_currentCollider.transform.position - transform.position).normalized;
+            Debug.DrawRay(transform.position, direction);
+
+            if (Physics.Raycast(transform.position, direction, out hit, 200, ~IgnoredLayerMasks))
+            {
+                return hit.collider.name == _currentCollider.name;
+            }
+        }
+
+        return false;
+    }
+
+    private bool checkForWallDashable()
+    {
+        if (_currentColliderDashable)
+        {
+            RaycastHit hit;
+            Vector3 direction = (_currentColliderDashable.transform.position - transform.position).normalized;
+
+            if (Physics.Raycast(transform.position, direction, out hit))
+            {
+                return hit.collider.name == _currentColliderDashable.name;
+            }
+        }
+
+        return false;
+    }
+
     private  void ToggleOutlineScriptOnGameobject(Outline outline, bool active)
     {
         outline.enabled = active;
@@ -166,6 +229,15 @@ public class HighlightBehaviour : MonoBehaviour
         {
             _iconCanvas.IconTarget = _currentCollider.gameObject;
             _iconCanvas.EnableIcons();
+        }
+    }
+
+    private void ShowDashIconAboveDashable()
+    {
+        if (_iconCanvas && _currentColliderDashable)
+        {
+            _iconCanvas.IconTargetDashable = _currentColliderDashable.gameObject;
+            _iconCanvas.EnableDashIcon();
         }
     }
 

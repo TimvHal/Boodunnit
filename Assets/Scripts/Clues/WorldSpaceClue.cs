@@ -52,7 +52,7 @@ public class WorldSpaceClue : MonoBehaviour
         SaveHandler.Instance.SaveClue(ClueScriptableObject.Name);
         SetClueInPopup();
 
-        if (Popup && !DoesPlayerHaveAllCLues()) //todo: remove !DoesPlayerHaveAllCLues() when to be continued popup is not neccisary enymore
+        if (Popup)
         {
             Canvas.enabled = true;
             GameManager.CursorIsLocked = false;

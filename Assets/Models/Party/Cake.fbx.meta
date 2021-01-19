@@ -8,17 +8,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Cake
-    second: {fileID: -2094654166512786520, guid: d5dbc317631148942911e14a7f054fc1, type: 3}
+    second: {fileID: 2100000, guid: 861fece344523ff41a630b686fa76340, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Candle
-    second: {fileID: -2094654166512786520, guid: d5dbc317631148942911e14a7f054fc1, type: 3}
+    second: {fileID: 2100000, guid: 1eea1a28fb825524aad19323b0442919, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Cream
-    second: {fileID: -2094654166512786520, guid: d5dbc317631148942911e14a7f054fc1, type: 3}
+    second: {fileID: 2100000, guid: 861fece344523ff41a630b686fa76340, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

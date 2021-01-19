@@ -13,33 +13,19 @@ MonoBehaviour:
   m_Name: Position1Dialogue
   m_EditorClassIdentifier: 
   sentences:
-  - Text: "So, you\u2019ve finally awakened."
-  - Text: I almost started to petrify, and let me tell you, there are enough gravestones
-      here as it is.
-  - Text: "Then again, who am I to complain? I don\u2019t even remember what it feels
-      like to have a body."
+  - Text: "So, you\u2019ve finally awakened. Took you long enough..."
   - Text: "Sorry, I\u2019m not exactly known for my manners..."
-  - Text: My name is Sir Bartholomeus Boonkle.
-  - Text: Entrepreneur, hat fanatic and professional pipe smoker - in that order.
-  - Text: "But you can just call me \u2018Mr. Boonkle\u2019 for short."
-  - Text: "I take it you\u2019ve already had a little \u2018introduction\u2019 to
-      this new life of yours,"
-  - Text: "but I can imagine if you\u2019re still confused."
-  - Text: Allow me to explain. And this might come as a shock to you, but...
-  - Text: "You\u2019ve been murdered, Julia. The whole town\u2019s in an uproar about
-      it."
-  - Text: "Looks like you\u2019re already more popular than me, and I\u2019ve been
-      here for almost 400 years..."
-  - Text: "But we surely can\u2019t let your murder go around unsolved for that long,
-      right?"
-  - Text: "...Unless you\u2019ve already lost all hope, like I once did..."
-  - Text: "Anyway\u2026 This \u2018unfinished business\u2019 of yours is why you
-      can\u2019t rest in peace just yet,"
-  - Text: " and that\u2019s where I come in."
-  - Text: "I can\u2019t help you solve it, unfortunately,"
-  - Text: but I can help you find and console your grieving sister, Emmie.
-  - Text: "And you\u2019ll have to escape this cemetery to reach her."
-  - Text: "I\u2019ll tell you more along the way."
-  - Text: Now, shall we? You remember how to dash, correct?
-  - Text: "Why don\u2019t you try it out on this fence right here?"
+  - Text: My name is Sir Bartholomeus Boonkle, but you can call me Sir Boonkle for
+      short.
+  - Text: Now, this might come as a shock to you, but...
+  - Text: "You\u2019ve been <b>murdered</b>, Julia. The whole town\u2019s in an uproar
+      about it."
+  - Text: "But since the circumstances are still unknown, you\u2019re not gone just
+      yet."
+  - Text: "This \u2018unfinished business\u2019 of yours is where I come in."
+  - Text: I can help you escape the cemetery so you can find your grieving sister,
+      <b>Emmie</b>.
+  - Text: I will tell you more along the way, as long as you <b>press F to talk</b>,
+      that is.
+  - Text: Now, shall we?
   question: {fileID: 0}

@@ -45,7 +45,12 @@ public class SaveHandler
     /// </summary>
     public void DeleteSaveGame()
     {
+        PlayerSettings playerSettings = LoadDataContainer<PlayerSettings>();
         PlayerPrefs.DeleteAll();
+        if(playerSettings != null)
+        {
+            SaveDataContainer(playerSettings);
+        }
     }
 
     /// <summary>

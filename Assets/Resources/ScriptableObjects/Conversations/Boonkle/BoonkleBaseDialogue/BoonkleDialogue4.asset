@@ -13,14 +13,9 @@ MonoBehaviour:
   m_Name: BoonkleDialogue4
   m_EditorClassIdentifier: 
   sentences:
-  - Text: "Since you\u2019re a ghost now, Julia.."
-  - Text: "How about I call you\u2026 Boolia? Get it? Boo!"
-  - Text: "Sorry, I\u2019m not known for my jokes either, but I always love a good
-      pun, even in ghost form!"
-  - Text: And as a ghost, you can also possess other living beings!
-  - Text: Not including me, of course. Just people and animals.
-  - Text: Animals have a unique ability you can use when you possess them.
-  - Text: Rats, for example, can climb walls with vines on them.
-  - Text: "Maybe there\u2019s one walking around here?"
-  - Text: Press 'E' to possess, press 'Q' to climb the vines
+  - Text: As a ghost, you can <b>possess</b> other living beings!
+  - Text: Not including me, of course. Just <b>people and animals.</b>
+  - Text: Animals have a unique <b>special ability</b> you can use.
+  - Text: <b>Rats</b>, for example, can climb on <b>vines.</b>
+  - Text: Press E to possess or unpossess, and press Q to use the special ability.
   question: {fileID: 0}

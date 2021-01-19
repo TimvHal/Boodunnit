@@ -16,8 +16,4 @@ MonoBehaviour:
   - Text: "Boonkle isn\u2019t the biggest place out there, you know?"
   - Text: And a murder case in such a peaceful town like mine?
   - Text: Something like that does not go around slowly.
-  - Text: "As I said, your story caused the biggest uproar I\u2019ve ever seen around
-      here!"
-  - Text: "I can\u2019t imagine who wouldn\u2019t know you by now, Boolia. Ha!"
-  - Text: Sorry. Wrong timing.
   question: {fileID: 11400000, guid: d330b736eb71cd0478d587bc0883c94b, type: 2}

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - Text: I wish I could, dear. But my time is coming to an end.
-  - Text: Simply helping someone was my goal to rest in peace.
+  - Text: Simply helping someone was my unfinished business in order to rest in peace.
   - Text: Solving your murder is yours.
   question: {fileID: 11400000, guid: d330b736eb71cd0478d587bc0883c94b, type: 2}
