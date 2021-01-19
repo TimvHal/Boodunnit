@@ -45,7 +45,12 @@ public class SaveHandler
     /// </summary>
     public void DeleteSaveGame()
     {
+        PlayerSettings playerSettings = LoadDataContainer<PlayerSettings>();
         PlayerPrefs.DeleteAll();
+        if(playerSettings != null)
+        {
+            SaveDataContainer(playerSettings);
+        }
     }
 
     /// <summary>
@@ -54,9 +59,14 @@ public class SaveHandler
     /// <param name="nameOfGameObject">Name of game object</param>
     /// <param name="nameOfProperty">Name of property you want to save</param>
     /// <param name="propertyValue">Value of the property</param>
-    public void SaveGameProperty(string nameOfGameObject, string nameOfProperty, object propertyValue)
+    public void SaveGameProperty(string nameOfGameObject, string nameOfProperty, object propertyValue, string nameOfScene = null)
     {
-        string sceneName = SceneManager.GetActiveScene().name;
+        string sceneName = "";
+        if (nameOfScene == null)
+            sceneName = SceneManager.GetActiveScene().name;
+        else
+            sceneName = nameOfScene;
+
         string uniqueKey = (nameOfGameObject + "_" + nameOfProperty).ToLower();
 
         string scene = PlayerPrefs.GetString(sceneName);
@@ -115,7 +125,6 @@ public class SaveHandler
             if (propertiesInScene.ContainsKey(uniqueKey))
             {
                 propertyValue = (T)Convert.ChangeType(propertiesInScene[uniqueKey], typeof(T));
-                Debug.Log("Boemba: " + propertyValue);
                 isValueFound = true;
             }
         }

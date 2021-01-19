@@ -24,7 +24,7 @@ public class TriggerLogger : MonoBehaviour
     {
         if (other.isTrigger) return;
         //TODO do something with layers here LayerMask does not seem to work for this
-        if (other.gameObject.name.Contains("Player"))
+        if (!other.gameObject.name.Contains("Player"))
             if (!(PossessionBehaviour.PossessionTarget &&
                   PossessionBehaviour.PossessionTarget.name == other.gameObject.name))
                 return;
@@ -73,7 +73,15 @@ public class TriggerLogger : MonoBehaviour
 
     private Log.Entry DetermineLogInformation()
     {
-        DashBehaviour dashBehaviour = CameraController.RotationTarget.GetComponent<DashBehaviour>();
+        DashBehaviour dashBehaviour = null;
+        try
+        {
+            dashBehaviour = CameraController.RotationTarget.GetComponent<DashBehaviour>();
+        }
+        catch ( Exception e)
+        {
+            //ignore
+        }
         BaseMovement movement = CameraController.RotationTarget.GetComponent<BaseMovement>();
         LevitateBehaviour levitateBehaviour = CameraController.RotationTarget.GetComponent<LevitateBehaviour>();
         string result = ""; 

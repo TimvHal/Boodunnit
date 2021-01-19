@@ -78,6 +78,13 @@ public class PlayerBehaviour : BaseMovement
             return;
         }
 
+        //Setting velocity to 0
+        if (ConversationManager.HasConversationStarted)
+        {
+            this.Rigidbody.velocity = Vector3.zero;
+            ConversationManager.ConversationTarget.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        }
+
         //Posses behaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -110,7 +117,7 @@ public class PlayerBehaviour : BaseMovement
         //Dash behaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            if (!DashBehaviour.IsDashing && !DashBehaviour.DashOnCooldown && !ConversationManager.HasConversationStarted)
+            if (!DashBehaviour.IsDashing && !DashBehaviour.DashOnCooldown && !ConversationManager.HasConversationStarted && !PossessionBehaviour.IsPossessing)
             {
                 // If player is grounded he can always dash.
                 if (IsGrounded)
@@ -148,7 +155,6 @@ public class PlayerBehaviour : BaseMovement
 
         if (!DashBehaviour.IsDashing && !PossessionBehaviour.IsPossessing && !ConversationManager.HasConversationStarted)
         {
-
             MoveEntityInDirection(moveDirection);   
         } 
         else if (PossessionBehaviour.IsPossessing && !ConversationManager.HasConversationStarted)

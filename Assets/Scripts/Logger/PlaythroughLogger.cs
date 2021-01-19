@@ -35,17 +35,17 @@ public class PlaythroughLogger : MonoBehaviour
         
         _userInfoFilePath = $"{Application.dataPath}/UserInfo.json";
         // DontDestroyOnLoad(gameObject);
-        CheckClientGUID();
+        if (!Application.isEditor) CheckClientGUID();
     }
 
 
     public void WriteLogThenQuit()
     {
         if (Application.isEditor) Application.Quit();
-        File.WriteAllText($"{Application.dataPath}/{Playthrough.Instance.GUID}.json",
-            SerializeObject(Playthrough.Instance));
         Playthrough.Instance.GameEndTime = DateTime.UtcNow;
         Playthrough.Instance.Platform = Application.platform.ToString();
+        File.WriteAllText($"{Application.dataPath}/{Playthrough.Instance.GUID}.json",
+            SerializeObject(Playthrough.Instance));
         
         StartCoroutine(Login(Playthrough.Instance, FirebaseHTTPController.GetLogin()));
     }

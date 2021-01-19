@@ -61,22 +61,17 @@ public class CameraController : MonoBehaviour
     private void Awake()
     {
         _pointToSlerpTo = transform.position;
-        _angle = Vector3.Angle(CameraRotationTarget.position, _pointToSlerpTo);
+        _angle = CameraRotationTarget.rotation.eulerAngles.y + 180;
         Distance = MaxDistance;
         _minElevationOrigin = MinElevation;
-        _maxElevationOrigin = MaxElevation;  
-
+        _maxElevationOrigin = MaxElevation;
+        RotateCamera();
     }
 
     private void Update()
     {
         if (ConversationManager.HasConversationStarted) return;
         RotationTarget = CameraRotationTarget;
-        
-        if (Input.GetKeyDown(KeyCode.Mouse1) && !GameManager.IsPaused)
-        {
-            GameManager.CursorIsLocked = !GameManager.CursorIsLocked;
-        }
     
         if (GameManager.CursorIsLocked)
         {

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using Entities.Humans;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ConversationCamera : MonoBehaviour
 {
@@ -46,8 +43,8 @@ public class ConversationCamera : MonoBehaviour
         RotateWithIgnoreXZRotations(_cameraController.CameraRotationTarget, conversationTarget);
 
         if (GameManager.CurrentHighlightedCollider != null && 
-            GameManager.CurrentHighlightedCollider.gameObject.GetComponent<VincentBehaviour>() == null &&
-            (GameManager.CurrentHighlightedCollider.gameObject.GetComponent<EmmieBehaviour>() == null && SceneManager.GetActiveScene().name.Equals("CemeteryScene")))
+            GameManager.CurrentHighlightedCollider.name != "VincentTheVigilanteV2" &&
+            GameManager.CurrentHighlightedCollider.name != "CemeteryEmmie Variant")
         {
             RotateWithIgnoreXZRotations(ConversationManager.ConversationTarget, _cameraController.CameraRotationTarget.position);
         }
