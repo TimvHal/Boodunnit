@@ -105,7 +105,7 @@ public class ConversationManager : MonoBehaviour
                     _animator.SetBool("IsOpen", true);
 
                     GameManager.CursorIsLocked = false;
-                    CheckWhichTypeOfConversationToExecute(entityToTalkTo.Dialogue, entityToTalkTo.Question, entityToTalkTo);
+                    CheckWhichTypeOfConversationToExecute(dialogue, question, entityToTalkTo);
                     break;
                 }
             }
