@@ -157,7 +157,7 @@ namespace Entities
             List<BaseEntity> baseEntities = colliders
                 .Where(collider =>
                     (collider && !collider.isTrigger) &&
-                    Vector3.Dot((collider.transform.root.position - transform.position).normalized, transform.forward) * 100f >= (90f - (_fearAngle / 2f)) &&
+                    Vector3.Dot((collider.transform.position - transform.position).normalized, transform.forward) * 100f >= (90f - (_fearAngle / 2f)) &&
                     collider.GetComponent<BaseEntity>() &&
                     ScaredOfEntities != null &&
                     ScaredOfEntities.ContainsKey(collider.GetComponent<BaseEntity>().CharacterName))
@@ -166,7 +166,7 @@ namespace Entities
 
             List<LevitateableObject> levitateables = colliders
                 .Where(c =>
-                    Vector3.Dot((c.transform.root.position - transform.position).normalized, transform.forward) * 100f >= (90f - (_fearAngle / 2f)) &&
+                    Vector3.Dot((c.transform.position - transform.position).normalized, transform.forward) * 100f >= (90f - (_fearAngle / 2f)) &&
                     c.GetComponent<LevitateableObject>()
                     && c.GetComponent<LevitateableObject>().State != LevitationState.NotLevitating &&
                     IsScaredOfLevitatableObject)
