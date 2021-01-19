@@ -117,7 +117,7 @@ public class PlayerBehaviour : BaseMovement
         //Dash behaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            if (!DashBehaviour.IsDashing && !DashBehaviour.DashOnCooldown && !ConversationManager.HasConversationStarted)
+            if (!DashBehaviour.IsDashing && !DashBehaviour.DashOnCooldown && !ConversationManager.HasConversationStarted && !PossessionBehaviour.IsPossessing)
             {
                 // If player is grounded he can always dash.
                 if (IsGrounded)
