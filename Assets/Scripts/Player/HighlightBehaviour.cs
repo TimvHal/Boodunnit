@@ -63,13 +63,6 @@ public class HighlightBehaviour : MonoBehaviour
 
         if (_currentColliderDashable != null && checkForWallDashable())
         {
-            Outline outline = _currentColliderDashable.gameObject.GetComponent<Outline>();
-
-            if (outline)
-            {
-                ToggleOutlineScriptOnGameobject(outline, true);
-            }
-
             if (!GameManager.IsCutscenePlaying)
                 ShowDashIconAboveDashable();
         }
