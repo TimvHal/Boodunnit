@@ -18,8 +18,7 @@ public class MainMenu : MonoBehaviour
 
     public void NewGame()
     {
-        // Todo start a new game
-        PlayerPrefs.DeleteAll();
+        SaveHandler.Instance.DeleteSaveGame();
         SaveHandler.Instance.StartNewGame();
         SceneTransitionHandler.Instance.GoToScene("PreTutorialScene");
     }
@@ -28,7 +27,6 @@ public class MainMenu : MonoBehaviour
     {
         if (!SaveHandler.Instance.DoesSaveGameExist())
             return;
-        // Todo load the game from the last save point
 
         SceneTransitionHandler.Instance.GoToScene(SaveHandler.Instance.LoadCurrentScene());
     }
