@@ -19,6 +19,8 @@ public class IconCanvas : MonoBehaviour
 
     public Image[] IconImages;
 
+    public Image DashIconImage;
+
     private List<Image> _enabledIconImages = new List<Image>();
 
     private void Awake()
@@ -37,6 +39,12 @@ public class IconCanvas : MonoBehaviour
                     imageTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, ImageHeight);
                 }
             }
+            RectTransform imageTransformDashIcon = DashIconImage.gameObject.GetComponent<RectTransform>();
+            if (imageTransformDashIcon)
+            {
+                imageTransformDashIcon.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, ImageWidth);
+                imageTransformDashIcon.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, ImageHeight);
+            }
         }
     }
 
@@ -44,6 +52,7 @@ public class IconCanvas : MonoBehaviour
     void Update()
     {
         UpdateImagePosition();
+        UpdateDashImagePosition();
     }
 
     public void DisableIcons()
@@ -54,11 +63,11 @@ public class IconCanvas : MonoBehaviour
             iconImage.transform.SetParent(transform, false);
         }
         _enabledIconImages.Clear();
+        DashIconImage.gameObject.SetActive(false);
     }
 
     public void EnableIcons()
     {
-        DisableIcons();
         IIconable iconable = IconTarget.GetComponent<IIconable>();
         if (iconable != null)
         {
@@ -128,7 +137,7 @@ public class IconCanvas : MonoBehaviour
         {
             if (iconImage.name.Contains(iconType.ToString()))
             {
-                _enabledIconImages.Add(iconImage);
+                AddImageToEnabledList(iconImage);
                 iconImage.transform.SetParent(GridLayoutGroup.transform, false);
                 UpdateImagePosition();
                 iconImage.gameObject.SetActive(true);
@@ -140,24 +149,26 @@ public class IconCanvas : MonoBehaviour
     {
         if (IconTargetDashable.layer == 10)
         {
-            foreach (Image iconImage in IconImages)
-            {
-                if (iconImage.name.Contains(WorldIconType.Dash.ToString()))
-                {
-                    _enabledIconImages.Add(iconImage);
-                    UpdateDashImagePosition(iconImage);
-                    iconImage.gameObject.SetActive(true);
-                }
-            }
+            DashIconImage.gameObject.SetActive(true);
+            UpdateDashImagePosition();
         }
     }
-    private void UpdateDashImagePosition(Image iconImage)
+
+    private void AddImageToEnabledList(Image iconImage)
+    {
+        if (!_enabledIconImages.Contains(iconImage))
+        {
+            _enabledIconImages.Add(iconImage);
+        }
+    }
+
+    private void UpdateDashImagePosition()
     {
         if (_enabledIconImages != null && IconTargetDashable != null)
         {
             Vector3 iconTargetPos = IconTargetDashable.transform.position;
 
-            iconImage.GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(iconTargetPos);
+            DashIconImage.GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(iconTargetPos);
         }
     }
 
@@ -171,7 +182,7 @@ public class IconCanvas : MonoBehaviour
 
             if (IconTarget.GetComponent<AirVent>() == null && IconTarget.gameObject.layer != 12)
             {
-                iconTargetPos.y = IconTarget.GetComponent<Collider>().bounds.extents.y;
+                iconTargetPos.y += IconTarget.GetComponent<Collider>().bounds.extents.y;
             }
 
             GridLayoutTransform.position = Camera.main.WorldToScreenPoint(iconTargetPos);
