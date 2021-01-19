@@ -13,10 +13,8 @@ MonoBehaviour:
   m_Name: BoonkleDialogue6
   m_EditorClassIdentifier: 
   sentences:
-  - Text: How amusing! It never gets old! I guess that explains why I was disliked
-      by people...
   - Text: "Oh, by the way, perhaps it\u2019s worth mentioning..."
   - Text: Only those you share the closest bond with are able to see and hear you.
-  - Text: You can only talk to a person by possessing someone else.
+  - Text: You can only talk to another person by possessing someone else.
   - Text: "Now, through this gate, whenever you\u2019re ready."
   question: {fileID: 0}

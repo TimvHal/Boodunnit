@@ -13,14 +13,10 @@ MonoBehaviour:
   m_Name: BoonkleDialogue2
   m_EditorClassIdentifier: 
   sentences:
-  - Text: Holy smoke out of my pipe, I think this place just closed.
   - Text: These walls are probably too thick for your dash.
   - Text: "I wish I could help you, but it looks like you\u2019ll have to find another
       way through."
-  - Text: Ugh... Disappointing others surely takes me back...
-  - Text: Are all of these walls really as sturdy as they seem, though?
-  - Text: "Oh, and in case you\u2019re wondering why you can\u2019t fly, or teleport..."
-  - Text: "it took me half a century to master that. You simply can\u2019t because
-      you\u2019re new to this form."
-  - Text: Tough luck, ghostly novice!
+  - Text: "Oh, and in case you\u2019re wondering why you can\u2019t fly, or teleport,
+      let\u2019s just say..."
+  - Text: It took me half a century to master it! Tough luck to you, ghostly novice!
   question: {fileID: 0}
