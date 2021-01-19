@@ -13,7 +13,6 @@ public class ClueCheatScript : MonoBehaviour, IPointerDownHandler
     private void Awake()
     {
         _pauseMenu = FindObjectOfType<PauseMenu>();
-        PlayerPrefs.DeleteAll();
     }
 
     public void OnPointerDown(PointerEventData eventData)
