@@ -3,7 +3,52 @@ guid: 5be6c1f693cbaa04d851f795a716d997
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Blue
+    second: {fileID: 2100000, guid: eb0e75fb00d0dbe48b975dd1236f37bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Circle_Hair
+    second: {fileID: 2100000, guid: e4fe372bc78e8d046a7595b50d39cad5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Circle_Nose
+    second: {fileID: 2100000, guid: 3e0d50451bf111b4ba27c4f802e06f8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Circle_Skin
+    second: {fileID: 2100000, guid: 8814a0333cbefa54eb58520bbbf14cc4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Eye
+    second: {fileID: 2100000, guid: fc544e316ecd1e54e808ea502f061092, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Gold
+    second: {fileID: 2100000, guid: 7be718ca7c4f84a4cb14e2ddccd4f924, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Pouch
+    second: {fileID: 2100000, guid: e5c46a808dc53d24ea9ad20c7b2f9ef0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__M_Circle_Hair
+    second: {fileID: 2100000, guid: e4fe372bc78e8d046a7595b50d39cad5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__M_Circle_Skin
+    second: {fileID: 2100000, guid: 8814a0333cbefa54eb58520bbbf14cc4, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

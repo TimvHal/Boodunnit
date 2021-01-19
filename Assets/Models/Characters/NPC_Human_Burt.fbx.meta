@@ -58,7 +58,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__pasted__pasted__M_Shirt2
-    second: {fileID: 8059074939283186515, guid: 46d91514856782343901e763c3e31b26, type: 3}
+    second: {fileID: 2100000, guid: 7be718ca7c4f84a4cb14e2ddccd4f924, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

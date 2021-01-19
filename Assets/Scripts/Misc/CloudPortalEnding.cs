@@ -12,9 +12,10 @@ public class CloudPortalEnding : MonoBehaviour
         image.canvasRenderer.SetAlpha(0.0f);
     }
 
-    private void OnTriggerEnter()
+    private void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(FadeToWhite());
+        if (other.gameObject.name == "PlayerV2" && other.gameObject.GetComponent<PlayerBehaviour>())
+            StartCoroutine(FadeToWhite());
     }
 
     private IEnumerator FadeToWhite()

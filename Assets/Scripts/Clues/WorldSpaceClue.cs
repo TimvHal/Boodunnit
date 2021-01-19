@@ -64,7 +64,7 @@ public class WorldSpaceClue : MonoBehaviour
 
         if (DoesPlayerHaveAllCLues())
         {
-            SaveHandler.Instance.SaveGameProperty("PlayerHasAllClues", "bool", true);
+            SaveHandler.Instance.SaveGameProperty("PlayerHasAllClues", "bool", true, "CrimeSceneQuest");
             GameManager.PlayerHasAllClues = true;
         }
     }

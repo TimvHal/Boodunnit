@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_Ears
-    second: {fileID: 5334372593589254846, guid: 7b60393bd1d7b56458a121b03c213e44, type: 3}
+    second: {fileID: 2100000, guid: b62187771956b3e43b72ca569efb67d8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -18,7 +18,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_Nose
-    second: {fileID: 2754842778901424381, guid: 7b60393bd1d7b56458a121b03c213e44, type: 3}
+    second: {fileID: 2100000, guid: 4d4788a3286ffc44895b5899207fabbf, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

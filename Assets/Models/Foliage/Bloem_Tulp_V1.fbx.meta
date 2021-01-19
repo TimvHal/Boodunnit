@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Berk_Blad
     second: {fileID: 2100000, guid: a8812afc04c7d014ab839bfb90c20c8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Beuk_Blad
+    second: {fileID: 2100000, guid: ba2e6e10895ede149ba541a529c28c50, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

@@ -8,17 +8,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Flower_Textures.002
-    second: {fileID: 2100000, guid: e128923ba8c02644682f181cf25419e3, type: 2}
+    second: {fileID: 2100000, guid: f26d29d244ca6e44e8a05a851deec68d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Flower_TexturesV2
-    second: {fileID: 2100000, guid: e128923ba8c02644682f181cf25419e3, type: 2}
+    second: {fileID: 2100000, guid: f26d29d244ca6e44e8a05a851deec68d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Tree_Leave_Loose
-    second: {fileID: 2100000, guid: e128923ba8c02644682f181cf25419e3, type: 2}
+    second: {fileID: 2100000, guid: ba2e6e10895ede149ba541a529c28c50, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

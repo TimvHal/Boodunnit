@@ -3,7 +3,22 @@ guid: d8116b8b1422f7244af5fb3e4283fb5f
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Scale
+    second: {fileID: 2100000, guid: 481f41d2a46c6794e880ee8968cbb2e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Screen
+    second: {fileID: 2100000, guid: 6fea4dc01353e594e88da3aa5f372d51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bowl
+    second: {fileID: 2100000, guid: 49f9dc8cea0596246acfdfefebbf91e5, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

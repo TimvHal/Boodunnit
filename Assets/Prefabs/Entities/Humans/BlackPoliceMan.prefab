@@ -90,13 +90,13 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3012583301816165954, guid: 1753fb12197b97f4893e49cb96cba81c, type: 3}
-  - {fileID: -2383473351892302618, guid: 1753fb12197b97f4893e49cb96cba81c, type: 3}
-  - {fileID: 1951287199777206018, guid: 1753fb12197b97f4893e49cb96cba81c, type: 3}
-  - {fileID: -3804194907996007171, guid: 1753fb12197b97f4893e49cb96cba81c, type: 3}
-  - {fileID: 8059074939283186515, guid: 1753fb12197b97f4893e49cb96cba81c, type: 3}
-  - {fileID: 707660351307728791, guid: 1753fb12197b97f4893e49cb96cba81c, type: 3}
-  - {fileID: -6339799759468492660, guid: 1753fb12197b97f4893e49cb96cba81c, type: 3}
+  - {fileID: 2100000, guid: de0ae390cfd0ff24bbd6c0888b7814be, type: 2}
+  - {fileID: 2100000, guid: fc544e316ecd1e54e808ea502f061092, type: 2}
+  - {fileID: 2100000, guid: eb0e75fb00d0dbe48b975dd1236f37bc, type: 2}
+  - {fileID: 2100000, guid: eb0e75fb00d0dbe48b975dd1236f37bc, type: 2}
+  - {fileID: 2100000, guid: 7be718ca7c4f84a4cb14e2ddccd4f924, type: 2}
+  - {fileID: 2100000, guid: e865e6f3254e3684c9aeaf82bb090e78, type: 2}
+  - {fileID: 2100000, guid: ac7fae48329dcf5479b67ada1e8e5ee3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -253,7 +253,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0000004917383, y: -0.6467218, z: -0.00000009934108}
+  m_ConnectedAnchor: {x: -0.0000004917383, y: -0.6467218, z: 0.0000004967054}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -362,7 +362,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.30434582, y: 0.2943337, z: -0.04371963}
+  m_ConnectedAnchor: {x: -0.3043461, y: 0.2943337, z: -0.04371984}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -502,7 +502,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.30434582, y: 0.2943337, z: 0.04371963}
+  m_ConnectedAnchor: {x: 0.3043461, y: 0.2943337, z: 0.04371984}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -780,6 +780,7 @@ MonoBehaviour:
   MaximumFollowRange: 10
   SequencePatrolAreas: []
   CanPossess: 1
+  TimesPosessed: 0
   WalkAudioClips:
   - {fileID: 8300000, guid: 1bb8e79a1ccfc90459740d175349d1e4, type: 3}
   - {fileID: 8300000, guid: d59fb20eef152ea45bed66fa4d37656a, type: 3}
@@ -1535,7 +1536,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.22099243, y: -0.21848619, z: 0.00000009934108}
+  m_ConnectedAnchor: {x: 0.22099243, y: -0.21848619, z: -0.0000004967054}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1741,14 +1742,14 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 707660351307728791, guid: 1753fb12197b97f4893e49cb96cba81c, type: 3}
-  - {fileID: -5135592815056491843, guid: 004667f70a0710347ba3b2ace0c4f53d, type: 3}
-  - {fileID: -6339799759468492660, guid: 1753fb12197b97f4893e49cb96cba81c, type: 3}
+  - {fileID: 2100000, guid: e865e6f3254e3684c9aeaf82bb090e78, type: 2}
+  - {fileID: 2100000, guid: eb0e75fb00d0dbe48b975dd1236f37bc, type: 2}
+  - {fileID: 2100000, guid: e865e6f3254e3684c9aeaf82bb090e78, type: 2}
   - {fileID: 2100000, guid: 28eeb6a1dc897ca4fba9aad241f7eab3, type: 2}
-  - {fileID: 8748892135801146194, guid: ef8f0910b4cb1f54db72eb71ee3f2e43, type: 3}
-  - {fileID: -6566220426624358206, guid: 004667f70a0710347ba3b2ace0c4f53d, type: 3}
-  - {fileID: 2896822385795500411, guid: 004667f70a0710347ba3b2ace0c4f53d, type: 3}
-  - {fileID: 2396733991367315829, guid: 004667f70a0710347ba3b2ace0c4f53d, type: 3}
+  - {fileID: 2100000, guid: e865e6f3254e3684c9aeaf82bb090e78, type: 2}
+  - {fileID: 2100000, guid: 7be718ca7c4f84a4cb14e2ddccd4f924, type: 2}
+  - {fileID: 2100000, guid: e5c46a808dc53d24ea9ad20c7b2f9ef0, type: 2}
+  - {fileID: 2100000, guid: b4801a1eb432b8a4995795a969158891, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1951,7 +1952,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.22099243, y: -0.21848619, z: -0.00000009934108}
+  m_ConnectedAnchor: {x: -0.22099243, y: -0.21848619, z: 0.0000004967054}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -2217,7 +2218,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.51926696, y: 0.0000067755595, z: -0.00000013166573}
+  m_ConnectedAnchor: {x: -0.5192677, y: 0.0000067755686, z: 0.000000083236955}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -2326,7 +2327,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000044703484, y: -0.6467217, z: -0.000000018626451}
+  m_ConnectedAnchor: {x: 0.00000020861626, y: -0.6467218, z: 0.0000004172325}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -2464,7 +2465,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.36762786, z: 0}
+  m_ConnectedAnchor: {x: 0, y: 0.3676281, z: 0}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -2635,7 +2636,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.51926696, y: 0.000021122876, z: 0.00000013166573}
+  m_ConnectedAnchor: {x: 0.5192677, y: 0.000021122903, z: -0.000000083236955}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:

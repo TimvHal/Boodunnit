@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__pasted__M_Green
-    second: {fileID: 2100000, guid: ba2e6e10895ede149ba541a529c28c50, type: 2}
+    second: {fileID: 2100000, guid: 059475d227a75d942b79f92a1f5f5147, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -18,7 +18,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__pasted__M_White
-    second: {fileID: 2100000, guid: d0d7a08cf0e248b4ab16c083f04508d6, type: 2}
+    second: {fileID: 2100000, guid: f403e085c61572f4c9b2d3194bac334a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

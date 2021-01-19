@@ -736,7 +736,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: dda2f7c4fa5bfb14cba9dee1eb4dc889, type: 2}
-  - {fileID: 8059074939283186515, guid: 46d91514856782343901e763c3e31b26, type: 3}
+  - {fileID: 2100000, guid: c045be178fda1c8499c5f8acd618bf5f, type: 2}
   - {fileID: 2100000, guid: 4c0d6a7ca98d8314880fb4d401ea9b7a, type: 2}
   - {fileID: 2100000, guid: 481f41d2a46c6794e880ee8968cbb2e3, type: 2}
   - {fileID: 2100000, guid: 007de9ccd1ed2454fa1d1fd74c662bbd, type: 2}
