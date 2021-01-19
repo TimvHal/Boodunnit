@@ -42,14 +42,11 @@ public class HighlightBehaviour : MonoBehaviour
             .Where(c => { return IsHighlightable(c) && IsObjectInAngle(c); })
             .ToArray();
 
-        _currentCollider = GetClosestCollider(currentObjects);
+        Collider[] closetColliders = GetClosestCollider(currentObjects);
+        _currentCollider = closetColliders[0];
+        _currentColliderDashable = closetColliders[1];
 
-        if(!checkForWall())
-        {
-            return;
-        }
-
-        if (_currentCollider != null)
+        if (_currentCollider != null && checkForWall())
         {
             Outline outline = _currentCollider.gameObject.GetComponent<Outline>();
 
@@ -58,13 +55,12 @@ public class HighlightBehaviour : MonoBehaviour
                 ToggleOutlineScriptOnGameobject(outline, true);
             }
 
-            if(!GameManager.IsCutscenePlaying)
+            if (!GameManager.IsCutscenePlaying)
                 ShowIconsAboveHighlightedObject();
         }
 
-        if (_currentColliderDashable != null)
+        if (_currentColliderDashable != null && checkForWallDashable())
         {
-            print(_currentColliderDashable);
             Outline outline = _currentColliderDashable.gameObject.GetComponent<Outline>();
 
             if (outline)
@@ -75,6 +71,7 @@ public class HighlightBehaviour : MonoBehaviour
             if (!GameManager.IsCutscenePlaying)
                 ShowIconsAboveHighlightedObject();
         }
+        
 
         if (_previousCollider != _currentCollider)
         {
@@ -97,13 +94,6 @@ public class HighlightBehaviour : MonoBehaviour
         {
             if (_previousColliderDashable != null)
             {
-                Outline outline = _previousColliderDashable.gameObject.GetComponent<Outline>();
-
-                if (outline)
-                {
-                    ToggleOutlineScriptOnGameobject(outline, false);
-                }
-
                 DisableIconCanvasImages();
             }
             _previousColliderDashable = _currentColliderDashable;
@@ -148,10 +138,11 @@ public class HighlightBehaviour : MonoBehaviour
         return angle > -90 && angle < 90;
     }
 
-    public Collider GetClosestCollider(Collider[] colliders)
+    public Collider[] GetClosestCollider(Collider[] colliders)
     {
         float minRadius = _maxRadius;
         Collider closestCollider = null;
+        Collider closestColliderDashable = null;
 
         foreach (Collider collider in colliders)
         {
@@ -160,9 +151,10 @@ public class HighlightBehaviour : MonoBehaviour
             {
                 float distance = Vector3.Distance(_position, collider.transform.position);
 
-                if (collider.gameObject.layer == 10 && distance < _highlighRadius["DashRadius"])
+                if (collider.gameObject.layer == 10 && distance < _highlighRadius["DashRadius"] && distance < minRadius)
                 {
-                    _currentColliderDashable = collider;
+                    minRadius = distance;
+                    closestColliderDashable = collider;
                 }
 
                 //check the extra distances distance < minDistance
@@ -170,8 +162,9 @@ public class HighlightBehaviour : MonoBehaviour
                     (collider.GetComponent<ILevitateable>() != null && distance < _highlighRadius["LevitateRadius"] ||
                      collider.GetComponent<IPossessable>() != null && distance < _highlighRadius["PossesionRadius"] ||
                      collider.GetComponent<WorldSpaceClue>() != null && distance < _highlighRadius["ClueRadius"]) &&
-                     distance < minRadius)
+                     distance < minRadius && collider.gameObject.layer != 10)
                 {
+                    print(collider);
                     minRadius = distance;
                     closestCollider = collider;
                 }
@@ -182,7 +175,7 @@ public class HighlightBehaviour : MonoBehaviour
                     //if collider is Possesable and within radius
                     if (collider.gameObject.GetComponent<IPossessable>() != null && distance < _highlighRadius["ConversationRadius"] ||
                      collider.gameObject.GetComponent<AirVent>() != null && distance < _highlighRadius["AirVentRadius"] ||
-                     collider.gameObject.layer == 12 && distance < _highlighRadius["ClimableRadius"])
+                     collider.gameObject.layer == 12 && distance < _highlighRadius["ClimableRadius"] && collider.gameObject.layer != 10)
                     {
                         if (distance < minRadius)
                         {
@@ -194,7 +187,7 @@ public class HighlightBehaviour : MonoBehaviour
             }
         }
 
-        return closestCollider;
+        return new Collider[] { closestCollider, closestColliderDashable };
     }
 
     private bool checkForWall()
@@ -204,9 +197,25 @@ public class HighlightBehaviour : MonoBehaviour
             RaycastHit hit;
             Vector3 direction = (_currentCollider.transform.position - transform.position).normalized;
 
-            if (Physics.Raycast(transform.position, direction, out hit))
+            if (Physics.Raycast(transform.position, direction, out hit, 100, ~10))
             {
                 return hit.collider == _currentCollider;
+            }
+        }
+
+        return false;
+    }
+
+    private bool checkForWallDashable()
+    {
+        if (_currentColliderDashable)
+        {
+            RaycastHit hit;
+            Vector3 direction = (_currentColliderDashable.transform.position - transform.position).normalized;
+
+            if (Physics.Raycast(transform.position, direction, out hit))
+            {
+                return hit.collider == _currentColliderDashable;
             }
         }
 
@@ -223,8 +232,12 @@ public class HighlightBehaviour : MonoBehaviour
         if (_iconCanvas && _currentCollider)
         {
             _iconCanvas.IconTarget = _currentCollider.gameObject;
-            _iconCanvas.IconTargetDashable = _currentColliderDashable.gameObject;
             _iconCanvas.EnableIcons();
+        }
+        if (_iconCanvas && _currentColliderDashable)
+        {
+            _iconCanvas.IconTargetDashable = _currentColliderDashable.gameObject;
+            _iconCanvas.EnableDashIcon();
         }
     }
 

@@ -93,10 +93,6 @@ public class IconCanvas : MonoBehaviour
         {
             EnableIcon(WorldIconType.PickupClue);
         }
-        else if (IconTargetDashable.layer == 10)
-        {
-            EnableDashIcon();
-        }
         else if (PossessionBehaviour.PossessionTarget)
         {
             if (IconTarget.GetComponent<AirVent>() != null && PossessionBehaviour.PossessionTarget.GetComponent<BirdBehaviour>() != null)
@@ -140,15 +136,18 @@ public class IconCanvas : MonoBehaviour
         }
     }
 
-    private void EnableDashIcon()
+    public void EnableDashIcon()
     {
-        foreach (Image iconImage in IconImages)
+        if (IconTargetDashable.layer == 10)
         {
-            if (iconImage.name.Contains(WorldIconType.Dash.ToString()))
+            foreach (Image iconImage in IconImages)
             {
-                _enabledIconImages.Add(iconImage);
-                UpdateDashImagePosition(iconImage);
-                iconImage.gameObject.SetActive(true);
+                if (iconImage.name.Contains(WorldIconType.Dash.ToString()))
+                {
+                    _enabledIconImages.Add(iconImage);
+                    UpdateDashImagePosition(iconImage);
+                    iconImage.gameObject.SetActive(true);
+                }
             }
         }
     }
@@ -172,7 +171,7 @@ public class IconCanvas : MonoBehaviour
 
             if (IconTarget.GetComponent<AirVent>() == null && IconTarget.gameObject.layer != 12)
             {
-                iconTargetPos.y += IconTarget.GetComponent<Collider>().bounds.extents.y;
+                iconTargetPos.y = IconTarget.GetComponent<Collider>().bounds.extents.y;
             }
 
             GridLayoutTransform.position = Camera.main.WorldToScreenPoint(iconTargetPos);
