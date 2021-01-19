@@ -9,6 +9,7 @@ public class IconCanvas : MonoBehaviour
 {
     [HideInInspector]
     public GameObject IconTarget;
+    public GameObject IconTargetDashable;
 
     public int ImageWidth;
     public int ImageHeight;
@@ -92,9 +93,9 @@ public class IconCanvas : MonoBehaviour
         {
             EnableIcon(WorldIconType.PickupClue);
         }
-        else if (IconTarget.layer == 10)
+        else if (IconTargetDashable.layer == 10)
         {
-            EnableIcon(WorldIconType.Dash);
+            EnableDashIcon();
         }
         else if (PossessionBehaviour.PossessionTarget)
         {
@@ -136,6 +137,28 @@ public class IconCanvas : MonoBehaviour
                 UpdateImagePosition();
                 iconImage.gameObject.SetActive(true);
             }
+        }
+    }
+
+    private void EnableDashIcon()
+    {
+        foreach (Image iconImage in IconImages)
+        {
+            if (iconImage.name.Contains(WorldIconType.Dash.ToString()))
+            {
+                _enabledIconImages.Add(iconImage);
+                UpdateDashImagePosition(iconImage);
+                iconImage.gameObject.SetActive(true);
+            }
+        }
+    }
+    private void UpdateDashImagePosition(Image iconImage)
+    {
+        if (_enabledIconImages != null && IconTargetDashable != null)
+        {
+            Vector3 iconTargetPos = IconTargetDashable.transform.position;
+
+            iconImage.GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(iconTargetPos);
         }
     }
 

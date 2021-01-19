@@ -8,6 +8,8 @@ public class HighlightBehaviour : MonoBehaviour
     private Vector3 _position;
     private Collider _currentCollider;
     private Collider _previousCollider;
+    private Collider _currentColliderDashable;
+    private Collider _previousColliderDashable;
     private IconCanvas _iconCanvas;
 
     private void Awake()
@@ -42,6 +44,11 @@ public class HighlightBehaviour : MonoBehaviour
 
         _currentCollider = GetClosestCollider(currentObjects);
 
+        if(!checkForWall())
+        {
+            return;
+        }
+
         if (_currentCollider != null)
         {
             Outline outline = _currentCollider.gameObject.GetComponent<Outline>();
@@ -52,6 +59,20 @@ public class HighlightBehaviour : MonoBehaviour
             }
 
             if(!GameManager.IsCutscenePlaying)
+                ShowIconsAboveHighlightedObject();
+        }
+
+        if (_currentColliderDashable != null)
+        {
+            print(_currentColliderDashable);
+            Outline outline = _currentColliderDashable.gameObject.GetComponent<Outline>();
+
+            if (outline)
+            {
+                ToggleOutlineScriptOnGameobject(outline, true);
+            }
+
+            if (!GameManager.IsCutscenePlaying)
                 ShowIconsAboveHighlightedObject();
         }
 
@@ -70,6 +91,22 @@ public class HighlightBehaviour : MonoBehaviour
             }
 
             _previousCollider = _currentCollider;
+        }
+
+        if (_previousColliderDashable != _currentColliderDashable)
+        {
+            if (_previousColliderDashable != null)
+            {
+                Outline outline = _previousColliderDashable.gameObject.GetComponent<Outline>();
+
+                if (outline)
+                {
+                    ToggleOutlineScriptOnGameobject(outline, false);
+                }
+
+                DisableIconCanvasImages();
+            }
+            _previousColliderDashable = _currentColliderDashable;
         }
     }
 
@@ -123,12 +160,16 @@ public class HighlightBehaviour : MonoBehaviour
             {
                 float distance = Vector3.Distance(_position, collider.transform.position);
 
+                if (collider.gameObject.layer == 10 && distance < _highlighRadius["DashRadius"])
+                {
+                    _currentColliderDashable = collider;
+                }
+
                 //check the extra distances distance < minDistance
                 if (!PossessionBehaviour.PossessionTarget &&
                     (collider.GetComponent<ILevitateable>() != null && distance < _highlighRadius["LevitateRadius"] ||
                      collider.GetComponent<IPossessable>() != null && distance < _highlighRadius["PossesionRadius"] ||
-                     collider.GetComponent<WorldSpaceClue>() != null && distance < _highlighRadius["ClueRadius"] ||
-                     collider.gameObject.layer == 10 && distance < _highlighRadius["DashRadius"]) &&
+                     collider.GetComponent<WorldSpaceClue>() != null && distance < _highlighRadius["ClueRadius"]) &&
                      distance < minRadius)
                 {
                     minRadius = distance;
@@ -155,6 +196,23 @@ public class HighlightBehaviour : MonoBehaviour
 
         return closestCollider;
     }
+
+    private bool checkForWall()
+    {
+        if (_currentCollider)
+        {
+            RaycastHit hit;
+            Vector3 direction = (_currentCollider.transform.position - transform.position).normalized;
+
+            if (Physics.Raycast(transform.position, direction, out hit))
+            {
+                return hit.collider == _currentCollider;
+            }
+        }
+
+        return false;
+    }
+
     private  void ToggleOutlineScriptOnGameobject(Outline outline, bool active)
     {
         outline.enabled = active;
@@ -165,6 +223,7 @@ public class HighlightBehaviour : MonoBehaviour
         if (_iconCanvas && _currentCollider)
         {
             _iconCanvas.IconTarget = _currentCollider.gameObject;
+            _iconCanvas.IconTargetDashable = _currentColliderDashable.gameObject;
             _iconCanvas.EnableIcons();
         }
     }
