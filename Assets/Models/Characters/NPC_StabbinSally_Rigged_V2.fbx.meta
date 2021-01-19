@@ -20,8 +20,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: "Avatar creation failed:\n\tTransform 'Character2_Hips' for
-      human bone 'Hips' not found\n"
+    rigImportErrors: "Avatar creation failed:\n\tTransform 'Character2_RightUpLeg'
+      for human bone 'RightUpperLeg' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 

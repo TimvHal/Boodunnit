@@ -61,7 +61,6 @@ MonoBehaviour:
   CanJump: 0
   bottomHitPoint: {x: 0, y: 0, z: 0}
   OffMeshLinkTraverseType: 0
-  CyclePositions: []
   IsTraversingOfMeshLink: 0
   TargetToFollow: {fileID: 0}
   NavMeshAgent: {fileID: 0}
@@ -73,6 +72,7 @@ MonoBehaviour:
   SequencePatrolAreas: []
   CanPossess: 1
   TimesPosessed: 0
+  HasToggledAbility: 0
   WalkAudioClips:
   - {fileID: 8300000, guid: e3a171d2d7134a444a9824ad9527caff, type: 3}
   - {fileID: 8300000, guid: 4792cd57de7818a43a5a60b6807d15c4, type: 3}
@@ -89,6 +89,7 @@ MonoBehaviour:
   IsScaredOfLevitatableObject: 1
   LevitatableObjectFearDamage: 5
   HasFearCooldown: 0
+  ParabolaHeight: 0
   _fearRadius: 5
   _fearAngle: 90
   _ragdollController: {fileID: 0}
