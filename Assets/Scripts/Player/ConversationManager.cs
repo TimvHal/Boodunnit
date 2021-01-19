@@ -74,7 +74,6 @@ public class ConversationManager : MonoBehaviour
                     break;
             }
         }
-
         //ToDo: Remove this line later when interaction with the world is thought about by the lead dev and lead game designer.]
         Collider[] hitColliderArray = Physics.OverlapSphere(transform.position, 5); // Player
         foreach (Collider entityCollider in hitColliderArray)
@@ -107,6 +106,7 @@ public class ConversationManager : MonoBehaviour
 
                     GameManager.CursorIsLocked = false;
                     CheckWhichTypeOfConversationToExecute(dialogue, question, entityToTalkTo);
+                    break;
                 }
             }
         }
@@ -132,7 +132,6 @@ public class ConversationManager : MonoBehaviour
         ResetQuestions();
         _sentences.Clear();
 
-        //ResetQuestions();
         if (!ConversationTarget) return;
 
         BaseEntity entity = ConversationTarget.gameObject.GetComponent<BaseEntity>();
@@ -184,10 +183,12 @@ public class ConversationManager : MonoBehaviour
     {
         _dialogueContainedQuestion = dialogue.question;
         _continueButton.gameObject.SetActive(true);
+
         foreach (Sentence sentence in dialogue.sentences)
         {
             _sentences.Enqueue(sentence.Text.ToString());
         }
+
         DisplayNextSentence();
     }
 
