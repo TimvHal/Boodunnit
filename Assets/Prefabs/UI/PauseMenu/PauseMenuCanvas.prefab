@@ -605,6 +605,7 @@ GameObject:
   - component: {fileID: 8886725897252974586}
   - component: {fileID: 8886725897252974587}
   - component: {fileID: 8886725897252974580}
+  - component: {fileID: 135158536029117173}
   m_Layer: 5
   m_Name: Bloody knife
   m_TagString: Untagged
@@ -736,6 +737,19 @@ MonoBehaviour:
           m_StringArgument: Bloody knife
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &135158536029117173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8886725897252974582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf9875c2ee524b3196676273f667f27d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClueScriptableObject: {fileID: 11400000, guid: 546ede9e0a32e2540986c110e0dab27c, type: 2}
 --- !u!1 &8886725897283470279
 GameObject:
   m_ObjectHideFlags: 0
@@ -1839,6 +1853,7 @@ GameObject:
   - component: {fileID: 8886725898084288228}
   - component: {fileID: 8886725898084288229}
   - component: {fileID: 8886725898084288230}
+  - component: {fileID: 3092979232179503518}
   m_Layer: 5
   m_Name: Trash cake
   m_TagString: Untagged
@@ -1970,6 +1985,19 @@ MonoBehaviour:
           m_StringArgument: Trash cake
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3092979232179503518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8886725898084288224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf9875c2ee524b3196676273f667f27d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClueScriptableObject: {fileID: 11400000, guid: e485a6c7396f4f649b7be9be979eaece, type: 2}
 --- !u!1 &8886725898104360163
 GameObject:
   m_ObjectHideFlags: 0
@@ -2061,6 +2089,7 @@ GameObject:
   - component: {fileID: 8886725898238748138}
   - component: {fileID: 8886725898238748139}
   - component: {fileID: 8886725898238748132}
+  - component: {fileID: 1652427712402740552}
   m_Layer: 5
   m_Name: Broken flower pot
   m_TagString: Untagged
@@ -2192,6 +2221,19 @@ MonoBehaviour:
           m_StringArgument: Broken flower pot
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1652427712402740552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8886725898238748134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf9875c2ee524b3196676273f667f27d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClueScriptableObject: {fileID: 11400000, guid: 373ec4e00a3a90e49acd444db35ed69e, type: 2}
 --- !u!1 &8886725898378754528
 GameObject:
   m_ObjectHideFlags: 0
@@ -2282,6 +2324,7 @@ GameObject:
   - component: {fileID: 8886725898385191794}
   - component: {fileID: 8886725898385191795}
   - component: {fileID: 8886725898385191788}
+  - component: {fileID: 7960788233073973741}
   m_Layer: 5
   m_Name: Hard hat
   m_TagString: Untagged
@@ -2413,6 +2456,19 @@ MonoBehaviour:
           m_StringArgument: Hard hat
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7960788233073973741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8886725898385191790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf9875c2ee524b3196676273f667f27d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClueScriptableObject: {fileID: 11400000, guid: 026dc0d5fa2135a418b90fb9494792ad, type: 2}
 --- !u!1 &8886725898400234931
 GameObject:
   m_ObjectHideFlags: 0
@@ -2762,6 +2818,7 @@ GameObject:
   - component: {fileID: 8886725898564829010}
   - component: {fileID: 8886725898564829011}
   - component: {fileID: 8886725898564829004}
+  - component: {fileID: 5452399826458780885}
   m_Layer: 5
   m_Name: Red fabric
   m_TagString: Untagged
@@ -2893,6 +2950,19 @@ MonoBehaviour:
           m_StringArgument: Red fabric
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5452399826458780885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8886725898564829006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf9875c2ee524b3196676273f667f27d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClueScriptableObject: {fileID: 11400000, guid: 5ff1820b20bc30f4dbfae08c8cacd63c, type: 2}
 --- !u!1 &8886725898658456404
 GameObject:
   m_ObjectHideFlags: 0

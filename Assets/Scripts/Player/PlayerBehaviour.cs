@@ -184,6 +184,9 @@ public class PlayerBehaviour : BaseMovement
             // Reset dash counter for single in air dash.
             _dashCounter = 0;
         }
+
+        //Teleports the player to the end of the current level (excl. CrimeScene).
+        if (Input.GetKeyDown(KeyCode.P)) CheatHandler.TeleportToEndOfLevel();
     }
 
     private void FixedUpdate()

@@ -73,4 +73,10 @@ public class PauseMenu : MonoBehaviour
 
         CanvasPanels[0].SetActive(true);
     }
+
+    public void UpdateClueUI()
+    {
+        ToggleImagesCollectedClues();
+        ToggleImagesCollectedClues();
+    }
 }
