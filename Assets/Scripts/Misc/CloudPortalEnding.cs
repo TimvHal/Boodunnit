@@ -14,7 +14,8 @@ public class CloudPortalEnding : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "PlayerV2" && other.gameObject.GetComponent<PlayerBehaviour>())
+        PlayerBehaviour player = other.gameObject.GetComponent<PlayerBehaviour>();
+        if (player)
             StartCoroutine(FadeToWhite());
     }
 

@@ -16,17 +16,10 @@ public class CrimeSceneStateHandler : MonoBehaviour
             GameManager.PlayerHasAllClues = true;
         }
 
-        if (CheckIfPlayerInEndingState())
+        GameObject gameObject = GameObject.Find("Cloudportal");
+        if (gameObject)
         {
-            GameManager.PlayerIsInEndState = true;
-            LoadEndingStateGameObjects();
-        } else
-        {
-            GameObject gameObject = GameObject.Find("Cloudportal");
-            if (gameObject)
-            {
-                gameObject.SetActive(false);
-            }
+            gameObject.SetActive(false);
         }
     }
 
@@ -95,10 +88,8 @@ public class CrimeSceneStateHandler : MonoBehaviour
 
     public void PlayerEnteredEndState()
     {
-        SaveHandler handler = SaveHandler.Instance;
-        handler.SaveGameProperty("PlayerIsInEndState", "bool", true);
         GameManager.PlayerIsInEndState = true;
-    }
+    } 
 
     private void SetGameObjectTransform(GameObject gameObject)
     {
