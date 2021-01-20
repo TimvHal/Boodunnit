@@ -48,7 +48,7 @@ public class HighlightBehaviour : MonoBehaviour
         _currentCollider = closetColliders[0];
         _currentColliderDashable = closetColliders[1];
 
-        if (_currentCollider != null && checkForWall())
+        if (_currentCollider != null && CheckForWall())
         {
             Outline outline = _currentCollider.gameObject.GetComponent<Outline>();
 
@@ -185,7 +185,7 @@ public class HighlightBehaviour : MonoBehaviour
         return new Collider[] { closestCollider, closestColliderDashable };
     }
 
-    private bool checkForWall()
+    public bool CheckForWall()
     {
         if (_currentCollider)
         {

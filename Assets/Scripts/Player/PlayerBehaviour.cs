@@ -94,7 +94,7 @@ public class PlayerBehaviour : BaseMovement
             }
             else
             {
-                if (!DashBehaviour.IsDashing && !ConversationManager.HasConversationStarted && !LevitateBehaviour.IsLevitating && HighlightedObject && HighlightedObject.GetComponent<IPossessable>() != null)
+                if (!DashBehaviour.IsDashing && !ConversationManager.HasConversationStarted && !LevitateBehaviour.IsLevitating && HighlightedObject && HighlightedObject.GetComponent<IPossessable>() != null && HighlightBehaviour.CheckForWall())
                 {
                     PossessionBehaviour.PossessTarget(HighlightedObject);
                 }
