@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7119080031330911708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3368906951361466726}
+  m_Layer: 11
+  m_Name: FearEmpty
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3368906951361466726
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7119080031330911708}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.024, y: 1.602, z: 0.407}
+  m_LocalScale: {x: 1.2500001, y: 1.25, z: 1.2500001}
+  m_Children: []
+  m_Father: {fileID: 8469522771752720839}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8469522771752720836
 GameObject:
   m_ObjectHideFlags: 0
@@ -36,6 +66,7 @@ Transform:
   m_LocalScale: {x: 0.79999995, y: 0.8, z: 0.79999995}
   m_Children:
   - {fileID: 465925173921088467}
+  - {fileID: 3368906951361466726}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -105,6 +136,8 @@ MonoBehaviour:
   - {fileID: 0}
   CanPossess: 1
   TimesPosessed: 0
+  HasToggledAbility: 0
+  FearEmpty: {fileID: 7119080031330911708}
   WalkAudioClips:
   - {fileID: 8300000, guid: 1bb8e79a1ccfc90459740d175349d1e4, type: 3}
   - {fileID: 8300000, guid: d59fb20eef152ea45bed66fa4d37656a, type: 3}
@@ -127,10 +160,10 @@ MonoBehaviour:
   IsScaredOfLevitatableObject: 0
   LevitatableObjectFearDamage: 10
   HasFearCooldown: 0
+  ParabolaHeight: 0
   _fearRadius: 5
   _fearAngle: 90
   _ragdollController: {fileID: 3001241893109621394}
-  ParabolaHeight: 0
   ConsumableEndPosition: {fileID: 465925174668980178}
   PoliceHead: {fileID: 465925173488531708}
   _donutDetectionRadius: 10

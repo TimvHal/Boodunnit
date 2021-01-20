@@ -14,6 +14,7 @@ namespace Entities
         public bool CanPossess = true;
         public int TimesPosessed;
         public bool HasToggledAbility;
+        public GameObject FearEmpty;
         
         public bool IsWalking { get; set; }
 
@@ -147,17 +148,17 @@ namespace Entities
             }
         }
 
-        protected virtual void CheckSurroundings(Vector3 raycastStartPosition)
+        protected virtual void CheckSurroundings(Transform raycastStartPosition)
         {
-            if (HasFearCooldown || EmotionalState == EmotionalState.Fainted || IsPossessed) return;
+            if (HasFearCooldown || EmotionalState == EmotionalState.Fainted || IsPossessed || !FearEmpty) return;
             StartCoroutine(ActivateCooldown());
             
-            Collider[] colliders = Physics.OverlapSphere(raycastStartPosition, _fearRadius);
+            Collider[] colliders = Physics.OverlapSphere(raycastStartPosition.position, _fearRadius);
 
             List<BaseEntity> baseEntities = colliders
                 .Where(collider =>
                     (collider && !collider.isTrigger) &&
-                    Vector3.Dot((collider.transform.position - transform.position).normalized, transform.forward) * 100f >= (90f - (_fearAngle / 2f)) &&
+                    Vector3.Dot((collider.transform.position - raycastStartPosition.position).normalized, raycastStartPosition.forward) * 100f >= (90f - (_fearAngle / 2f)) &&
                     collider.GetComponent<BaseEntity>() &&
                     ScaredOfEntities != null &&
                     ScaredOfEntities.ContainsKey(collider.GetComponent<BaseEntity>().CharacterName))
@@ -166,7 +167,7 @@ namespace Entities
 
             List<LevitateableObject> levitateables = colliders
                 .Where(c =>
-                    Vector3.Dot((c.transform.position - transform.position).normalized, transform.forward) * 100f >= (90f - (_fearAngle / 2f)) &&
+                    Vector3.Dot((c.transform.position - raycastStartPosition.position).normalized, raycastStartPosition.forward) * 100f >= (90f - (_fearAngle / 2f)) &&
                     c.GetComponent<LevitateableObject>()
                     && c.GetComponent<LevitateableObject>().State != LevitationState.NotLevitating &&
                     IsScaredOfLevitatableObject)
@@ -181,7 +182,10 @@ namespace Entities
             }
         }
 
-        protected virtual void CheckSurroundings() { CheckSurroundings(transform.position); }
+        protected virtual void CheckSurroundings() 
+        {    
+            if (FearEmpty) CheckSurroundings(FearEmpty.transform); 
+        }
 
         protected virtual IEnumerator ActivateCooldown()
         {
