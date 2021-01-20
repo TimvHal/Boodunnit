@@ -6,6 +6,7 @@ public class SirBoonkleSpawnLocationBehaviour : MonoBehaviour
 {
     public Transform Spawnpoint;
     public int Index;
+    public Cutscene Cutscene;
 
     private SirBoonkleBehaviour _sirBoonkleBehaviour;
 
@@ -17,9 +18,30 @@ public class SirBoonkleSpawnLocationBehaviour : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         PlayerBehaviour player = other.GetComponent<PlayerBehaviour>();
-        if (player && _sirBoonkleBehaviour)
+        if (GameObject.Find("SirBoonkle"))
+        {
+            _sirBoonkleBehaviour = GameObject.Find("SirBoonkle").GetComponentInChildren<SirBoonkleBehaviour>();
+        }
+        if (Index == 6 && GameObject.Find("SirBoonkle"))
+        {
+            Cutscene.StartCutscene();
+        }
+        else if (player && _sirBoonkleBehaviour)
         {
             _sirBoonkleBehaviour.SpawnToNewLocation(Spawnpoint, Index);
         }
+    }
+
+    public void SpawnBoonkleOnNewLocation()
+    {
+        if (_sirBoonkleBehaviour)
+        {
+            _sirBoonkleBehaviour.SpawnToNewLocation(Spawnpoint, Index);
+        }
+    }
+
+    public void DespawnBoonkle()
+    {
+        _sirBoonkleBehaviour.transform.parent.gameObject.SetActive(false);
     }
 }
