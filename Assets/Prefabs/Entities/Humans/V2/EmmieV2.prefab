@@ -34,6 +34,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2744158934419123751}
+  - {fileID: 7836524995978753339}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -59,7 +60,6 @@ MonoBehaviour:
   CanJump: 0
   bottomHitPoint: {x: 0, y: 0, z: 0}
   OffMeshLinkTraverseType: 0
-  CyclePositions: []
   IsTraversingOfMeshLink: 0
   TargetToFollow: {fileID: 0}
   NavMeshAgent: {fileID: 0}
@@ -71,6 +71,8 @@ MonoBehaviour:
   SequencePatrolAreas: []
   CanPossess: 0
   TimesPosessed: 0
+  HasToggledAbility: 0
+  FearEmpty: {fileID: 6775537770500438090}
   WalkAudioClips: []
   Dialogue: {fileID: 0}
   Question: {fileID: 0}
@@ -85,6 +87,7 @@ MonoBehaviour:
   IsScaredOfLevitatableObject: 0
   LevitatableObjectFearDamage: 10
   HasFearCooldown: 0
+  ParabolaHeight: 0
   _fearRadius: 0
   _fearAngle: 0
   _ragdollController: {fileID: 0}
@@ -174,6 +177,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &6775537770500438090
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7836524995978753339}
+  m_Layer: 11
+  m_Name: FearEmpty
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7836524995978753339
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6775537770500438090}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.1125, y: 1.2195, z: 0.4159}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5995242838963564243}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5995242840212685172
 PrefabInstance:
   m_ObjectHideFlags: 0
