@@ -28,7 +28,7 @@ Material:
     - Vector1_8EB6C33E: 0
     - Vector1_C8A47180: 0.5
     m_Colors:
-    - Color_5B75C8BB: {r: 0, g: 0, b: 0, a: 0}
+    - Color_5B75C8BB: {r: 1, g: 1, b: 1, a: 0}
     - Color_6BA3DEBD: {r: 0, g: 0.143079, b: 0.6981132, a: 0}
     - Color_ECC43D1D: {r: 0.3726415, g: 1, b: 1, a: 0}
     - Vector2_1C3ADBB1: {r: 0, g: 0.05, b: 0, a: 0}
