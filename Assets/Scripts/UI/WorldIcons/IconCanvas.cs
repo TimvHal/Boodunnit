@@ -68,6 +68,7 @@ public class IconCanvas : MonoBehaviour
 
     public void EnableIcons()
     {
+        DisableIcons();
         IIconable iconable = IconTarget.GetComponent<IIconable>();
         if (iconable != null)
         {
