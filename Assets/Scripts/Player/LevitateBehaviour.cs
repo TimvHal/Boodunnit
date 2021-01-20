@@ -92,9 +92,8 @@ public class LevitateBehaviour : MonoBehaviour
 
         Collider firstHit = _currentHighlightedObject;
 
-        if (firstHit.GetComponent<ILevitateable>() == null) return null;
-        if (!firstHit) return null;
-        
+        if (!firstHit || firstHit.GetComponent<ILevitateable>() == null) return null;
+
         Rigidbody rigidbody = firstHit.gameObject.GetComponent<Rigidbody>();
 
         if (!rigidbody ||
