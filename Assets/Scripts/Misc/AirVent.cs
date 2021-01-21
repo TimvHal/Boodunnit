@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Enums;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ public class AirVent : MonoBehaviour
                 Rigidbody otherRigidBody = other.gameObject.GetComponent<Rigidbody>();
                 if (otherRigidBody)
                 {
+                    AchievementHandler.Instance.AwardAchievement(SteamAchievements.ACH_PHEASANT_PHYSICS);
                     otherRigidBody.AddForce(transform.forward * AirPower, ForceMode.Acceleration);
                 }
             }
