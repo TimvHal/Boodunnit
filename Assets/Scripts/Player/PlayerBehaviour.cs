@@ -238,7 +238,6 @@ public class PlayerBehaviour : BaseMovement
         {
             if (GameManager.PlayerHasAllClues && !GameManager.PlayerIsInEndState)
             {
-                GameManager.PlayerIsInEndState = true;
                 FadeInAndOut fade = GameObject.Find("FadeInOutCanvas").GetComponent<FadeInAndOut>();
                 if (fade)
                 {
@@ -259,8 +258,8 @@ public class PlayerBehaviour : BaseMovement
     {
         PossessionSpeed = 0;
         Rigidbody.velocity = Vector3.zero;
-        Animator.SetBool("IsMoving", false);
         IconCanvas canvas = FindObjectOfType<IconCanvas>();
+        CrimeSceneStateHandler.ToggleQuestMarker(false);
         if (canvas)
         {
             canvas.DisableIcons();

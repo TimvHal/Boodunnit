@@ -68,6 +68,7 @@ public class WorldSpaceClue : MonoBehaviour
         {
             SaveHandler.Instance.SaveGameProperty("PlayerHasAllClues", "bool", true, "CrimeSceneQuest");
             GameManager.PlayerHasAllClues = true;
+            CrimeSceneStateHandler.ToggleQuestMarker(true);
         }
         
         //Add Steam Achievements

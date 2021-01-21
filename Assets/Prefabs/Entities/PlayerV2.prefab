@@ -546,7 +546,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d0d7a08cf0e248b4ab16c083f04508d6, type: 2}
+  - {fileID: 2100000, guid: f403e085c61572f4c9b2d3194bac334a, type: 2}
   - {fileID: 2100000, guid: 70afc075025575d4fa9f7988817b7d9d, type: 2}
   - {fileID: 2100000, guid: 70afc075025575d4fa9f7988817b7d9d, type: 2}
   - {fileID: 2100000, guid: ba2e6e10895ede149ba541a529c28c50, type: 2}
@@ -881,9 +881,6 @@ MonoBehaviour:
   _levitationMoveSpeed: 250
   _objectStartingDistance: 10
   _objectStartingHeight: 8
-  _ignoredLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &8658040402228577260
 MonoBehaviour:
   m_ObjectHideFlags: 0
