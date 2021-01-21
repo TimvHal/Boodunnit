@@ -4,15 +4,15 @@ namespace Enums
     {
         NONE,
         ACH_A_NEW_LIFE, //Ryan, Done
-        ACH_VERMIN_PARKOUR, // Ryan, Done
+        ACH_VERMIN_PARKOUR, //Jan, Done
         ACH_NOT_DEAD_YET, //Ryan, Done
         ACH_LEFTOVER_COFFINS, // Ryan, Done
         ACH_GOTCHA, //Tim, Done
         ACH_PRIVATE_DETECTIVE, //Tim, Done
         ACH_SOLVED, //Ryan
-        ACH_PHEASANT_PHYSICS,
+        ACH_PHEASANT_PHYSICS, //Ryan
         ACH_SCAREDY_COP, //Ryan, Done
-        ACH_UNDER_ARREST, //Tim
+        ACH_UNDER_ARREST, //Tim, Done
         ACH_I_AM_JULIA_LAWSON, //Ryan, Done
         ACH_PIECE_OF_CAKE, //Tim, Done
         ACH_BUTCHERING_BUSINESS, //Tim, Done
