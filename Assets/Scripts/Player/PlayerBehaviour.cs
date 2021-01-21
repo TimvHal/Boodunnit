@@ -258,6 +258,7 @@ public class PlayerBehaviour : BaseMovement
         PossessionSpeed = 0;
         Rigidbody.velocity = Vector3.zero;
         IconCanvas canvas = FindObjectOfType<IconCanvas>();
+        CrimeSceneStateHandler.ToggleQuestMarker(false);
         if (canvas)
         {
             canvas.DisableIcons();
