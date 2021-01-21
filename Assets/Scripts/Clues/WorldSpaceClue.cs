@@ -18,7 +18,7 @@ public class WorldSpaceClue : MonoBehaviour
     private List<Clue> _listOfClues;
 
     private void Awake()
-    {      
+    {
         _listOfClues = Resources.LoadAll<Clue>("ScriptableObjects/Clues").ToList();
         
         if (SaveHandler.Instance.DoesPlayerHaveClue(ClueScriptableObject.Name))
@@ -70,9 +70,11 @@ public class WorldSpaceClue : MonoBehaviour
             GameManager.PlayerHasAllClues = true;
         }
         
-        //Add Steam Achievement
+        //Add Steam Achievements
+        AchievementHandler.Instance.AwardAchievement(SteamAchievements.ACH_GOTCHA); //Only works first call.
         SteamAchievements achievement = GetAchievementName();
         AchievementHandler.Instance.AwardAchievement(achievement);
+        if(SaveHandler.Instance.GetSavedClueNames().Count >= 5) AchievementHandler.Instance.AwardAchievement(SteamAchievements.ACH_PRIVATE_DETECTIVE);
     }
 
     private bool DoesPlayerHaveAllCLues()
