@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Entities.Humans;
+using Enums;
 using UnityEngine;
 
 public class PlayerBehaviour : BaseMovement
