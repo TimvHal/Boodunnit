@@ -37,6 +37,11 @@ public class PoliceManBehaviour : BaseEntity
     {
         if (!IsPossessed && !ConversationManager.HasConversationStarted) CheckDonutsInSurrounding();
         if(TargetToFollow && !IsPossessed) CheckDistanceToDonut();
+
+        if (EmotionalState == EmotionalState.Scared)
+        {
+            AchievementHandler.Instance.AwardAchievement(SteamAchievements.ACH_SCAREDY_COP);
+        }
     }
 
     private void CheckDonutsInSurrounding()
