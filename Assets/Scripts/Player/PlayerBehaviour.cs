@@ -172,7 +172,6 @@ public class PlayerBehaviour : BaseMovement
         //Jump
         if (Input.GetKeyDown(KeyCode.Space) && !ConversationManager.HasConversationStarted)
         {
-            AchievementHandler.Instance.AwardAchievement(SteamAchievements.ACH_SOLVED);
             if (PossessionBehaviour.IsPossessing)
             {
                 PossessionBehaviour.TargetBehaviour.Jump();

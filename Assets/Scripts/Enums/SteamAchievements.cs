@@ -14,10 +14,10 @@ namespace Enums
         ACH_SCAREDY_COP, //Ryan, Done
         ACH_UNDER_ARREST, 
         ACH_I_AM_JULIA_LAWSON, //Ryan, Done
-        ACH_PIECE_OF_CAKE, //Tim
-        ACH_BUTCHERING_BUSINESS, //Tim
-        ACH_UNDER_CONSTRUCTION, //Tim
-        ACH_SCRAPPED_OFF_THE_LIST, //Tim
-        ACH_SOIL_DECORATION //Tim
+        ACH_PIECE_OF_CAKE, //Tim, Done
+        ACH_BUTCHERING_BUSINESS, //Tim, Done
+        ACH_UNDER_CONSTRUCTION, //Tim, Done
+        ACH_SCRAPPED_OFF_THE_LIST, //Tim, Done
+        ACH_SOIL_DECORATION //Tim, Done
     }
 }
