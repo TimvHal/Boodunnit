@@ -28,7 +28,7 @@ public class AchievementHandler
 
     public void AwardAchievement(SteamAchievements achievement)
     {
-        if (!SteamManager.Initialized) return;
+        if (!SteamManager.Initialized || achievement == SteamAchievements.NONE) return;
         SteamUserStats.SetAchievement(achievement.ToString());
         SteamUserStats.StoreStats();
     }

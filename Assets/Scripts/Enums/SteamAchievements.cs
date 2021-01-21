@@ -2,6 +2,7 @@ namespace Enums
 {
     public enum SteamAchievements
     {
+        NONE,
         ACH_A_NEW_LIFE, //Ryan, Done
         ACH_VERMIN_PARKOUR,
         ACH_NOT_DEAD_YET, //Ryan, Done
