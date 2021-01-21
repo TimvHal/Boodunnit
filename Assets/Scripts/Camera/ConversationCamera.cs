@@ -44,7 +44,8 @@ public class ConversationCamera : MonoBehaviour
 
         if (GameManager.CurrentHighlightedCollider != null && 
             GameManager.CurrentHighlightedCollider.name != "VincentTheVigilanteV2" &&
-            GameManager.CurrentHighlightedCollider.name != "CemeteryEmmie Variant")
+            GameManager.CurrentHighlightedCollider.name != "CemeteryEmmie Variant" &&
+            !GameManager.IsCutscenePlaying)
         {
             RotateWithIgnoreXZRotations(ConversationManager.ConversationTarget, _cameraController.CameraRotationTarget.position);
         }
