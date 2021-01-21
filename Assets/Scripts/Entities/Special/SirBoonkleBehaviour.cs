@@ -27,7 +27,8 @@ public class SirBoonkleBehaviour : BaseEntity
                 Dialogue = null;
             else
                 Dialogue = _dialogues[index];
-            StartCoroutine(FadeInAndOut());
+            ChangePosition();
+            //StartCoroutine(FadeInAndOut());
         }
     }
 
@@ -44,13 +45,8 @@ public class SirBoonkleBehaviour : BaseEntity
             currentTime += Time.deltaTime;
             ChangeColorOpacity(materials, 1 - currentTime / FadeDuration);
         }
-        
-        if (_newSpawnTransform)
-        {
-            transform.parent.position = _newSpawnTransform.position;
-            transform.parent.rotation = _newSpawnTransform.rotation;
-            transform.localPosition = Vector3.zero;
-        }
+
+        ChangePosition();
 
         // Fade in
         currentTime = 0;
@@ -59,6 +55,16 @@ public class SirBoonkleBehaviour : BaseEntity
             yield return null;
             currentTime += Time.deltaTime;
             ChangeColorOpacity(materials, currentTime / FadeDuration);
+        }
+    }
+
+    private void ChangePosition()
+    {
+        if (_newSpawnTransform)
+        {
+            transform.parent.position = _newSpawnTransform.position;
+            transform.parent.rotation = _newSpawnTransform.rotation;
+            transform.localPosition = Vector3.zero;
         }
     }
 
