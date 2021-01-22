@@ -9,24 +9,27 @@ using UnityEngine.SceneManagement;
 
 public class CrimeSceneStateHandler : MonoBehaviour
 {
+    public Canvas QuestCanvas;
+
     private void Awake()
     {
         GameManager.PlayerIsInEndState = false;
         if (CheckIfPlayerHasAllClues())
         {
             GameManager.PlayerHasAllClues = true;
-            ToggleQuestMarker(true);
+            GameManager.ToggleQuestMarker = true;
 
-        } else
-        {
-            ToggleQuestMarker(false);
         }
-
         GameObject gameObject = GameObject.Find("Cloudportal");
         if (gameObject)
         {
             gameObject.SetActive(false);
         }
+    }
+
+    private void Update()
+    {
+        ToggleQuestMarker(GameManager.ToggleQuestMarker);
     }
 
     public bool CheckIfPlayerHasAllClues()
@@ -41,12 +44,14 @@ public class CrimeSceneStateHandler : MonoBehaviour
     public void PlayerEnteredEndState()
     {
         GameManager.PlayerIsInEndState = true;
-    } 
+    }
 
-    public static void ToggleQuestMarker(bool toggle)
+    public void ToggleQuestMarker(bool toggle)
     {
-        GameObject questMarker = FindObjectOfType<RotateQuestMarker>().gameObject;
-        if (questMarker)
-            questMarker.SetActive(toggle);
+        if (QuestCanvas)
+        {
+            QuestCanvas.enabled = toggle;
+        }
+
     }
 }
