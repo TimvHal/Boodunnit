@@ -56248,6 +56248,7 @@ GameObject:
   - component: {fileID: 7472674279501784056}
   - component: {fileID: 4455027094052643667}
   - component: {fileID: 3638387456354944820}
+  - component: {fileID: 1005147190778798743}
   m_Layer: 0
   m_Name: Cube.215
   m_TagString: Untagged
@@ -56255,6 +56256,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &1005147190778798743
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005147190778798742}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 202.8463, y: 64.79292, z: 284.04666}
+  m_Center: {x: 8.257077, y: -1.1189692, z: 27.17169}
 --- !u!4 &1022058045416094987
 Transform:
   m_ObjectHideFlags: 0
