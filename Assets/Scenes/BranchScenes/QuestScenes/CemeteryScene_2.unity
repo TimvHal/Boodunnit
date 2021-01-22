@@ -9147,6 +9147,13 @@ MonoBehaviour:
     ShouldStartOnStart: 0
     IsMusicVolume: 0
     AudioSource: {fileID: 0}
+  - Name: Clue_pickup
+    AudioClip: {fileID: 8300000, guid: 4b9e0d1cbb7725747b73bfc165db29fb, type: 3}
+    Volume: 0
+    ShouldLoop: 0
+    ShouldStartOnStart: 0
+    IsMusicVolume: 0
+    AudioSource: {fileID: 0}
 --- !u!4 &371465336
 Transform:
   m_ObjectHideFlags: 0
