@@ -70,9 +70,10 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
+        transform.parent.position = CameraRotationTarget.position;
         if (ConversationManager.HasConversationStarted) return;
         RotationTarget = CameraRotationTarget;
-    
+     
         if (GameManager.CursorIsLocked)
         {
             _rotationInput.x = Input.GetAxisRaw("Mouse X");
@@ -88,12 +89,16 @@ public class CameraController : MonoBehaviour
         float angleOffset = 0;
         _pointToSlerpTo.y = ElevationRange;
 
-        transform.position = CameraRotationTarget.position + _pointToSlerpTo;
-        transform.LookAt(CameraRotationTarget);
+        transform.localPosition = Vector3.Slerp(
+            transform.localPosition, 
+            _pointToSlerpTo,
+            Time.deltaTime * 5
+            );
+        transform.LookAt(transform.parent);
 
         if (_rotationInput.x != 0)
         {
-            transform.LookAt(CameraRotationTarget);
+            transform.LookAt(transform.parent);
             RotateCamera();
         }
         else
@@ -105,28 +110,28 @@ public class CameraController : MonoBehaviour
         {
             ElevationRange += (_rotationInput.y / 10f);
         }
-
-        Vector3 position2DIfied = new Vector3(transform.position.x, 0, transform.position.z);
-        Vector3 targetPosition2DIfied = new Vector3(CameraRotationTarget.position.x, 0, CameraRotationTarget.position.z);
-
-        if (Vector3.Distance(position2DIfied, targetPosition2DIfied) > Distance || 
-            Vector3.Distance(position2DIfied, targetPosition2DIfied) < Distance) 
-            AlignCameraWithTarget();
+        //
+        // Vector3 position2DIfied = new Vector3(transform.position.x, 0, transform.position.z);
+        // Vector3 targetPosition2DIfied = new Vector3(CameraRotationTarget.position.x, 0, CameraRotationTarget.position.z);
+        //
+        // if (Vector3.Distance(position2DIfied, targetPosition2DIfied) > Distance || 
+        //     Vector3.Distance(position2DIfied, targetPosition2DIfied) < Distance) 
+        //     AlignCameraWithTarget();
     }
 
     private void LateUpdate()
     {
-        Vector3 direction = (transform.position - CameraRotationTarget.position).normalized;
+        Vector3 direction = ((transform.localPosition + transform.parent.position) - CameraRotationTarget.position).normalized;
         float zoomValue = 0;
         if (Physics.Raycast(CameraRotationTarget.position, direction, out RaycastHit raycastHit,
-            Distance, LayerMask.GetMask("Default")))
+            Distance, LayerMask.GetMask("Default"), QueryTriggerInteraction.Ignore))
         {
             raycastHit.point -= direction.normalized / 2f;
             zoomValue = (-Vector3.Distance(transform.position, raycastHit.point) - 0.1f);
             _scrollZoomActivation = false;
         }
-        else if (!Physics.Raycast(CameraRotationTarget.position, direction, out RaycastHit hit, MaxDistance, 
-                 LayerMask.GetMask("Default")) && !_scrollZoomActivation)
+        else if (!Physics.Raycast(transform.position, direction, out RaycastHit hit, MaxDistance, 
+                 LayerMask.GetMask("Default"), QueryTriggerInteraction.Ignore) && !_scrollZoomActivation)
             zoomValue = 1f;
         
         if (_scrollingInput != 0)
@@ -148,6 +153,7 @@ public class CameraController : MonoBehaviour
         Distance += zoomAmount;
         MinElevation = _minElevationOrigin * Distance / 7;
         MaxElevation = _maxElevationOrigin * Distance / 7;
+        RotateCamera();
     }
 
     public void RotateCamera()
