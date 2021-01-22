@@ -45,7 +45,7 @@ public class CrimeSceneStateHandler : MonoBehaviour
 
     public static void ToggleQuestMarker(bool toggle)
     {
-        GameObject questMarker = GameObject.Find("QuestCanvas");
+        GameObject questMarker = FindObjectOfType<RotateQuestMarker>().gameObject;
         if (questMarker)
             questMarker.SetActive(toggle);
     }
