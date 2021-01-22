@@ -256,7 +256,7 @@ public class Cutscene : MonoBehaviour
                 player.Rigidbody.velocity = Vector3.zero;
 
             if (shouldPlayerBeEnabled)
-                player.PossessionSpeed = 10;
+                player.PossessionSpeed = 8;
         }
     }
 
