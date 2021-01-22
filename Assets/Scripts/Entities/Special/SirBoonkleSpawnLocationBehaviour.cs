@@ -24,7 +24,7 @@ public class SirBoonkleSpawnLocationBehaviour : MonoBehaviour
         }
         if (Index == 6 && GameObject.Find("SirBoonkle"))
         {
-            Cutscene.StartCutscene();
+            // Cutscene.StartCutscene();
         }
         else if (player && _sirBoonkleBehaviour)
         {
