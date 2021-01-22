@@ -1269,6 +1269,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52801747}
   m_Mesh: {fileID: 5769486934180388862, guid: c45983b298f1999409cd1779d558ee87, type: 3}
+--- !u!1 &54997425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 54997426}
+  - component: {fileID: 54997428}
+  - component: {fileID: 54997427}
+  m_Layer: 0
+  m_Name: RatOnStatueAchievementTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &54997426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54997425}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.639999, y: -31.78, z: -59.334457}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1718083005}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &54997427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54997425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7e7fda1c3068849bc6ccaaf8652386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &54997428
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54997425}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1201248, y: 1.1407175, z: 1.3710257}
+  m_Center: {x: 0.24723625, y: 0.041411877, z: 0.12735695}
 --- !u!1001 &55845239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9085,6 +9142,13 @@ MonoBehaviour:
     AudioSource: {fileID: 0}
   - Name: Levitate_bump
     AudioClip: {fileID: 8300000, guid: 7fc3c3e1df9c2c14ba44761a6500d84b, type: 3}
+    Volume: 0
+    ShouldLoop: 0
+    ShouldStartOnStart: 0
+    IsMusicVolume: 0
+    AudioSource: {fileID: 0}
+  - Name: Clue_pickup
+    AudioClip: {fileID: 8300000, guid: 4b9e0d1cbb7725747b73bfc165db29fb, type: 3}
     Volume: 0
     ShouldLoop: 0
     ShouldStartOnStart: 0
@@ -40165,6 +40229,7 @@ Transform:
   - {fileID: 2026885731}
   - {fileID: 1859071935}
   - {fileID: 928538977}
+  - {fileID: 54997426}
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

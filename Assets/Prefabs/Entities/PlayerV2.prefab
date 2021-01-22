@@ -793,7 +793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rigidbody: {fileID: 0}
   JumpForce: 7.1
-  PossessionSpeed: 10
+  PossessionSpeed: 8
   PathfindingSpeed: 0
   Collider: {fileID: 8658040402228577259}
   IsGrounded: 1
@@ -879,7 +879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levitationMoveSpeed: 250
-  _objectStartingDistance: 10
+  _objectStartingDistance: 12
   _objectStartingHeight: 8
 --- !u!114 &8658040402228577260
 MonoBehaviour:

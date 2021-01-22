@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Enums;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.UI;
 
 public class WorldSpaceClue : MonoBehaviour
@@ -16,7 +18,7 @@ public class WorldSpaceClue : MonoBehaviour
     private List<Clue> _listOfClues;
 
     private void Awake()
-    {      
+    {
         _listOfClues = Resources.LoadAll<Clue>("ScriptableObjects/Clues").ToList();
         
         if (SaveHandler.Instance.DoesPlayerHaveClue(ClueScriptableObject.Name))
@@ -66,7 +68,14 @@ public class WorldSpaceClue : MonoBehaviour
         {
             SaveHandler.Instance.SaveGameProperty("PlayerHasAllClues", "bool", true, "CrimeSceneQuest");
             GameManager.PlayerHasAllClues = true;
+            GameManager.ToggleQuestMarker = true;
         }
+        
+        //Add Steam Achievements
+        AchievementHandler.Instance.AwardAchievement(SteamAchievements.ACH_GOTCHA); //Only works first call.
+        SteamAchievements achievement = GetAchievementName();
+        AchievementHandler.Instance.AwardAchievement(achievement);
+        if(SaveHandler.Instance.GetSavedClueNames().Count >= 5) AchievementHandler.Instance.AwardAchievement(SteamAchievements.ACH_PRIVATE_DETECTIVE);
     }
 
     private bool DoesPlayerHaveAllCLues()
@@ -79,5 +88,24 @@ public class WorldSpaceClue : MonoBehaviour
         ClueText.text = ClueScriptableObject.Name;
         Description.text = ClueScriptableObject.Description;
         ClueImage.sprite = ClueScriptableObject.Image;
+    }
+
+    public SteamAchievements GetAchievementName()
+    {
+        switch (ClueScriptableObject.Name)
+        {
+            case "Broken flower pot":
+                return SteamAchievements.ACH_SOIL_DECORATION;
+            case "Bloody knife":
+                return SteamAchievements.ACH_BUTCHERING_BUSINESS;
+            case "Red fabric":
+                return SteamAchievements.ACH_SCRAPPED_OFF_THE_LIST;
+            case "Hard hat":
+                return SteamAchievements.ACH_UNDER_CONSTRUCTION;
+            case "Trash cake":
+                return SteamAchievements.ACH_PIECE_OF_CAKE;
+            default:
+                return SteamAchievements.NONE;
+        }
     }
 }

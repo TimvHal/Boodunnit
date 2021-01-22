@@ -148,6 +148,40 @@ namespace Entities
             }
         }
 
+        public void SetDialogueForEnding()
+        {
+            string path = "ScriptableObjects/Conversations/Ending/04_Goodbyes/";
+            string fileName = "GoodbyeDialogue";
+            CanTalkToBoolia = true;
+            switch (gameObject.name)
+            {
+                case "CrimeSceneEmmie Variant":
+                    Dialogue = Resources.Load<Dialogue>(path + "Emmie" + fileName);
+                    break;
+                case "Burt":
+                    Dialogue = Resources.Load<Dialogue>(path + "Burt" + fileName);
+                    break;
+                case "Bort":
+                    Dialogue = Resources.Load<Dialogue>(path + "Bort" + fileName);
+                    break;
+                case "Sally":
+                    Dialogue = Resources.Load<Dialogue>(path + "Sally" + fileName);
+                    break;
+                case "Annie":
+                    Dialogue = Resources.Load<Dialogue>(path + "Annie" + fileName);
+                    break;
+                case "BlackPoliceMan":
+                    Dialogue = Resources.Load<Dialogue>(path + "Marcus" + fileName);
+                    break;
+                case "Bird 2":
+                    Dialogue = Resources.Load<Dialogue>(path + "Bird" + fileName);
+                    break;
+                case "WhitePoliceWoman":
+                    Dialogue = Resources.Load<Dialogue>(path + "Dana" + fileName);
+                    break;
+            }
+        }
+
         protected virtual void CheckSurroundings(Transform raycastStartPosition)
         {
             if (HasFearCooldown || EmotionalState == EmotionalState.Fainted || IsPossessed || !FearEmpty) return;

@@ -1,3 +1,4 @@
+using Enums;
 using System;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace SceneTransition
 
         public void LeaveCemeteryScene()
         {
+            AchievementHandler.Instance.AwardAchievement(SteamAchievements.ACH_NOT_DEAD_YET);
             SceneTransitionHandler.Instance.GoToScene(SceneName ?? "MainMenu");
         }
 
