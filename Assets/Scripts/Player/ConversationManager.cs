@@ -108,15 +108,18 @@ public class ConversationManager : MonoBehaviour
                         GameManager.CursorIsLocked = false;
 
                     CheckWhichTypeOfConversationToExecute(dialogue, question, entityToTalkTo);
-                    
+
                     //Award achievement if cop talks to Vincent.
-                    PoliceManBehaviour policeMan = _currentPossedEntity.GetComponent<PoliceManBehaviour>();
-                    if (policeMan
-                        && entityToTalkTo.CharacterName == CharacterType.Vincent)
+                    if (_currentPossedEntity != null && _currentPossedEntity.CharacterName == CharacterType.PoliceMan)
                     {
-                        AchievementHandler.Instance.AwardAchievement(SteamAchievements.ACH_UNDER_ARREST);
+                        PoliceManBehaviour policeMan = _currentPossedEntity.GetComponent<PoliceManBehaviour>();
+                        if (policeMan
+                            && entityToTalkTo.CharacterName == CharacterType.Vincent)
+                        {
+                            AchievementHandler.Instance.AwardAchievement(SteamAchievements.ACH_UNDER_ARREST);
+                        }
                     }
-                    
+
                     break;
                 }
             }
