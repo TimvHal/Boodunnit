@@ -12,6 +12,7 @@ public class GameManager
 
     public static bool PlayerHasAllClues = false;
     public static bool PlayerIsInEndState = false;
+    public static bool ToggleQuestMarker = false;
     public static Collider CurrentHighlightedCollider { get; set; }
 
     private static bool _cursorIsLocked = true;
