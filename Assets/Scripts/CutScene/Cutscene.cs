@@ -251,7 +251,10 @@ public class Cutscene : MonoBehaviour
             player.enabled = shouldPlayerBeEnabled;
             player.Animator.SetBool("IsMoving", false);
             player.Animator.SetBool("IsDashing", false);
-            player.Rigidbody.velocity = Vector3.zero;
+
+            if (player.Rigidbody)
+                player.Rigidbody.velocity = Vector3.zero;
+
             if (shouldPlayerBeEnabled)
                 player.PossessionSpeed = 10;
         }
