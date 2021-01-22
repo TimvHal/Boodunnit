@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 53a92f80c898d6548a053e5ecbd69ed1
+guid: fdea7ed1fd2f8fd48ae65965416a338b
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.087
-    second: {fileID: 2100000, guid: a97d50b1c2d6e024f9af870519350702, type: 2}
+      name: Beuk_Blad
+    second: {fileID: 2100000, guid: ba2e6e10895ede149ba541a529c28c50, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Beuk_Stam
+    second: {fileID: 2100000, guid: 8d127c50bcad9b94da14877090b00d40, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -39,7 +44,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.2
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -50,7 +55,7 @@ ModelImporter:
     importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -90,7 +95,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.2
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

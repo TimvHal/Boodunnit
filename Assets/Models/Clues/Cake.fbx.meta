@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 53a92f80c898d6548a053e5ecbd69ed1
+guid: 0c37ef97e1eee9543acc95297c7ccc43
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
@@ -7,8 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.087
-    second: {fileID: 2100000, guid: a97d50b1c2d6e024f9af870519350702, type: 2}
+      name: Cream
+    second: {fileID: 2100000, guid: 861fece344523ff41a630b686fa76340, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: f35ffc5b39b64644a8b22c2214ac9d26, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: strawberry
+    second: {fileID: 2100000, guid: 86283012f03e3b246be1cac1e9bf19b3, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -50,7 +60,7 @@ ModelImporter:
     importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
