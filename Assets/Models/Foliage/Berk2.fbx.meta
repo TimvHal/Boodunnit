@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 53a92f80c898d6548a053e5ecbd69ed1
+guid: 249d6268ec1213a4db2da79adb3987d4
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.087
-    second: {fileID: 2100000, guid: a97d50b1c2d6e024f9af870519350702, type: 2}
+      name: Berk_Blad
+    second: {fileID: 2100000, guid: 059475d227a75d942b79f92a1f5f5147, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Berk_Stam
+    second: {fileID: 2100000, guid: 46e6eb36c906a994a9904ee4d8589312, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -36,10 +41,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.2
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -90,7 +95,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.002
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
