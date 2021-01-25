@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_BooliaShader
-  m_Shader: {fileID: -6465566751694194690, guid: 18f8a37376fb566489bf9486b0043389, type: 3}
+  m_Name: Water2
+  m_Shader: {fileID: -6465566751694194690, guid: d63d1600d908137448fcc15e7e27b4f6, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,11 +19,17 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_D3E5B934:
-        m_Texture: {fileID: 0}
+    - _Texture2DAsset_F1FD9CD7_Out_0:
+        m_Texture: {fileID: 2800000, guid: 6ca0e2836bfb4f84dbe0627412b03c87, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats: []
+    m_Floats:
+    - Vector1_8DFD8A1B: 1
+    - Vector1_8EB6C33E: 0
+    - Vector1_C8A47180: 0.5
     m_Colors:
-    - Color_E7FA6661: {r: 0, g: 0, b: 0, a: 0}
+    - Color_5B75C8BB: {r: 1, g: 1, b: 1, a: 0}
+    - Color_6BA3DEBD: {r: 0, g: 0.143079, b: 0.6981132, a: 0}
+    - Color_ECC43D1D: {r: 0.3726415, g: 1, b: 1, a: 0}
+    - Vector2_1C3ADBB1: {r: 0, g: 0.05, b: 0, a: 0}
   m_BuildTextureStacks: []
