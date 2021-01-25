@@ -16,6 +16,7 @@ MonoBehaviour:
   - {fileID: 5446570099215220073}
   - {fileID: 472823772222140287}
   - {fileID: 4645607626635536803}
+  - {fileID: 6630508357951985234}
 --- !u!114 &472823772222140287
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -32,12 +33,12 @@ MonoBehaviour:
   m_AdvancedMode: 0
   temperature:
     m_OverrideState: 1
-    m_Value: 19.2
+    m_Value: 39.7
     min: -100
     max: 100
   tint:
     m_OverrideState: 1
-    m_Value: 21.6
+    m_Value: 20.2
     min: -100
     max: 100
 --- !u!114 &4645607626635536803
@@ -55,7 +56,7 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   threshold:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.9
     min: 0
   intensity:
@@ -103,13 +104,13 @@ MonoBehaviour:
   m_AdvancedMode: 0
   shadows:
     m_OverrideState: 0
-    m_Value: {x: 1, y: 0.8144647, z: 0.5789219, w: 0}
+    m_Value: {x: 0.07476032, y: 1, z: 0.1786843, w: 0.1384083}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.9388077, z: 0.6457647, w: 0.015337655}
+    m_Value: {x: 0.7520242, y: 1, z: 0.92741394, w: 0.015337655}
   highlights:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.93277764, z: 0.95241225, w: 0.122699365}
+    m_Value: {x: 1, y: 0.91666687, z: 0, w: 0.114048846}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0
@@ -126,3 +127,26 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
     min: 0
+--- !u!114 &6630508357951985234
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5485954d14dfb9a4c8ead8edb0ded5b1, type: 3}
+  m_Name: LiftGammaGain
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  lift:
+    m_OverrideState: 0
+    m_Value: {x: 1, y: 1, z: 1, w: 0}
+  gamma:
+    m_OverrideState: 1
+    m_Value: {x: 0, y: 0.22519684, z: 1, w: 0}
+  gain:
+    m_OverrideState: 1
+    m_Value: {x: 0.8783554, y: 0.88583577, z: 1, w: 0}
