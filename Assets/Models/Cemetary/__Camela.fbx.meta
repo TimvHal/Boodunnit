@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c6f28dc14c31d7e42823ff61f75ef8a3
+guid: ba4a30e0fc606e24b868f140e814fd0c
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Grave_2_Texture
-    second: {fileID: 2100000, guid: 510a1a1083f7b204286d6c260f1ad0e6, type: 2}
+      name: Grave_Decalls
+    second: {fileID: 2100000, guid: 40ff86e6bddb9e44a8421d8d2bea91fd, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -50,7 +50,7 @@ ModelImporter:
     importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
