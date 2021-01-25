@@ -33,7 +33,8 @@ public abstract class BaseMovement : MonoBehaviour
     
     public void MoveEntityInDirection(Vector3 direction, float speed)
     {
-        if (_hasCollidedWithWall)
+        
+        if (false)
         {
             foreach (var contact in _contacts)
             {
@@ -93,6 +94,40 @@ public abstract class BaseMovement : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, 
                 Quaternion.LookRotation(direction.normalized), Time.deltaTime * _rotationSpeed);
         }
+        if (!IsGrounded)
+        {
+            if (MovementCheck(Rigidbody.velocity, true) && MovementCheck(Rigidbody.velocity, false)) 
+                Rigidbody.velocity = new Vector3(0, Rigidbody.velocity.y, 0); 
+        }
+    }
+    private bool MovementCheck(Vector3 velocity, bool positive, int angleChangedAmount = 0)
+    {
+        // Get the velocity
+        Vector3 horizontalMove = velocity;
+        // Don't use the vertical velocity
+        horizontalMove.y = 0;
+        // Calculate the approximate distance that will be traversed
+        float distance =  horizontalMove.magnitude * Time.fixedDeltaTime;
+        // Normalize horizontalMove since it should be used to indicate direction
+        horizontalMove.Normalize();
+        RaycastHit hit;
+
+        // Check if the body's current velocity will result in a collision
+        if (Rigidbody.SweepTest(horizontalMove, out hit, distance, QueryTriggerInteraction.Ignore))
+        {
+            if (Math.Abs(angleChangedAmount) < 90)
+            {
+                return MovementCheck(Quaternion.Euler(0, positive ? 1 : -1, 0) * velocity, positive, angleChangedAmount + 1);
+            }
+            return true;
+        }
+
+        float y = Rigidbody.velocity.y;
+        Vector3 newVel = velocity / (1 + (angleChangedAmount / 25f));
+        newVel.y = y;
+        Rigidbody.velocity = newVel;
+        return false;
+        
     }
 
     public virtual void MoveEntityInDirection(Vector3 direction)
