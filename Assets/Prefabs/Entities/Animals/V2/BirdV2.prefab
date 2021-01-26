@@ -94,6 +94,7 @@ MonoBehaviour:
   _fearRadius: 5
   _fearAngle: 90
   _ragdollController: {fileID: 0}
+  _glideSpeed: 6
 --- !u!114 &7888336112395919875
 MonoBehaviour:
   m_ObjectHideFlags: 0
