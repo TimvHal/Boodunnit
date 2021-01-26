@@ -9,6 +9,9 @@ public class BirdBehaviour : BaseEntity
     private GlideBehaviour _glideBehaviour;
     private Animator _animator;
 
+    [Header("Glide")]
+    [SerializeField] private float _glideSpeed;
+
     private void Awake()
     {
         InitBaseEntity();
@@ -26,6 +29,7 @@ public class BirdBehaviour : BaseEntity
             [CharacterType.PoliceMan] = 3f,
             [CharacterType.Villager] = 3f
         };
+        if (_glideSpeed == 0) _glideSpeed = PossessionSpeed / 1.5f;
     }
 
     private void LateUpdate()
@@ -42,7 +46,7 @@ public class BirdBehaviour : BaseEntity
     {
         if (_glideBehaviour.IsGliding && !IsGrounded)
         {
-            base.MoveEntityInDirection(direction, PossessionSpeed / 1.5f);
+            base.MoveEntityInDirection(direction, _glideSpeed);
             PlayAudioOnMovement(1);
         }
         else
