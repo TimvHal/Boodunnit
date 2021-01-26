@@ -6872,6 +6872,7 @@ GameObject:
   m_Component:
   - component: {fileID: 273829389}
   - component: {fileID: 273829390}
+  - component: {fileID: 273829391}
   m_Layer: 13
   m_Name: New Sprite
   m_TagString: Untagged
@@ -6887,7 +6888,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 273829388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.004, y: 2.857, z: -1.587}
+  m_LocalPosition: {x: -0.023, y: 2.781, z: -1.189}
   m_LocalScale: {x: 0.31742, y: 0.31742, z: 0.31742}
   m_Children: []
   m_Father: {fileID: 4542598694854682451}
@@ -6944,6 +6945,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &273829391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273829388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e813ed5017ead3947a56088c597c0a1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CameraTransform: {fileID: 0}
 --- !u!1001 &282022400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11817,6 +11831,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3140008231842352239, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.82726544
+      objectReference: {fileID: 0}
     - target: {fileID: 3196356778786734473, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
       propertyPath: m_Drag
       value: 10
@@ -11864,6 +11882,14 @@ PrefabInstance:
     - target: {fileID: 3538221693501181503, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
       propertyPath: WillLogPossessCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4011152260335877516, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4011152260516042734, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4719249922896133346, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
       propertyPath: m_Drag
@@ -11968,6 +11994,14 @@ PrefabInstance:
     - target: {fileID: 8411665549482126378, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
       propertyPath: WillLogPossessCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8799139850119131376, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8799139850165344914, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
@@ -46914,19 +46948,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c45983b298f1999409cd1779d558ee87, type: 3}
       propertyPath: m_RootOrder
-      value: 32
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c45983b298f1999409cd1779d558ee87, type: 3}
       propertyPath: m_LocalScale.x
-      value: 11.91809
+      value: 24.815847
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c45983b298f1999409cd1779d558ee87, type: 3}
       propertyPath: m_LocalScale.y
-      value: 11.91809
+      value: 12.185078
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c45983b298f1999409cd1779d558ee87, type: 3}
       propertyPath: m_LocalScale.z
-      value: 11.91809
+      value: 24.815847
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c45983b298f1999409cd1779d558ee87, type: 3}
       propertyPath: m_LocalPosition.x
@@ -61725,8 +61759,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1eea1a28fb825524aad19323b0442919, type: 2}
-  - {fileID: 2100000, guid: 1eea1a28fb825524aad19323b0442919, type: 2}
+  - {fileID: 2100000, guid: d4e8f4365e90e6a4fad49209d73a5846, type: 2}
+  - {fileID: 2100000, guid: 481f41d2a46c6794e880ee8968cbb2e3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
