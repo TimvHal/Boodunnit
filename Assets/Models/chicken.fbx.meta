@@ -3,7 +3,17 @@ guid: 5a40bdc35d5d63d499391bca4bb501d7
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: meat.019
+    second: {fileID: 2100000, guid: ff41decf8af588b4689359a360b29f67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stick.019
+    second: {fileID: 2100000, guid: 861fece344523ff41a630b686fa76340, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
