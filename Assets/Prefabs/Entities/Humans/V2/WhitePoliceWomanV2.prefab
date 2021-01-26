@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rigidbody: {fileID: 0}
   JumpForce: 10
-  PossessionSpeed: 6
+  PossessionSpeed: 5.5
   PathfindingSpeed: 4
   Collider: {fileID: 0}
   IsGrounded: 0

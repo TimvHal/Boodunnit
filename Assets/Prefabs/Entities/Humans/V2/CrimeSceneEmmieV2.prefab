@@ -24,6 +24,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 532012604440946208, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+      propertyPath: PossessionSpeed
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 532012604440946208, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
+      propertyPath: PathfindingSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 532012604440946208, guid: 77bb95aaabec99645882353de5b912e0, type: 3}
       propertyPath: Relationships.Array.size
       value: 1
       objectReference: {fileID: 0}

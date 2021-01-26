@@ -807,7 +807,7 @@ MonoBehaviour:
   ConversationRadius: 5
   LeviatateRadius: 12
   PossesionRadius: 5
-  ClueRadius: 5
+  ClueRadius: 1
   AirVentRadius: 20
   ClimableRadius: 20
   DashRadius: 10
@@ -880,7 +880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levitationMoveSpeed: 250
   _objectStartingDistance: 12
-  _objectStartingHeight: 8
+  _objectStartingHeight: 12
 --- !u!114 &8658040402228577260
 MonoBehaviour:
   m_ObjectHideFlags: 0
