@@ -20609,35 +20609,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1273058107644286839, guid: c5beabe590a741847968f0360b846844, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.7
+      value: -3.31
       objectReference: {fileID: 0}
     - target: {fileID: 1273058107644286839, guid: c5beabe590a741847968f0360b846844, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: -3.01
       objectReference: {fileID: 0}
     - target: {fileID: 1273058107644286839, guid: c5beabe590a741847968f0360b846844, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.95
+      value: -5.33
       objectReference: {fileID: 0}
     - target: {fileID: 1273058107644286839, guid: c5beabe590a741847968f0360b846844, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.22594975
+      value: 0.8196523
       objectReference: {fileID: 0}
     - target: {fileID: 1273058107644286839, guid: c5beabe590a741847968f0360b846844, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1273058107644286839, guid: c5beabe590a741847968f0360b846844, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.974139
+      value: -0.5728614
       objectReference: {fileID: 0}
     - target: {fileID: 1273058107644286839, guid: c5beabe590a741847968f0360b846844, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1273058107644286839, guid: c5beabe590a741847968f0360b846844, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -153.883
+      value: -69.9
       objectReference: {fileID: 0}
     - target: {fileID: 1564115569639276235, guid: c5beabe590a741847968f0360b846844, type: 3}
       propertyPath: m_Name
@@ -20645,7 +20645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1564115569639276236, guid: c5beabe590a741847968f0360b846844, type: 3}
       propertyPath: m_Size.x
-      value: 6.090187
+      value: 7.66
       objectReference: {fileID: 0}
     - target: {fileID: 1564115569639276236, guid: c5beabe590a741847968f0360b846844, type: 3}
       propertyPath: m_Size.y
@@ -20653,7 +20653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1564115569639276236, guid: c5beabe590a741847968f0360b846844, type: 3}
       propertyPath: m_Size.z
-      value: 5.525036
+      value: 9.42
       objectReference: {fileID: 0}
     - target: {fileID: 1564115569639276236, guid: c5beabe590a741847968f0360b846844, type: 3}
       propertyPath: m_Center.x
@@ -20669,7 +20669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1564115569639276237, guid: c5beabe590a741847968f0360b846844, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9
+      value: 2.48
       objectReference: {fileID: 0}
     - target: {fileID: 1564115569639276237, guid: c5beabe590a741847968f0360b846844, type: 3}
       propertyPath: m_LocalPosition.y
@@ -20677,7 +20677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1564115569639276237, guid: c5beabe590a741847968f0360b846844, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 114.78
+      value: 116.65
       objectReference: {fileID: 0}
     - target: {fileID: 1564115569639276237, guid: c5beabe590a741847968f0360b846844, type: 3}
       propertyPath: m_LocalRotation.w
@@ -20714,7 +20714,7 @@ PrefabInstance:
     - target: {fileID: 1564115569639276238, guid: c5beabe590a741847968f0360b846844, type: 3}
       propertyPath: Cutscene
       value: 
-      objectReference: {fileID: 874127749}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5beabe590a741847968f0360b846844, type: 3}
 --- !u!1 &827243533 stripped
@@ -21691,155 +21691,6 @@ CapsuleCollider:
   m_Height: 0.05
   m_Direction: 2
   m_Center: {x: -0.01, y: 0.0025, z: -0.01}
---- !u!1 &874127746 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1564115569639276235, guid: c5beabe590a741847968f0360b846844, type: 3}
-  m_PrefabInstance: {fileID: 821267148}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &874127748 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1564115569639276238, guid: c5beabe590a741847968f0360b846844, type: 3}
-  m_PrefabInstance: {fileID: 821267148}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874127746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c2fe807f623fec4da61db669288aaaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &874127749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874127746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f941876dc4cf1049b7ac848fe645614, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StartCutsceneOnAwake: 0
-  ActionsInCutscene:
-  - ActionType: 6
-    ObjectForCutscene: {fileID: 0}
-    EndPosition: {x: 0, y: 0, z: 0}
-    EndRotation: {x: 0, y: 0, z: 0}
-    EndScale: {x: 0, y: 0, z: 0}
-    TransitionSpeed: 0
-    IsInstant: 0
-    ShouldBeKinematic: 0
-    IsExecuting: 0
-    TimeBeforeNextAction: 0
-    Popup: {fileID: 0}
-    Dialogue: {fileID: 0}
-    Question: {fileID: 0}
-    ConversationManager: {fileID: 0}
-    TargetToTalkTo: {fileID: 0}
-    targetIsPlayer: 0
-    MethodToCallFromScript:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 874127748}
-          m_TargetAssemblyTypeName: SirBoonkleSpawnLocationBehaviour, Assembly-CSharp
-          m_MethodName: SpawnBoonkleOnNewLocation
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - ActionType: 4
-    ObjectForCutscene: {fileID: 907654326}
-    EndPosition: {x: 0, y: 0, z: 0}
-    EndRotation: {x: 0, y: 0, z: 0}
-    EndScale: {x: 0, y: 0, z: 0}
-    TransitionSpeed: 0
-    IsInstant: 0
-    ShouldBeKinematic: 0
-    IsExecuting: 0
-    TimeBeforeNextAction: 0
-    Popup: {fileID: 0}
-    Dialogue: {fileID: 11400000, guid: 3d109ec46bb9e1c44aa581507f211430, type: 2}
-    Question: {fileID: 0}
-    ConversationManager: {fileID: 0}
-    TargetToTalkTo: {fileID: 0}
-    targetIsPlayer: 0
-    MethodToCallFromScript:
-      m_PersistentCalls:
-        m_Calls: []
-  - ActionType: 1
-    ObjectForCutscene: {fileID: 983749691}
-    EndPosition: {x: 0, y: 0, z: 0}
-    EndRotation: {x: 0, y: 90, z: 0}
-    EndScale: {x: 0, y: 0, z: 0}
-    TransitionSpeed: 2
-    IsInstant: 0
-    ShouldBeKinematic: 0
-    IsExecuting: 0
-    TimeBeforeNextAction: 0
-    Popup: {fileID: 0}
-    Dialogue: {fileID: 0}
-    Question: {fileID: 0}
-    ConversationManager: {fileID: 0}
-    TargetToTalkTo: {fileID: 0}
-    targetIsPlayer: 0
-    MethodToCallFromScript:
-      m_PersistentCalls:
-        m_Calls: []
-  - ActionType: 0
-    ObjectForCutscene: {fileID: 983749691}
-    EndPosition: {x: -3.24, y: 0.67, z: 63.41}
-    EndRotation: {x: 0, y: 0, z: 0}
-    EndScale: {x: 0, y: 0, z: 0}
-    TransitionSpeed: 2
-    IsInstant: 0
-    ShouldBeKinematic: 0
-    IsExecuting: 0
-    TimeBeforeNextAction: 0
-    Popup: {fileID: 0}
-    Dialogue: {fileID: 0}
-    Question: {fileID: 0}
-    ConversationManager: {fileID: 0}
-    TargetToTalkTo: {fileID: 0}
-    targetIsPlayer: 0
-    MethodToCallFromScript:
-      m_PersistentCalls:
-        m_Calls: []
-  - ActionType: 6
-    ObjectForCutscene: {fileID: 0}
-    EndPosition: {x: 0, y: 0, z: 0}
-    EndRotation: {x: 0, y: 0, z: 0}
-    EndScale: {x: 0, y: 0, z: 0}
-    TransitionSpeed: 0
-    IsInstant: 0
-    ShouldBeKinematic: 0
-    IsExecuting: 0
-    TimeBeforeNextAction: 0
-    Popup: {fileID: 0}
-    Dialogue: {fileID: 0}
-    Question: {fileID: 0}
-    ConversationManager: {fileID: 0}
-    TargetToTalkTo: {fileID: 0}
-    targetIsPlayer: 0
-    MethodToCallFromScript:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 874127748}
-          m_TargetAssemblyTypeName: SirBoonkleSpawnLocationBehaviour, Assembly-CSharp
-          m_MethodName: DespawnBoonkle
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1001 &875578386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24283,11 +24134,6 @@ Terrain:
   m_GroupingID: 0
   m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
---- !u!1 &983749691 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4802291010820939075, guid: 8f8cd4d2a6ee9464196894779516d82a, type: 3}
-  m_PrefabInstance: {fileID: 1241626995}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &983883956
 PrefabInstance:
   m_ObjectHideFlags: 0
