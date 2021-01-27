@@ -24,7 +24,9 @@ public abstract class BaseMovement : MonoBehaviour
     private float _rotationSpeed = 10f;
     private bool _hasCollidedWithWall;
     private ContactPoint[] _contacts;
-    [SerializeField] private Vector3 bottomHitPoint = Vector3.zero; 
+    [SerializeField] private Vector3 bottomHitPoint = Vector3.zero;
+
+    public Collider GroundCollider;
 
     protected void InitBaseMovement()
     {
@@ -33,47 +35,6 @@ public abstract class BaseMovement : MonoBehaviour
     
     public void MoveEntityInDirection(Vector3 direction, float speed)
     {
-        
-        if (false)
-        {
-            foreach (var contact in _contacts)
-            {
-                Vector3 contactDirection = (contact.point - transform.position);
-                
-                bool raycast = Physics.Raycast(transform.position, contactDirection, out RaycastHit hit,
-                    Vector3.Distance(transform.position, contact.point) + 0.2f, 
-                    ~LayerMask.GetMask("Player", "PlayerDash", "Possessable"));
-                  if (raycast)
-                  {
-                      if (
-                          (hit.normal.y > 0.75f || hit.normal.y < 0) &&
-                          (contact.point.y < transform.position.y - Collider.bounds.size.y / 2
-                           || contact.point.y > transform.position.y + Collider.bounds.size.y / 2)
-                      ) continue;
-                      
-                    float contactAngle = Vector3.Angle(IgnoreY(direction), IgnoreY(contactDirection));
-                    Vector3 contactCross = Vector3.Cross(IgnoreY(direction), IgnoreY(contactDirection));
-
-                    if (contactCross.y < 0) contactAngle = -contactAngle;
-                    
-                    
-                    if (Math.Abs(contactAngle) > 10 && Math.Abs(contactAngle) <= 90)
-                    {
-                        float angle = contactAngle > 0 ? 90 : contactAngle < 0 ? -90 : 0;
-                        direction = Quaternion.Euler(0, angle, 0) * hit.normal * (Math.Abs(contactAngle)/90);
-                        direction.y = 0;
-                    }    
-                    else if (Math.Abs(contactAngle) > 90)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        direction = Vector3.zero;
-                    }
-                }
-            }
-        }
         float yVelocity = 0;
         if (IsGrounded && 
             Physics.Raycast(transform.position, -transform.up, out RaycastHit castHit, Collider.bounds.size.y/2 + Mathf.Abs(Collider.bounds.center.y) + 0.1f, 
@@ -181,6 +142,7 @@ public abstract class BaseMovement : MonoBehaviour
 
             IsGrounded = true;
             IsJumping = false;
+            GroundCollider = other;
         }
     }
 
@@ -194,6 +156,7 @@ public abstract class BaseMovement : MonoBehaviour
             }
 
             IsGrounded = true;
+            GroundCollider = other;
         }
     }
 
@@ -207,6 +170,7 @@ public abstract class BaseMovement : MonoBehaviour
             }
 
             IsGrounded = false;
+            GroundCollider = null;
         }
     }
 
