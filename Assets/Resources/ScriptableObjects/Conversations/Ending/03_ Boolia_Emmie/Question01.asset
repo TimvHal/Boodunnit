@@ -22,7 +22,7 @@ MonoBehaviour:
     ClueToUnlock: {fileID: 0}
   - Text: That was a stupid thing to do.
     CharacterUnlocksChoice: 
-    Dialogue: {fileID: 11400000, guid: 993813ffc006a2942afc545f2416b300, type: 2}
+    Dialogue: {fileID: 11400000, guid: 0aabff97f72cf5a4d98cc4ff4c53c016, type: 2}
     Question: {fileID: 0}
     ChoiceIndexToHide: 0
     ClueToUnlock: {fileID: 0}
