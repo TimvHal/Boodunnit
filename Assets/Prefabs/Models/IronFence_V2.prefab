@@ -89,7 +89,6 @@ GameObject:
   - component: {fileID: 8615044966564954333}
   - component: {fileID: 8615044966564954330}
   - component: {fileID: 8615044966564954331}
-  - component: {fileID: 8615044966564954332}
   m_Layer: 13
   m_Name: Fence_Broken (1)
   m_TagString: Untagged
@@ -160,20 +159,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8615044966564954332
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8615044966564954334}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &8615044966704706783
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +200,6 @@ GameObject:
   - component: {fileID: 8615044967806891860}
   - component: {fileID: 8615044967806891857}
   - component: {fileID: 8615044967806891858}
-  - component: {fileID: 8615044967806891859}
   m_Layer: 13
   m_Name: Fence_Broken
   m_TagString: Untagged
@@ -286,20 +270,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8615044967806891859
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8615044967806891861}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &8615044966224440172
 PrefabInstance:
   m_ObjectHideFlags: 0
