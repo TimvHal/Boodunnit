@@ -210,6 +210,7 @@ public class PlayerBehaviour : BaseMovement
 
     private void HandleLevitationInput()
     {
+        if (GameManager.IsCutscenePlaying) return;
         LevitateBehaviour.CurrentLevitateableObjects = LevitateBehaviour.FindLevitateableObjectsInFrontOfPlayer();
         LevitateBehaviour.SetCurrentHighlightedObject(HighlightBehaviour.HighlightGameobject(_highlightRadiuses));
         if (Input.GetMouseButtonDown(0)) LevitateBehaviour.LevitationStateHandler();

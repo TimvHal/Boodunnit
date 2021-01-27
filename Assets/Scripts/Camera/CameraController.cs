@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -61,11 +62,16 @@ public class CameraController : MonoBehaviour
     private void Awake()
     {
         _pointToSlerpTo = transform.position;
-        _angle = CameraRotationTarget.rotation.eulerAngles.y + 180;
         Distance = MaxDistance;
         _minElevationOrigin = MinElevation;
         _maxElevationOrigin = MaxElevation;
         RotateCamera();
+    }
+
+    private void Start()
+    {
+        if (!GameManager.IsCutscenePlaying)
+            _angle = CameraRotationTarget.rotation.eulerAngles.y + 180;
     }
 
     private void Update()
@@ -77,7 +83,7 @@ public class CameraController : MonoBehaviour
         if (GameManager.CursorIsLocked)
         {
             _rotationInput.x = Input.GetAxisRaw("Mouse X");
-            _rotationInput.y = -Input.GetAxisRaw("Mouse Y");
+            _rotationInput.y = -GetYInput();
             _scrollingInput = -Input.GetAxisRaw("Mouse ScrollWheel");
         }
         else
@@ -85,15 +91,10 @@ public class CameraController : MonoBehaviour
             _rotationInput = Vector2.zero;
             _scrollingInput = 0;
         }
-
         float angleOffset = 0;
         _pointToSlerpTo.y = ElevationRange;
 
-        transform.localPosition = Vector3.Slerp(
-            transform.localPosition, 
-            _pointToSlerpTo,
-            Time.deltaTime * 5
-            );
+        transform.localPosition = _pointToSlerpTo;
         transform.LookAt(transform.parent);
 
         if (_rotationInput.x != 0)
@@ -121,7 +122,8 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
-        Vector3 direction = ((transform.localPosition + transform.parent.position) - CameraRotationTarget.position).normalized;
+        Vector3 direction = ((transform.localPosition + transform.parent.position) - CameraRotationTarget.position)
+            .normalized;
         float zoomValue = 0;
         if (Physics.Raycast(CameraRotationTarget.position, direction, out RaycastHit raycastHit,
             Distance, LayerMask.GetMask("Default"), QueryTriggerInteraction.Ignore))
@@ -130,19 +132,31 @@ public class CameraController : MonoBehaviour
             zoomValue = (-Vector3.Distance(transform.position, raycastHit.point) - 0.1f);
             _scrollZoomActivation = false;
         }
-        else if (!Physics.Raycast(transform.position, direction, out RaycastHit hit, MaxDistance, 
-                 LayerMask.GetMask("Default"), QueryTriggerInteraction.Ignore) && !_scrollZoomActivation)
+        else if (!Physics.Raycast(transform.position, direction, out RaycastHit hit, MaxDistance,
+            LayerMask.GetMask("Default"), QueryTriggerInteraction.Ignore) && !_scrollZoomActivation)
             zoomValue = 1f;
-        
+
         if (_scrollingInput != 0)
         {
             _scrollZoomActivation = true;
             zoomValue = _scrollingInput * 3;
         }
-        
+        BaseMovement playerMovement = CameraRotationTarget.GetComponent<BaseMovement>();
+        if (playerMovement.IsGrounded && playerMovement.GroundCollider)
+        {
+            if (playerMovement.Collider.bounds.Contains(transform.position))
+            {
+                zoomValue = -1f;
+                float middleElevation = (MinElevation + MaxElevation) / 2;
+                if (_distance <= MinDistance)
+                {
+                    ElevationRange += _elevationRange + _elevationRange > middleElevation ? -0.1f : 0.1f;
+                }
+            }
+        }
         ScrollZoom(zoomValue);
     }
-
+    
     private void AlignCameraWithTarget()
     {
         RotateCamera();
@@ -175,5 +189,12 @@ public class CameraController : MonoBehaviour
         float newX = circlePosition.x + (radius * Mathf.Sin(angle));
         float newZ = circlePosition.z + (radius * Mathf.Cos(angle));
         return new Vector3(newX, circlePosition.y, newZ);
+    }
+
+    public float GetYInput()
+    {
+        float result = Input.GetAxis("Mouse Y");
+        if (Mathf.Abs(result) < 0.5) result = 0;
+        return result;
     }
 }
