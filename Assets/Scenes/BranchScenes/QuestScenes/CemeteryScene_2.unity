@@ -4833,7 +4833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 3
+  outlineMode: 1
   outlineColor: {r: 0.98039216, g: 0.7411765, b: 0.38039216, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
@@ -10946,7 +10946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5586861110341491549, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
       propertyPath: m_RootOrder
-      value: 32
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 5586861110341491549, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
       propertyPath: m_LocalScale.x
@@ -16238,7 +16238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 3
+  outlineMode: 1
   outlineColor: {r: 0.98039216, g: 0.7411765, b: 0.38039216, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
@@ -31528,7 +31528,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f18004c3900485344911e922b6371566, type: 3}
       propertyPath: m_RootOrder
-      value: 33
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f18004c3900485344911e922b6371566, type: 3}
       propertyPath: m_LocalScale.x
