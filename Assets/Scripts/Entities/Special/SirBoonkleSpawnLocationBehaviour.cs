@@ -6,7 +6,6 @@ public class SirBoonkleSpawnLocationBehaviour : MonoBehaviour
 {
     public Transform Spawnpoint;
     public int Index;
-    public Cutscene Cutscene;
 
     private SirBoonkleBehaviour _sirBoonkleBehaviour;
 
@@ -22,11 +21,8 @@ public class SirBoonkleSpawnLocationBehaviour : MonoBehaviour
         {
             _sirBoonkleBehaviour = GameObject.Find("SirBoonkle").GetComponentInChildren<SirBoonkleBehaviour>();
         }
-        if (Index == 6 && GameObject.Find("SirBoonkle"))
-        {
-            // Cutscene.StartCutscene();
-        }
-        else if (player && _sirBoonkleBehaviour)
+        
+        if (player && _sirBoonkleBehaviour)
         {
             _sirBoonkleBehaviour.SpawnToNewLocation(Spawnpoint, Index);
         }
