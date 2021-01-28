@@ -37058,6 +37058,10 @@ PrefabInstance:
       propertyPath: _mainCamera
       value: 
       objectReference: {fileID: 401040155}
+    - target: {fileID: 8658040402228577262, guid: a1f7abed19c66a442918c5fa0806c600, type: 3}
+      propertyPath: IgnoredLayerMasks.m_Bits
+      value: 1028
+      objectReference: {fileID: 0}
     - target: {fileID: 8658040402228577266, guid: a1f7abed19c66a442918c5fa0806c600, type: 3}
       propertyPath: m_Name
       value: PlayerV2

@@ -191,9 +191,8 @@ public class HighlightBehaviour : MonoBehaviour
         {
             RaycastHit hit;
             Vector3 direction = (_currentCollider.transform.position - transform.position).normalized;
-            Debug.DrawRay(transform.position, direction);
 
-            if (Physics.Raycast(transform.position, direction, out hit, 200, ~IgnoredLayerMasks))
+            if (Physics.Raycast(transform.position, direction, out hit, 200, ~IgnoredLayerMasks, QueryTriggerInteraction.Ignore))
             {
                 return hit.collider.name == _currentCollider.name;
             }
