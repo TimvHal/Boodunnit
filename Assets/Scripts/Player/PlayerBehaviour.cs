@@ -60,7 +60,6 @@ public class PlayerBehaviour : BaseMovement
         GameManager.CurrentHighlightedCollider = HighlightedObject;
 
         PickUpClue(HighlightedObject);
-        StartEndingWithEmmie(HighlightedObject);
         PlayerAnimation();
 
         //Pause game behaviour
@@ -109,7 +108,17 @@ public class PlayerBehaviour : BaseMovement
                 !DashBehaviour.IsDashing && 
                 !LevitateBehaviour.IsLevitating)
             {
-                ConversationManager.TriggerConversation(PossessionBehaviour.IsPossessing);
+                EmmieBehaviour emmie = HighlightedObject.gameObject.GetComponent<EmmieBehaviour>();
+                if (emmie && !PossessionBehaviour.IsPossessing)
+                {
+                    if (GameManager.PlayerHasAllClues && !GameManager.PlayerIsInEndState)
+                    {
+                        StartEndingWithEmmie();
+                        return;
+                    }
+
+                }
+                    ConversationManager.TriggerConversation(PossessionBehaviour.IsPossessing);
 
                 if (ConversationManager.ConversationTarget?.gameObject == _emmie.gameObject) _emmie.TalkWithBoolia();
             }
@@ -229,29 +238,19 @@ public class PlayerBehaviour : BaseMovement
         }
     }
 
-    private void StartEndingWithEmmie(Collider HighlightedObject)
+    private void StartEndingWithEmmie()
     {
-        if (!HighlightedObject)
-            return;
-
-        EmmieBehaviour emmie = HighlightedObject.GetComponent<EmmieBehaviour>();
-        if (emmie)
+        FadeInAndOut fade = GameObject.Find("FadeInOutCanvas").GetComponent<FadeInAndOut>();
+        if (fade)
         {
-            if (GameManager.PlayerHasAllClues && !GameManager.PlayerIsInEndState)
-            {
-                FadeInAndOut fade = GameObject.Find("FadeInOutCanvas").GetComponent<FadeInAndOut>();
-                if (fade)
-                {
-                    fade.FadeIn(1);
-                    PrepareForEnding();
-                }
+            fade.FadeIn(1);
+            PrepareForEnding();
+        }
 
-                Cutscene endCutscene = GameObject.Find("EndCutscene").GetComponent<Cutscene>();
-                if (endCutscene)
-                {
-                    endCutscene.StartCutscene();
-                }
-            }
+        Cutscene endCutscene = GameObject.Find("EndCutscene").GetComponent<Cutscene>();
+        if (endCutscene)
+        {
+            endCutscene.StartCutscene();
         }
     }
 
