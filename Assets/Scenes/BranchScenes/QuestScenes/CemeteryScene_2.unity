@@ -10876,6 +10876,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 326868937}
     m_Modifications:
+    - target: {fileID: 2078272213467212560, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
+      propertyPath: WillLogPossessCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2078272213467212567, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
       propertyPath: m_Drag
       value: 10
@@ -10908,6 +10912,14 @@ PrefabInstance:
       propertyPath: m_AngularDrag
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3196356778786734474, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
+      propertyPath: WillLogPossessCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434164311693222960, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
+      propertyPath: WillLogPossessCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3434164311693222967, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
       propertyPath: m_Drag
       value: 10
@@ -10932,6 +10944,10 @@ PrefabInstance:
       propertyPath: m_AngularDrag
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3538221693501181503, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
+      propertyPath: WillLogPossessCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4719249922896133346, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
       propertyPath: m_Drag
       value: 10
@@ -10943,6 +10959,10 @@ PrefabInstance:
     - target: {fileID: 4719249922896133346, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
       propertyPath: m_AngularDrag
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719249922896133347, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
+      propertyPath: WillLogPossessCount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5586861110341491549, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
       propertyPath: m_RootOrder
@@ -11027,6 +11047,10 @@ PrefabInstance:
     - target: {fileID: 8411665549482126377, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
       propertyPath: m_AngularDrag
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411665549482126378, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
+      propertyPath: WillLogPossessCount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e0e33a7146f8a440bb6a8209d79ed20, type: 3}
@@ -38481,7 +38505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: SewerRetry
-  LoggingTypes: 
+  LoggingTypes: 05000000
   hasLogged: 0
 --- !u!65 &1681400883
 BoxCollider:
@@ -48112,8 +48136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7689588c37ad2784fa2773328828831f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
-  LoggingTypes: 
+  Name: SewerGate
+  LoggingTypes: 05000000
   hasLogged: 0
 --- !u!1 &1886432209
 GameObject:
@@ -49777,7 +49801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Return to town
-  LoggingTypes: 
+  LoggingTypes: 05000000
   hasLogged: 0
 --- !u!65 &1932765267
 BoxCollider:
@@ -52643,7 +52667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Hard Hat Area
-  LoggingTypes: 
+  LoggingTypes: 05000000
   hasLogged: 0
 --- !u!1001 &2047354640
 PrefabInstance:
