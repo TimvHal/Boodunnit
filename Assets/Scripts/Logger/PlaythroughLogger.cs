@@ -41,7 +41,7 @@ public class PlaythroughLogger : MonoBehaviour
 
     public void WriteLogThenQuit()
     {
-        if (Application.isEditor) Application.Quit();
+        if (Application.isEditor || Playthrough.Instance.Scenes.Count <= 0) Application.Quit();
         Playthrough.Instance.GameEndTime = DateTime.UtcNow;
         Playthrough.Instance.Platform = Application.platform.ToString();
         File.WriteAllText($"{Application.dataPath}/{Playthrough.Instance.GUID}.json",
