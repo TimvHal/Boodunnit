@@ -96,6 +96,7 @@ public class PlayerBehaviour : BaseMovement
             {
                 if (!DashBehaviour.IsDashing && !ConversationManager.HasConversationStarted && !LevitateBehaviour.IsLevitating && HighlightedObject && HighlightedObject.GetComponent<IPossessable>() != null && HighlightBehaviour.CheckForWall())
                 {
+                    print(HighlightedObject);
                     PossessionBehaviour.PossessTarget(HighlightedObject);
                 }
             }
@@ -108,19 +109,22 @@ public class PlayerBehaviour : BaseMovement
                 !DashBehaviour.IsDashing && 
                 !LevitateBehaviour.IsLevitating)
             {
-                EmmieBehaviour emmie = HighlightedObject.gameObject.GetComponent<EmmieBehaviour>();
-                if (emmie && !PossessionBehaviour.IsPossessing)
+                if (HighlightedObject)
                 {
-                    if (GameManager.PlayerHasAllClues && !GameManager.PlayerIsInEndState)
+                    EmmieBehaviour emmie = HighlightedObject.gameObject.GetComponent<EmmieBehaviour>();
+                    if (emmie && !PossessionBehaviour.IsPossessing)
                     {
-                        StartEndingWithEmmie();
-                        return;
-                    }
+                        if (GameManager.PlayerHasAllClues && !GameManager.PlayerIsInEndState)
+                        {
+                            StartEndingWithEmmie();
+                            return;
+                        }
 
+                    }
                 }
                     ConversationManager.TriggerConversation(PossessionBehaviour.IsPossessing);
 
-                if (ConversationManager.ConversationTarget?.gameObject == _emmie.gameObject) _emmie.TalkWithBoolia();
+                if (ConversationManager.ConversationTarget != null && ConversationManager.ConversationTarget?.gameObject == _emmie.gameObject) _emmie.TalkWithBoolia();
             }
         }
 
