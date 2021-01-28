@@ -59,6 +59,9 @@ public class PlayerBehaviour : BaseMovement
         Collider HighlightedObject = HighlightBehaviour.HighlightGameobject(_highlightRadiuses);
         GameManager.CurrentHighlightedCollider = HighlightedObject;
 
+        print(HighlightedObject);
+
+
         PickUpClue(HighlightedObject);
         StartEndingWithEmmie(HighlightedObject);
         PlayerAnimation();
@@ -97,6 +100,7 @@ public class PlayerBehaviour : BaseMovement
             {
                 if (!DashBehaviour.IsDashing && !ConversationManager.HasConversationStarted && !LevitateBehaviour.IsLevitating && HighlightedObject && HighlightedObject.GetComponent<IPossessable>() != null && HighlightBehaviour.CheckForWall())
                 {
+                    print(HighlightedObject);
                     PossessionBehaviour.PossessTarget(HighlightedObject);
                 }
             }
