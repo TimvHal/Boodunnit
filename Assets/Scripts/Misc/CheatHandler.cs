@@ -15,12 +15,6 @@ public class CheatHandler : MonoBehaviour
     public static GameObject Player = FindObjectOfType<PlayerBehaviour>().gameObject;
     public static PossessionBehaviour PossessionBehaviour = Player.GetComponent<PossessionBehaviour>();
 
-    public static void AddSelectedClue()
-    {
-        //check what clue is selected 
-        //Addclue
-    }
-
     public static void TeleportToEndOfLevel()
     {
         if (!Player || !PossessionBehaviour)

@@ -64,12 +64,7 @@ public class WorldSpaceClue : MonoBehaviour
         SoundManager.Instance.PlaySound("Clue_pickup");
         gameObject.SetActive(false);
 
-        if (DoesPlayerHaveAllCLues())
-        {
-            SaveHandler.Instance.SaveGameProperty("PlayerHasAllClues", "bool", true, "CrimeSceneQuest");
-            GameManager.PlayerHasAllClues = true;
-            GameManager.ToggleQuestMarker = true;
-        }
+        CheckForAllClues();
         
         //Add Steam Achievements
         AchievementHandler.Instance.AwardAchievement(SteamAchievements.ACH_GOTCHA); //Only works first call.
@@ -78,11 +73,21 @@ public class WorldSpaceClue : MonoBehaviour
         if(SaveHandler.Instance.GetSavedClueNames().Count >= 5) AchievementHandler.Instance.AwardAchievement(SteamAchievements.ACH_PRIVATE_DETECTIVE);
     }
 
-    private bool DoesPlayerHaveAllCLues()
+    public bool DoesPlayerHaveAllCLues()
     {
         return _listOfClues.All(clue => SaveHandler.Instance.DoesPlayerHaveClue(clue.Name));
     }
 
+    public void CheckForAllClues()
+    {
+        if (DoesPlayerHaveAllCLues())
+        {
+            SaveHandler.Instance.SaveGameProperty("PlayerHasAllClues", "bool", true, "CrimeSceneQuest");
+            GameManager.PlayerHasAllClues = true;
+            GameManager.ToggleQuestMarker = true;
+        }
+    }
+    
     public void SetClueInPopup()
     {
         ClueText.text = ClueScriptableObject.Name;

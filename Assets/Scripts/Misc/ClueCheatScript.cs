@@ -9,10 +9,19 @@ public class ClueCheatScript : MonoBehaviour, IPointerDownHandler
 {
     public Clue ClueScriptableObject;
     private PauseMenu _pauseMenu;
+    private List<string> _clueNames;
 
     private void Awake()
     {
         _pauseMenu = FindObjectOfType<PauseMenu>();
+        _clueNames = new List<string>()
+        {
+            "Broken flower pot",
+            "Red fabric",
+            "Hard hat",
+            "Bloody knife",
+            "Trash cake"
+        };
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -31,10 +40,21 @@ public class ClueCheatScript : MonoBehaviour, IPointerDownHandler
         yield return new WaitForSecondsRealtime(1f);
         SaveHandler.Instance.SaveClue(ClueScriptableObject.Name);
         _pauseMenu.UpdateClueUI();
-        RemoveClue();
+        RemoveClueFromScene();
+
+        List<string> obtainedClues = _clueNames
+            .Where(clue => SaveHandler.Instance.DoesPlayerHaveClue(clue))
+            .ToList();
+        
+        if(obtainedClues.All(clue => SaveHandler.Instance.DoesPlayerHaveClue(clue)))
+        {
+            SaveHandler.Instance.SaveGameProperty("PlayerHasAllClues", "bool", true, "CrimeSceneQuest");
+            GameManager.PlayerHasAllClues = true;
+            GameManager.ToggleQuestMarker = true;
+        }
     }
 
-    public void RemoveClue()
+    public void RemoveClueFromScene()
     {
         List<WorldSpaceClue> clueList = FindObjectsOfType<WorldSpaceClue>().ToList();
         List<WorldSpaceClue> currentClue = clueList
