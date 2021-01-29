@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Voetstuk
+    second: {fileID: 2100000, guid: 11ff668c8c2f2744196f698cb68b3d21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: kozijn
     second: {fileID: 2100000, guid: 725f89b49b3e09d4fa5df6f52a71dac5, type: 2}
   - first:
@@ -55,7 +60,7 @@ ModelImporter:
     importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1

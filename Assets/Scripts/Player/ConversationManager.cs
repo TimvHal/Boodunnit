@@ -104,8 +104,22 @@ public class ConversationManager : MonoBehaviour
                     _entityNameTextbox.text = EnumValueToString(entityToTalkTo.CharacterName);
                     _animator.SetBool("IsOpen", true);
 
-                    GameManager.CursorIsLocked = false;
+                    if(!GameManager.IsCutscenePlaying)
+                        GameManager.CursorIsLocked = false;
+
                     CheckWhichTypeOfConversationToExecute(dialogue, question, entityToTalkTo);
+
+                    //Award achievement if cop talks to Vincent.
+                    if (_currentPossedEntity != null && _currentPossedEntity.CharacterName == CharacterType.PoliceMan)
+                    {
+                        PoliceManBehaviour policeMan = _currentPossedEntity.GetComponent<PoliceManBehaviour>();
+                        if (policeMan
+                            && entityToTalkTo.CharacterName == CharacterType.Vincent)
+                        {
+                            AchievementHandler.Instance.AwardAchievement(SteamAchievements.ACH_UNDER_ARREST);
+                        }
+                    }
+
                     break;
                 }
             }
@@ -121,7 +135,8 @@ public class ConversationManager : MonoBehaviour
         _entityNameTextbox.text = targetIsPlayer ? "Boolia" : EnumValueToString(target.CharacterName);
         _animator.SetBool("IsOpen", true);
 
-        GameManager.CursorIsLocked = false;
+        if (!GameManager.IsCutscenePlaying)
+            GameManager.CursorIsLocked = false;
         CheckWhichTypeOfConversationToExecute(dialogue, question, target);
     }
     #endregion
@@ -172,7 +187,10 @@ public class ConversationManager : MonoBehaviour
         HasConversationStarted = false;
         ConversationTarget = null;
         _animator.SetBool("IsOpen", false);
-        GameManager.CursorIsLocked = true;
+
+        if (!GameManager.IsCutscenePlaying)
+            GameManager.CursorIsLocked = true;
+
         if (_sceneLogger) _sceneLogger.SceneLog.Stats.Add(_conversationLog);
         _conversationLog = new Log();
     }

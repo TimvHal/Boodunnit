@@ -12,8 +12,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Kozijn.006
+    second: {fileID: 2100000, guid: 79854f0c6c31cc446bdd390e294ecf6b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Raam.005
     second: {fileID: 2100000, guid: 11ff668c8c2f2744196f698cb68b3d21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Raam.006
+    second: {fileID: 2100000, guid: e82f9e17866521c4aae1f0774d603ce9, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -55,7 +65,7 @@ ModelImporter:
     importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1

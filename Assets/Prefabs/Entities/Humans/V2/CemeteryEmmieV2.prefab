@@ -19,6 +19,14 @@ PrefabInstance:
       propertyPath: CanPossess
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1677767469927011132, guid: 268d47810a3f08c4097042b9683611ab, type: 3}
+      propertyPath: PossessionSpeed
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677767469927011132, guid: 268d47810a3f08c4097042b9683611ab, type: 3}
+      propertyPath: PathfindingSpeed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4835132774294723534, guid: 268d47810a3f08c4097042b9683611ab, type: 3}
       propertyPath: m_Name
       value: CemeteryEmmieV2

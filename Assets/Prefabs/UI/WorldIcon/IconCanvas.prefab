@@ -801,13 +801,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IconTarget: {fileID: 0}
+  IconTargetDashable: {fileID: 0}
   ImageWidth: 50
   ImageHeight: 50
   GridLayoutGroup: {fileID: 8344469900788257488}
   GridLayoutTransform: {fileID: 8344469900788257489}
   IconImages:
   - {fileID: 8344469900413905739}
-  - {fileID: 8344469898960302982}
   - {fileID: 8344469899815727552}
   - {fileID: 8344469898940325876}
   - {fileID: 8344469900556554151}
@@ -819,6 +819,7 @@ MonoBehaviour:
   - {fileID: 8344469900852372326}
   - {fileID: 8344469899013104356}
   - {fileID: 2284164722538097721}
+  DashIconImage: {fileID: 8344469898960302982}
 --- !u!1 &8344469900413905737
 GameObject:
   m_ObjectHideFlags: 0

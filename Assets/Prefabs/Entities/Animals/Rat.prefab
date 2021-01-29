@@ -136,13 +136,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rigidbody: {fileID: 1097548279662457384}
   JumpForce: 5
-  PossessionSpeed: 5
-  PathfindingSpeed: 5
+  PossessionSpeed: 8.5
+  PathfindingSpeed: 8.5
   Collider: {fileID: 6267253183563679202}
   IsGrounded: 1
   IsJumping: 0
   CanJump: 1
   bottomHitPoint: {x: 0, y: 0, z: 0}
+  OffMeshLinkTraverseType: 0
+  IsTraversingOfMeshLink: 0
   TargetToFollow: {fileID: 0}
   NavMeshAgent: {fileID: 1371556504}
   Animator: {fileID: 0}
@@ -153,6 +155,8 @@ MonoBehaviour:
   SequencePatrolAreas: []
   CanPossess: 1
   TimesPosessed: 0
+  HasToggledAbility: 0
+  FearEmpty: {fileID: 0}
   WalkAudioClips:
   - {fileID: 8300000, guid: 92c71e9046d969d44a0be7915856ddfa, type: 3}
   - {fileID: 8300000, guid: 99ae7d9cf49d5514e8f629b18848a8cf, type: 3}
@@ -169,6 +173,7 @@ MonoBehaviour:
   IsScaredOfLevitatableObject: 0
   LevitatableObjectFearDamage: 10
   HasFearCooldown: 0
+  ParabolaHeight: 0
   _fearRadius: 0
   _fearAngle: 0
   _ragdollController: {fileID: 0}

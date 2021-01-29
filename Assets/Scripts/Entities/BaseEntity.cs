@@ -14,6 +14,7 @@ namespace Entities
         public bool CanPossess = true;
         public int TimesPosessed;
         public bool HasToggledAbility;
+        public GameObject FearEmpty;
         
         public bool IsWalking { get; set; }
 
@@ -147,17 +148,51 @@ namespace Entities
             }
         }
 
-        protected virtual void CheckSurroundings(Vector3 raycastStartPosition)
+        public void SetDialogueForEnding()
         {
-            if (HasFearCooldown || EmotionalState == EmotionalState.Fainted || IsPossessed) return;
+            string path = "ScriptableObjects/Conversations/Ending/04_Goodbyes/";
+            string fileName = "GoodbyeDialogue";
+            CanTalkToBoolia = true;
+            switch (gameObject.name)
+            {
+                case "CrimeSceneEmmie Variant":
+                    Dialogue = Resources.Load<Dialogue>(path + "Emmie" + fileName);
+                    break;
+                case "Burt":
+                    Dialogue = Resources.Load<Dialogue>(path + "Burt" + fileName);
+                    break;
+                case "Bort":
+                    Dialogue = Resources.Load<Dialogue>(path + "Bort" + fileName);
+                    break;
+                case "Sally":
+                    Dialogue = Resources.Load<Dialogue>(path + "Sally" + fileName);
+                    break;
+                case "Annie":
+                    Dialogue = Resources.Load<Dialogue>(path + "Annie" + fileName);
+                    break;
+                case "BlackPoliceMan":
+                    Dialogue = Resources.Load<Dialogue>(path + "Marcus" + fileName);
+                    break;
+                case "Bird 2":
+                    Dialogue = Resources.Load<Dialogue>(path + "Bird" + fileName);
+                    break;
+                case "WhitePoliceWoman":
+                    Dialogue = Resources.Load<Dialogue>(path + "Dana" + fileName);
+                    break;
+            }
+        }
+
+        protected virtual void CheckSurroundings(Transform raycastStartPosition)
+        {
+            if (HasFearCooldown || EmotionalState == EmotionalState.Fainted || IsPossessed || !FearEmpty) return;
             StartCoroutine(ActivateCooldown());
             
-            Collider[] colliders = Physics.OverlapSphere(raycastStartPosition, _fearRadius);
+            Collider[] colliders = Physics.OverlapSphere(raycastStartPosition.position, _fearRadius);
 
             List<BaseEntity> baseEntities = colliders
                 .Where(collider =>
                     (collider && !collider.isTrigger) &&
-                    Vector3.Dot((collider.transform.root.position - transform.position).normalized, transform.forward) * 100f >= (90f - (_fearAngle / 2f)) &&
+                    Vector3.Dot((collider.transform.position - raycastStartPosition.position).normalized, raycastStartPosition.forward) * 100f >= (90f - (_fearAngle / 2f)) &&
                     collider.GetComponent<BaseEntity>() &&
                     ScaredOfEntities != null &&
                     ScaredOfEntities.ContainsKey(collider.GetComponent<BaseEntity>().CharacterName))
@@ -166,7 +201,7 @@ namespace Entities
 
             List<LevitateableObject> levitateables = colliders
                 .Where(c =>
-                    Vector3.Dot((c.transform.root.position - transform.position).normalized, transform.forward) * 100f >= (90f - (_fearAngle / 2f)) &&
+                    Vector3.Dot((c.transform.position - raycastStartPosition.position).normalized, raycastStartPosition.forward) * 100f >= (90f - (_fearAngle / 2f)) &&
                     c.GetComponent<LevitateableObject>()
                     && c.GetComponent<LevitateableObject>().State != LevitationState.NotLevitating &&
                     IsScaredOfLevitatableObject)
@@ -181,7 +216,10 @@ namespace Entities
             }
         }
 
-        protected virtual void CheckSurroundings() { CheckSurroundings(transform.position); }
+        protected virtual void CheckSurroundings() 
+        {    
+            if (FearEmpty) CheckSurroundings(FearEmpty.transform); 
+        }
 
         protected virtual IEnumerator ActivateCooldown()
         {

@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Bakje
-    second: {fileID: -2094654166512786520, guid: d5dbc317631148942911e14a7f054fc1, type: 3}
+    second: {fileID: 2100000, guid: 861fece344523ff41a630b686fa76340, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: saus
-    second: {fileID: 9195106800544003621, guid: 9597625656cb6b6479d27de455378cf8, type: 3}
+    second: {fileID: 2100000, guid: 86283012f03e3b246be1cac1e9bf19b3, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -55,7 +55,7 @@ ModelImporter:
     importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1

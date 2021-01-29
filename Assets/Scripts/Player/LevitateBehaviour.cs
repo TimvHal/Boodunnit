@@ -1,5 +1,4 @@
-﻿using System;
-using DefaultNamespace.Enums;
+﻿using DefaultNamespace.Enums;
 using UnityEngine;
 using System.Linq;
 
@@ -10,10 +9,6 @@ public class LevitateBehaviour : MonoBehaviour
     [SerializeField] private float _objectStartingDistance = 10f;
     [SerializeField] private float _objectStartingHeight = 8f;
     
-    [Header("Layers")]
-    [SerializeField] private LayerMask _ignoredLayerMask;
-
-    private Camera _mainCamera;
     private Rigidbody _selectedRigidbody;
     private Collider _currentHighlightedObject;
     private Vector3 _originalRigidbodyPosition;
@@ -22,11 +17,6 @@ public class LevitateBehaviour : MonoBehaviour
     public Collider[] CurrentLevitateableObjects { get; set; }
     public bool IsLevitating { get; set; }
     public bool PushingObjectIsToggled { get; set; }
-
-    private void Awake()
-    {
-        _mainCamera = Camera.main;
-    }
 
     private void Start()
     {
@@ -100,29 +90,15 @@ public class LevitateBehaviour : MonoBehaviour
             if (levitateable != null && !IsObjectInLevitateablesArray(collider)) return null;
         }
 
-        float distanceBetweenObjectAndCamera =
-            Vector3.Distance(gameObject.transform.position, _mainCamera.transform.position) 
-            + CurrentLevitateRadius;
+        Collider firstHit = _currentHighlightedObject;
 
-        RaycastHit[] hits;
-        hits = Physics.RaycastAll(
-            _mainCamera.transform.position,
-            _mainCamera.transform.forward,
-            distanceBetweenObjectAndCamera,
-            ~_ignoredLayerMask
-        );
-        
-        RaycastHit firstHit = hits
-            .OrderBy(hit => Vector3.Distance(hit.transform.position, transform.position))
-            .FirstOrDefault(hit => hit.collider.gameObject.GetComponent<ILevitateable>() != null);
+        if (!firstHit || firstHit.GetComponent<ILevitateable>() == null) return null;
 
-        if (!firstHit.collider) return null;
-        
-        Rigidbody rigidbody = firstHit.collider.gameObject.GetComponent<Rigidbody>();
+        Rigidbody rigidbody = firstHit.gameObject.GetComponent<Rigidbody>();
 
         if (!rigidbody ||
-            firstHit.collider != _currentHighlightedObject ||
-            !firstHit.collider.gameObject.GetComponent(typeof(ILevitateable))) return null;
+            firstHit != _currentHighlightedObject ||
+            !firstHit.gameObject.GetComponent(typeof(ILevitateable))) return null;
 
         int levitatingObjectLayerMask = LayerMask.NameToLayer("LevitatingObject");
         
@@ -134,7 +110,7 @@ public class LevitateBehaviour : MonoBehaviour
             }
         }     
             
-        _originalRigidbodyPosition = firstHit.collider.transform.position;
+        _originalRigidbodyPosition = firstHit.transform.position;
         return rigidbody;
     }
     

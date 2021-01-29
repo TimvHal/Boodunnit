@@ -546,7 +546,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d0d7a08cf0e248b4ab16c083f04508d6, type: 2}
+  - {fileID: 2100000, guid: f403e085c61572f4c9b2d3194bac334a, type: 2}
   - {fileID: 2100000, guid: 70afc075025575d4fa9f7988817b7d9d, type: 2}
   - {fileID: 2100000, guid: 70afc075025575d4fa9f7988817b7d9d, type: 2}
   - {fileID: 2100000, guid: ba2e6e10895ede149ba541a529c28c50, type: 2}
@@ -793,13 +793,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rigidbody: {fileID: 0}
   JumpForce: 7.1
-  PossessionSpeed: 10
+  PossessionSpeed: 8
   PathfindingSpeed: 0
   Collider: {fileID: 8658040402228577259}
   IsGrounded: 1
   IsJumping: 0
   CanJump: 0
   bottomHitPoint: {x: 0, y: 0, z: 0}
+  GroundCollider: {fileID: 0}
   PossessionBehaviour: {fileID: 8658040402228577256}
   DashBehaviour: {fileID: 8658040402228577263}
   HighlightBehaviour: {fileID: 8658040402228577262}
@@ -807,7 +808,7 @@ MonoBehaviour:
   ConversationRadius: 5
   LeviatateRadius: 12
   PossesionRadius: 5
-  ClueRadius: 5
+  ClueRadius: 2.5
   AirVentRadius: 20
   ClimableRadius: 20
   DashRadius: 10
@@ -863,6 +864,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda64b232a8ed564b8fd5097cf3494e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IgnoredLayerMasks:
+    serializedVersion: 2
+    m_Bits: 1028
 --- !u!114 &8658040402228577261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -876,11 +880,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levitationMoveSpeed: 250
-  _objectStartingDistance: 10
-  _objectStartingHeight: 8
-  _ignoredLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
+  _objectStartingDistance: 12
+  _objectStartingHeight: 12
 --- !u!114 &8658040402228577260
 MonoBehaviour:
   m_ObjectHideFlags: 0

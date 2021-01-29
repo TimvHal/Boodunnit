@@ -156,7 +156,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 897881984945589419, guid: ec411017b2d8d0346bbd19f2f713df5a, type: 3}
       propertyPath: PossessionSpeed
-      value: 6
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 897881984945589419, guid: ec411017b2d8d0346bbd19f2f713df5a, type: 3}
+      propertyPath: PathfindingSpeed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 897881984945589419, guid: ec411017b2d8d0346bbd19f2f713df5a, type: 3}
       propertyPath: _pathFindingState

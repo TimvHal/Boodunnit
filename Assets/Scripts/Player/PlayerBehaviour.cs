@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Entities.Humans;
+using Enums;
 using UnityEngine;
 
 public class PlayerBehaviour : BaseMovement
@@ -59,7 +60,6 @@ public class PlayerBehaviour : BaseMovement
         GameManager.CurrentHighlightedCollider = HighlightedObject;
 
         PickUpClue(HighlightedObject);
-        StartEndingWithEmmie(HighlightedObject);
         PlayerAnimation();
 
         //Pause game behaviour
@@ -94,8 +94,9 @@ public class PlayerBehaviour : BaseMovement
             }
             else
             {
-                if (!DashBehaviour.IsDashing && !ConversationManager.HasConversationStarted && !LevitateBehaviour.IsLevitating && HighlightedObject && HighlightedObject.GetComponent<IPossessable>() != null)
+                if (!DashBehaviour.IsDashing && !ConversationManager.HasConversationStarted && !LevitateBehaviour.IsLevitating && HighlightedObject && HighlightedObject.GetComponent<IPossessable>() != null && HighlightBehaviour.CheckForWall())
                 {
+                    print(HighlightedObject);
                     PossessionBehaviour.PossessTarget(HighlightedObject);
                 }
             }
@@ -108,9 +109,22 @@ public class PlayerBehaviour : BaseMovement
                 !DashBehaviour.IsDashing && 
                 !LevitateBehaviour.IsLevitating)
             {
-                ConversationManager.TriggerConversation(PossessionBehaviour.IsPossessing);
+                if (HighlightedObject)
+                {
+                    EmmieBehaviour emmie = HighlightedObject.gameObject.GetComponent<EmmieBehaviour>();
+                    if (emmie && !PossessionBehaviour.IsPossessing)
+                    {
+                        if (GameManager.PlayerHasAllClues && !GameManager.PlayerIsInEndState)
+                        {
+                            StartEndingWithEmmie();
+                            return;
+                        }
 
-                if (ConversationManager.ConversationTarget?.gameObject == _emmie.gameObject) _emmie.TalkWithBoolia();
+                    }
+                }
+                    ConversationManager.TriggerConversation(PossessionBehaviour.IsPossessing);
+
+                if (ConversationManager.ConversationTarget != null && ConversationManager.ConversationTarget?.gameObject == _emmie.gameObject) _emmie.TalkWithBoolia();
             }
         }
 
@@ -212,6 +226,7 @@ public class PlayerBehaviour : BaseMovement
 
     private void HandleLevitationInput()
     {
+        if (GameManager.IsCutscenePlaying) return;
         LevitateBehaviour.CurrentLevitateableObjects = LevitateBehaviour.FindLevitateableObjectsInFrontOfPlayer();
         LevitateBehaviour.SetCurrentHighlightedObject(HighlightBehaviour.HighlightGameobject(_highlightRadiuses));
         if (Input.GetMouseButtonDown(0)) LevitateBehaviour.LevitationStateHandler();
@@ -230,30 +245,19 @@ public class PlayerBehaviour : BaseMovement
         }
     }
 
-    private void StartEndingWithEmmie(Collider HighlightedObject)
+    private void StartEndingWithEmmie()
     {
-        if (!HighlightedObject)
-            return;
-
-        EmmieBehaviour emmie = HighlightedObject.GetComponent<EmmieBehaviour>();
-        if (emmie)
+        FadeInAndOut fade = GameObject.Find("FadeInOutCanvas").GetComponent<FadeInAndOut>();
+        if (fade)
         {
-            if (GameManager.PlayerHasAllClues && !GameManager.PlayerIsInEndState)
-            {
-                GameManager.PlayerIsInEndState = true;
-                FadeInAndOut fade = GameObject.Find("FadeInOutCanvas").GetComponent<FadeInAndOut>();
-                if (fade)
-                {
-                    fade.FadeIn(1);
-                    PrepareForEnding();
-                }
+            fade.FadeIn(1);
+            PrepareForEnding();
+        }
 
-                Cutscene endCutscene = GameObject.Find("EndCutscene").GetComponent<Cutscene>();
-                if (endCutscene)
-                {
-                    endCutscene.StartCutscene();
-                }
-            }
+        Cutscene endCutscene = GameObject.Find("EndCutscene").GetComponent<Cutscene>();
+        if (endCutscene)
+        {
+            endCutscene.StartCutscene();
         }
     }
 
@@ -261,8 +265,8 @@ public class PlayerBehaviour : BaseMovement
     {
         PossessionSpeed = 0;
         Rigidbody.velocity = Vector3.zero;
-        Animator.SetBool("IsMoving", false);
         IconCanvas canvas = FindObjectOfType<IconCanvas>();
+        GameManager.ToggleQuestMarker = false;
         if (canvas)
         {
             canvas.DisableIcons();

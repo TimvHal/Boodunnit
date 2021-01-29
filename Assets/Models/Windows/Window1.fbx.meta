@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 45ef04f5c4408914bbb75d5dc82d4f40
+guid: 70bc94f31c5f40345867295ba47b66c4
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
@@ -7,12 +7,17 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: B8E7DE
+      name: B8E7DE.108
     second: {fileID: 2100000, guid: 79854f0c6c31cc446bdd390e294ecf6b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: glas.021
+      name: glas.051
+    second: {fileID: 2100000, guid: 11ff668c8c2f2744196f698cb68b3d21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glas.052
     second: {fileID: 2100000, guid: 11ff668c8c2f2744196f698cb68b3d21, type: 2}
   materials:
     materialImportMode: 1
@@ -44,7 +49,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.01
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -55,7 +60,7 @@ ModelImporter:
     importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -95,7 +100,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.01
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

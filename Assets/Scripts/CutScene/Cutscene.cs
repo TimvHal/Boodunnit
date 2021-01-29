@@ -20,7 +20,7 @@ public class Cutscene : MonoBehaviour
         GameManager.IsCutscenePlaying = true;
         DisableOrEnablePlayer(false);
         DisableOrEnablePlayerCamera(false);
-
+        GameManager.CursorIsLocked = false;
         StartCoroutine(ExecuteActions());
     }
 
@@ -74,6 +74,7 @@ public class Cutscene : MonoBehaviour
                     GameManager.IsCutscenePlaying = false;
                     DisableOrEnablePlayer(true);
                     DisableOrEnablePlayerCamera(true);
+                    GameManager.CursorIsLocked = true;
                     yield break;
                 }
             }
@@ -244,9 +245,19 @@ public class Cutscene : MonoBehaviour
     /// <param name="shouldPlayerBeEnabled">Should player be enabled or disabled.</param>
     private void DisableOrEnablePlayer(bool shouldPlayerBeEnabled)
     {
-        FindObjectOfType<PlayerBehaviour>().enabled = shouldPlayerBeEnabled;
-        if(shouldPlayerBeEnabled)
-            FindObjectOfType<PlayerBehaviour>().PossessionSpeed = 10;
+        PlayerBehaviour player = FindObjectOfType<PlayerBehaviour>();
+        if (player)
+        {
+            player.enabled = shouldPlayerBeEnabled;
+            player.Animator.SetBool("IsMoving", false);
+            player.Animator.SetBool("IsDashing", false);
+
+            if (player.Rigidbody)
+                player.Rigidbody.velocity = Vector3.zero;
+
+            if (shouldPlayerBeEnabled)
+                player.PossessionSpeed = 8;
+        }
     }
 
     /// <summary>

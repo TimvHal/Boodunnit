@@ -33,7 +33,7 @@ public class SoundManager : MonoBehaviour
         {
             if (sound.ShouldStartOnStart)
             {
-                sound.AudioSource.Play();   
+                sound.AudioSource.Play();
             }
         }
     }

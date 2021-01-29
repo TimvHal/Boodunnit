@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Enums;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,8 +15,12 @@ public class CloudPortalEnding : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "PlayerV2" && other.gameObject.GetComponent<PlayerBehaviour>())
+        PlayerBehaviour player = other.gameObject.GetComponent<PlayerBehaviour>();
+        if (player)
+        {
+            AchievementHandler.Instance.AwardAchievement(SteamAchievements.ACH_I_AM_JULIA_LAWSON);
             StartCoroutine(FadeToWhite());
+        }
     }
 
     private IEnumerator FadeToWhite()

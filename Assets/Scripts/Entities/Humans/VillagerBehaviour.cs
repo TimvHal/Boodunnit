@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Entities;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class VillagerBehaviour : BaseEntity
 {
@@ -15,6 +16,16 @@ public class VillagerBehaviour : BaseEntity
         {
             [CharacterType.Rat] = 3f,
         };
+    }
+
+    private void LateUpdate()
+    {
+        if ((CharacterName == CharacterType.Burt || CharacterName == CharacterType.Bort) 
+            && EmotionalState == EmotionalState.Fainted 
+            && SceneManager.GetActiveScene().name == "CemeteryScene_1")
+        {
+            AchievementHandler.Instance.AwardAchievement(SteamAchievements.ACH_LEFTOVER_COFFINS);
+        }
     }
 
     public override void MoveEntityInDirection(Vector3 direction)

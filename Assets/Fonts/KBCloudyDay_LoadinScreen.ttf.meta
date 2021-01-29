@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 8f7208a15d5bb7d459624adb73222efb
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - KBCloudyDay
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: ba9b29ac5c2566a43a6a3edb43aded24, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
