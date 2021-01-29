@@ -12838,6 +12838,10 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 0.0000006322434
       objectReference: {fileID: 0}
+    - target: {fileID: 9046699222887342269, guid: 579c0302a1fd7d941bc4ada478bc454a, type: 3}
+      propertyPath: Dialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: bb327518a3943e547867f291228c3168, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 579c0302a1fd7d941bc4ada478bc454a, type: 3}
 --- !u!4 &521865914 stripped
@@ -24985,6 +24989,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 19515175}
     m_Modifications:
+    - target: {fileID: 432952813084000327, guid: 526af931129d0a24db9a74d0f62fea3a, type: 3}
+      propertyPath: Dialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: a0c7191da6fbdd4418ebc2b12fed8f87, type: 2}
     - target: {fileID: 1615040650635592509, guid: 526af931129d0a24db9a74d0f62fea3a, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: -0.0000007748604
