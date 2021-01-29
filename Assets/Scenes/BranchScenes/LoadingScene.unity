@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 14.364}
   m_AnchorMin: {x: 0.63100004, y: 0.24400002}
   m_AnchorMax: {x: 0.9381672, y: 0.85400003}
-  m_AnchoredPosition: {x: -1.5, y: -2}
+  m_AnchoredPosition: {x: -1.5, y: -2.0000305}
   m_SizeDelta: {x: -4.7911377, y: -4.1574707}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &175526381
@@ -225,16 +225,16 @@ RectTransform:
   m_GameObject: {fileID: 279797818}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.2842, y: 3.2842, z: 3.2842}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 855598237}
   m_Father: {fileID: 960530084}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.18400002, y: 0.41713232}
-  m_AnchorMax: {x: 0.5936458, y: 0.76600003}
-  m_AnchoredPosition: {x: 2, y: -1.5}
-  m_SizeDelta: {x: -547.2271, y: -251.47302}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 276, y: 37}
+  m_SizeDelta: {x: 319, y: 129}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &279797820
 MonoBehaviour:
@@ -379,18 +379,18 @@ RectTransform:
   m_GameObject: {fileID: 597133181}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 13.1368, y: 13.1368, z: 3.2842}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 675693784}
   - {fileID: 2077847595}
   m_Father: {fileID: 960530084}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.051249996, y: 0.041220486}
-  m_AnchorMax: {x: 0.9537921, y: 0.2582205}
-  m_AnchoredPosition: {x: -1.131958, y: 0}
-  m_SizeDelta: {x: -1600.6028, y: -209.68073}
-  m_Pivot: {x: 0.4783999, y: 0.4999999}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -157.41}
+  m_SizeDelta: {x: 720, y: 81.319275}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &597133183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,11 +548,11 @@ RectTransform:
   m_Father: {fileID: 279797819}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 12.785}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -161.1, y: -1.8}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: -44.350006, y: -1.4000015}
   m_SizeDelta: {x: 482.89294, y: 485.4215}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &855598238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -643,7 +643,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -662,7 +662,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -746,6 +746,7 @@ GameObject:
   - component: {fileID: 980051441}
   - component: {fileID: 980051440}
   - component: {fileID: 980051439}
+  - component: {fileID: 980051442}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -818,6 +819,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &980051442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980051438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &1400699176
 GameObject:
   m_ObjectHideFlags: 0
