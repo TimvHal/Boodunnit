@@ -110,11 +110,10 @@ public class ConversationManager : MonoBehaviour
                     CheckWhichTypeOfConversationToExecute(dialogue, question, entityToTalkTo);
 
                     //Award achievement if cop talks to Vincent.
-                    if (_currentPossedEntity != null && _currentPossedEntity.CharacterName == CharacterType.PoliceMan)
+                    if (_currentPossedEntity != null)
                     {
                         PoliceManBehaviour policeMan = _currentPossedEntity.GetComponent<PoliceManBehaviour>();
-                        if (policeMan
-                            && entityToTalkTo.CharacterName == CharacterType.Vincent)
+                        if (policeMan && entityToTalkTo.CharacterName == CharacterType.Vincent)
                         {
                             AchievementHandler.Instance.AwardAchievement(SteamAchievements.ACH_UNDER_ARREST);
                         }
